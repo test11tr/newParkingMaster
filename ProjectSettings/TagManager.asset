@@ -6,11 +6,9 @@ TagManager:
   tags:
   - GameManager
   - p_vehicle
-  - LevelManager
-  - fl-wheelCheck
-  - fr-wheelCheck
-  - rl-wheelCheck
-  - rr-wheelCheck
+  - orbitCamTarget
+  - p_vehicle_front
+  - p_vehicle_rear
   layers:
   - Default
   - TransparentFX
