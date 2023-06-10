@@ -63,15 +63,6 @@ public class CarController : MonoBehaviour
     private bool playedExhaust;
 
     [Space(20)]
-    [Header("LIGHTS")]
-    public GameObject FrontLight1;
-    public GameObject FrontLight2;
-    public GameObject RearLight1;
-    public GameObject RearLight2;
-    public GameObject FrontHL;
-    public GameObject RearHL;
-
-    [Space(20)]
     [Header("UI")]
     public bool useUI = false;
     public Text carSpeedText;
@@ -265,37 +256,6 @@ public class CarController : MonoBehaviour
             EngineSwitch();
         }
 
-        //LIGHTS SWITCH
-        #region Lights Switch
-        if (engineOn)
-        {
-            if (!Exhaust.isPlaying)
-            {
-                Exhaust.Play();
-                FrontLight1.SetActive(true);
-                FrontLight2.SetActive(true);
-                RearLight1.SetActive(true);
-                RearLight2.SetActive(true);
-                FrontHL.SetActive(true);
-                RearHL.SetActive(true);
-            }
-        }
-        else if (!engineOn)
-        {
-            if (Exhaust.isPlaying)
-            {
-                Exhaust.Stop();
-                FrontLight1.SetActive(false);
-                FrontLight2.SetActive(false);
-                RearLight1.SetActive(false);
-                RearLight2.SetActive(false);
-                FrontHL.SetActive(false);
-                RearHL.SetActive(false);
-                carAnimator.Play("VehBrake");
-                deceleratingCar = true;
-            }
-        }
-
         if (engineOn)
         {
             if (useTouchControls && touchControlsSetup)
@@ -416,7 +376,7 @@ public class CarController : MonoBehaviour
         // We call the method AnimateWheelMeshes() in order to match the wheel collider movements with the 3D meshes of the wheels.
         AnimateWheelMeshes();
     }
-    #endregion
+
     // This method converts the car speed data from float to string, and then set the text of the UI carSpeedText with this value.
     public void CarSpeedUI()
     {
