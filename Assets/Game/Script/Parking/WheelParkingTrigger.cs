@@ -27,7 +27,7 @@ namespace test11.Managers
         {
             if (_levelManager == null)
             {
-                _levelManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<LevelManager>();
+                _levelManager = GameObject.FindGameObjectWithTag("Level").GetComponent<LevelManager>();
             }
             if (_carController == null)
             {

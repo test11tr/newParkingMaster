@@ -16,7 +16,7 @@ public class CameraFollow : MonoBehaviour {
 	void Start(){
 		if (_levelManager == null)
 		{
-			_levelManager = GameObject.FindGameObjectWithTag("GameManager").transform.GetComponent<LevelManager>();
+			_levelManager = GameObject.FindGameObjectWithTag("Level").transform.GetComponent<LevelManager>();
 		}
 		initialPlayerPosition = _levelManager.SpawnedPlayerVehicle.transform.position;		
 

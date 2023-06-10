@@ -12,7 +12,6 @@ namespace test11.Managers
         {
             base.Awake();
             _uiManager = GetComponent<UIManager>();
-            _levelManager = GetComponent<LevelManager>();
         }
     }
 }

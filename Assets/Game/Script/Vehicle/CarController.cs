@@ -126,7 +126,7 @@ public class CarController : MonoBehaviour
     void Awake(){
         if (_levelmanager == null)
 		{
-			_levelmanager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<LevelManager>();
+			_levelmanager = GameObject.FindGameObjectWithTag("Level").GetComponent<LevelManager>();
 		}
     }
 
