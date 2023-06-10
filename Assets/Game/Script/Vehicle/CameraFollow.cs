@@ -12,23 +12,17 @@ public class CameraFollow : MonoBehaviour {
 	public float lookSpeed = 5;
 	Vector3 initialPlayerPosition;
 	public Vector3 offsetIsoCamera = new Vector3(-12.5799999f,14.6999998f,15.8599997f);
-	public Vector3 offsetNearCamera = new Vector3(0f,4.982f,-8.02000046f);
-
-	[SerializeField] private enum CameraType
-	{
-		NearCamera,
-		IsometricCamera,
-	}
-	[SerializeField] private CameraType _cameraType;
 
 	void Start(){
 		if (_levelManager == null)
 		{
 			_levelManager = GameObject.FindGameObjectWithTag("GameManager").transform.GetComponent<LevelManager>();
 		}
-		
 		initialPlayerPosition = _levelManager.SpawnedPlayerVehicle.transform.position;		
-		_cameraType = CameraType.NearCamera; //default camera
+
+		// Make the rigid body not change rotation
+		if (GetComponent<Rigidbody>())
+			GetComponent<Rigidbody>().freezeRotation = true;
 	}
 
 	void FixedUpdate()
@@ -37,33 +31,15 @@ public class CameraFollow : MonoBehaviour {
 		Vector3 currentOffset;
 
 		Target = _levelManager.SpawnedPlayerVehicle.transform.position;
-
-		if(Input.GetKeyDown(KeyCode.C)){
-			if(_cameraType == CameraType.NearCamera){
-				_cameraType = CameraType.IsometricCamera;
-			}else if(_cameraType == CameraType.IsometricCamera){
-				_cameraType = CameraType.NearCamera;
-			}
-		}
 		
-		if(_cameraType == CameraType.NearCamera){
-			currentOffset = offsetNearCamera;
-			//Look at car
-			Vector3 _lookDirection = - currentOffset;
-			Quaternion _rot = Quaternion.LookRotation(_lookDirection, Vector3.up);
-			transform.rotation = Quaternion.Lerp(transform.rotation, _rot, lookSpeed * Time.deltaTime);
-			//Move to car
-			Vector3 _targetPos = currentOffset + Target;
-			transform.position = Vector3.Lerp(transform.position, _targetPos, followSpeed * Time.deltaTime);
-		}else if(_cameraType == CameraType.IsometricCamera){
-			currentOffset = offsetIsoCamera;
-			//Look at car
-			Vector3 _lookDirection = - currentOffset;
-			Quaternion _rot = Quaternion.LookRotation(_lookDirection, Vector3.up);
-			transform.rotation = Quaternion.Lerp(transform.rotation, _rot, lookSpeed * Time.deltaTime);
-			//Move to car
-			Vector3 _targetPos = currentOffset + Target;
-			transform.position = Vector3.Lerp(transform.position, _targetPos, followSpeed * Time.deltaTime);
-		}
+		currentOffset = offsetIsoCamera;
+		//Look at car
+		Vector3 _lookDirection = - currentOffset;
+		Quaternion _rot = Quaternion.LookRotation(_lookDirection, Vector3.up);
+		transform.rotation = Quaternion.Lerp(transform.rotation, _rot, lookSpeed * Time.deltaTime);
+		//Move to car
+		Vector3 _targetPos = currentOffset + Target;
+		transform.position = Vector3.Lerp(transform.position, _targetPos, followSpeed * Time.deltaTime);
+		
 	}
 }

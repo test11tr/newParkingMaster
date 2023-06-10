@@ -88,6 +88,11 @@ public class CarController : MonoBehaviour
     public GameObject handbrakeButton;
     TouchInput handbrakePTI;
 
+    [Space(20)]
+    [Header("CAMERA")]
+    public GameObject[] cameras;
+    [SerializeField] private int currentCameraIndex;
+
     //CAR DATA
     [HideInInspector]
     public bool engineOn = false;
@@ -241,6 +246,20 @@ public class CarController : MonoBehaviour
                 Debug.LogWarning(ex);
             }
         }
+
+        //CAMERA
+        currentCameraIndex = 0;
+    
+         for (int i=1; i<cameras.Length; i++) 
+         {
+             cameras[i].gameObject.SetActive(false);
+         }
+         
+         if (cameras.Length>0)
+         {
+             cameras [0].gameObject.SetActive (true);
+             Debug.Log ("Camera with name: " + cameras [0] + ", is now enabled");
+         }
     }
     
     void Update()
@@ -260,7 +279,6 @@ public class CarController : MonoBehaviour
         {
             if (useTouchControls && touchControlsSetup)
             {
-
                 if (throttlePTI.buttonPressed)
                 {
                     CancelInvoke("DecelerateCar");
@@ -371,6 +389,25 @@ public class CarController : MonoBehaviour
                 {
                     ResetSteeringAngle();
                 }
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            currentCameraIndex ++;
+            Debug.Log ("Switching to the next camera");
+            if (currentCameraIndex < cameras.Length)
+            {
+                cameras[currentCameraIndex-1].gameObject.SetActive(false);
+                cameras[currentCameraIndex].gameObject.SetActive(true);
+                Debug.Log ("Camera with name: " + cameras [currentCameraIndex] + ", is now enabled");
+            }
+            else
+            {
+                cameras[currentCameraIndex-1].gameObject.SetActive(false);
+                currentCameraIndex = 0;
+                cameras[currentCameraIndex].gameObject.SetActive(true);
+                Debug.Log ("Camera with name: " + cameras [currentCameraIndex] + ", is now enabled");
             }
         }
         // We call the method AnimateWheelMeshes() in order to match the wheel collider movements with the 3D meshes of the wheels.
