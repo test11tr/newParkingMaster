@@ -9,6 +9,7 @@ TagManager:
   - orbitCamTarget
   - p_vehicle_front
   - p_vehicle_rear
+  - Level
   layers:
   - Default
   - TransparentFX
