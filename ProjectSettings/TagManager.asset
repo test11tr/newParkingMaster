@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - GameManager
+  - p_vehicle
+  - LevelManager
+  - fl-wheelCheck
+  - fr-wheelCheck
+  - rl-wheelCheck
+  - rr-wheelCheck
   layers:
   - Default
   - TransparentFX

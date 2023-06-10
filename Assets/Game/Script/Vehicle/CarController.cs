@@ -7,9 +7,16 @@ using test11.Managers;
 
 public class CarController : MonoBehaviour
 {
-    [Space(20)]
-    //[Header("CAR SETUP")]
+    [Header("Test11 - Car Controller")]
     [Space(10)]
+    
+    [Header("ANIMATOR - don't assign")]
+    [SerializeField] private Animator carAnimator;
+    [Header("LEVEL MANAGER - don't assign")]
+    [SerializeField] private LevelManager _levelmanager;
+
+    [Space(20)]
+    [Header("VEHICLE SETTINGS")]
     [Range(20, 190)]
     public int maxSpeed = 90;
     [Range(10, 120)]
@@ -31,14 +38,8 @@ public class CarController : MonoBehaviour
     [Space(10)]
     public Vector3 bodyMassCenter;
 
-    //Animator
-    Animator carAnimator;
-
-    //CarController Checker
-    public Transform p_spawner;
-    [SerializeField] private LevelManager _levelmanager;
-
-    //[Header("WHEELS")]
+    [Space(20)]
+    [Header("WHEELS")]
     public GameObject frontLeftMesh;
     public WheelCollider frontLeftCollider;
     [Space(10)]
@@ -52,21 +53,17 @@ public class CarController : MonoBehaviour
     public WheelCollider rearRightCollider;
 
     [Space(20)]
-    //[Header("EFFECTS")]
-    [Space(10)]
+    [Header("EFFECTS")]
     public bool useEffects = false;
     public ParticleSystem RLWParticleSystem;
     public ParticleSystem RRWParticleSystem;
     public ParticleSystem Exhaust;
-    private bool playedExhaust;
-
-    [Space(10)]
     public TrailRenderer RLWTireSkid;
     public TrailRenderer RRWTireSkid;
+    private bool playedExhaust;
 
     [Space(20)]
-    //[Header("Lights")]
-    [Space(10)]
+    [Header("LIGHTS")]
     public GameObject FrontLight1;
     public GameObject FrontLight2;
     public GameObject RearLight1;
@@ -75,22 +72,19 @@ public class CarController : MonoBehaviour
     public GameObject RearHL;
 
     [Space(20)]
-    //[Header("UI")]
-    [Space(10)]
+    [Header("UI")]
     public bool useUI = false;
     public Text carSpeedText;
 
     [Space(20)]
-    //[Header("Sounds")]
-    [Space(10)]
+    [Header("SOUNDS")]
     public bool useSounds = false;
     public AudioSource carEngineSound;
     public AudioSource tireScreechSound;
     float initialCarEngineSoundPitch;
 
     [Space(20)]
-    //[Header("CONTROLS")]
-    [Space(10)]
+    [Header("CONTROLS")]
     public bool useTouchControls = false;
     public GameObject throttleButton;
     TouchInput throttlePTI;
