@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using test11.Managers;
 using UniqueVehicleController;
+using TMPro;
 
 namespace test11.Managers
 {
@@ -13,6 +14,7 @@ namespace test11.Managers
         [SerializeField] private LevelManager _levelManager;
         [SerializeField] private UVCUniqueVehicleController _carController;
         [SerializeField] private ParkingManager _parkingManager;
+        [SerializeField] private GameObject _hud;
 
         [HideInInspector]
         public bool fl,fr,rl,rr,front,rear;
@@ -22,14 +24,18 @@ namespace test11.Managers
         public GameObject FailedMenu;
 
         [Header("Score Settings")]
-        public int CollisionScore0 = 3, CollisionScore1 = 2, CollisionScore2 = 1, CollisionScore3 = 0;
+        public int CollisionScore0 = 0;
+        public int CollisionScore1 = 0;
+        public int CollisionScore2 = 0;
+        public int CollisionScore3 = 0;
+        public int collisionLimit = 3;
         private bool isFinish, Finished, Score, canLoad = true;
         float endTime;
 
         [Header("UI Text References")]
-        public Text CountDownText;
-        public Text CollisionCountText;
-        public Text FinishScoreText;
+        public TMP_Text CountDownText;
+        public TMP_Text CollisionCountText;
+        public TMP_Text FinishScoreText;
         [HideInInspector] public int CollisionCount;
         
         [Header("Visual Stuff")]
@@ -40,7 +46,7 @@ namespace test11.Managers
         [Header("Is Time Limited?")]
         public bool timeLimit;
         public GameObject TimeDownMenu;
-        public Text bestTime, currentTime;
+        public TMP_Text bestTime, currentTime;
 
         [Header("Audio Related")]
         public AudioSource AlarmSound;
@@ -58,7 +64,11 @@ namespace test11.Managers
             }
             if (_parkingManager == null)
             {
-                _parkingManager = GetComponentInParent<ParkingManager>();
+                _parkingManager = this;
+            }
+            if (_hud == null)
+            {
+                _hud = GameObject.FindGameObjectWithTag("HUD");
             }
 
             if(timeLimit)
@@ -235,6 +245,7 @@ namespace test11.Managers
                         PlayerPrefs.SetInt ("PassedLevels", PlayerPrefs.GetInt ("PassedLevels") + 1);
                     }
 
+                    _hud.SetActive(false);
                     FinishMenu.SetActive (true);
                     TimerCountMen.SetActive (false);
                     CountDownText.gameObject.SetActive (false);

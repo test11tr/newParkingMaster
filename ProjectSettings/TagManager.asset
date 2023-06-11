@@ -10,6 +10,12 @@ TagManager:
   - p_vehicle_front
   - p_vehicle_rear
   - Level
+  - Lights
+  - Audio
+  - Camera
+  - MainCameraPosition
+  - HUD
+  - parkingManager
   layers:
   - Default
   - TransparentFX
