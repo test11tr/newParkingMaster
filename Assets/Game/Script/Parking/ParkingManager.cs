@@ -20,8 +20,10 @@ namespace test11.Managers
         public bool fl,fr,rl,rr,front,rear;
         [Header("Menu References")]
         public GameObject FinishMenu;
-        public GameObject TimerCountMen;
+        public GameObject TimerCountMenu;
         public GameObject FailedMenu;
+        public GameObject TimeFailedMenu;
+        public GameObject ParkingGearMenu;
 
         [Header("Score Settings")]
         public int CollisionScore0 = 0;
@@ -53,7 +55,7 @@ namespace test11.Managers
         public AudioClip clipSuccess, clipLost;
         private AudioSource _audioSource;
 
-        void Start(){
+        IEnumerator Start(){
             if (_levelManager == null)
             {
                 _levelManager = GameObject.FindGameObjectWithTag("Level").GetComponent<LevelManager>();
@@ -87,33 +89,41 @@ namespace test11.Managers
             _audioSource.spatialBlend = 0;
             _audioSource.playOnAwake = false;
             _audioSource.loop = false;
+            
+            yield return new WaitForSeconds(.033f);
         }
 
         void Update(){
             if(!Finished){
                 if(fl && fr && rl && rr && front && rear){
-                    //checking when timer is reaching to 0
-                    StartCoroutine(CheckTimeToFinished());
-                    isFinish = true;
-                    ParkingArea.material.color = Color.green;
+                    if(!_levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().isparking){
+                        ParkingGearMenu.SetActive(true);
+                    }else{
+                        ParkingGearMenu.SetActive(false);
+                        //checking when timer is reaching to 0
+                        StartCoroutine(CheckTimeToFinished());
+                        isFinish = true;
+                        ParkingArea.material.color = Color.green;
 
-                    if(canLoad){
-                        TimerCountMen.SetActive(true);
-                        CountDownText.gameObject.SetActive(true);
+                        if(canLoad){
+                            TimerCountMenu.SetActive(true);
+                            CountDownText.gameObject.SetActive(true);
+                        }
+
+                        int timeLeft = (int)(endTime - Time.time);
+                        if(timeLeft < 0){
+                            timeLeft = 0;
+                        }
+
+                        //Timer to 3..2..1..
+                        CountDownText.text = timeLeft.ToString();
                     }
-
-                    int timeLeft = (int)(endTime - Time.time);
-                    if(timeLeft < 0){
-                        timeLeft = 0;
-                    }
-
-                    //Timer to 3..2..1..
-                    CountDownText.text = timeLeft.ToString();
                 }else{
+                    ParkingGearMenu.SetActive(false);
                     //Not parked correctly
                     StopCoroutine(CheckTimeToFinished());
                     isFinish = false;
-                    TimerCountMen.SetActive(false);
+                    TimerCountMenu.SetActive(false);
                     endTime = Time.time + 4;
                     CountDownText.text = "3";
                     ParkingArea.material.color = Color.white;
@@ -247,9 +257,9 @@ namespace test11.Managers
 
                     _hud.SetActive(false);
                     FinishMenu.SetActive (true);
-                    TimerCountMen.SetActive (false);
+                    TimerCountMenu.SetActive (false);
                     CountDownText.gameObject.SetActive (false);
-                    _levelManager.SpawnedPlayerVehicle.GetComponent<CarController>().EngineSwitch();
+                     _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().engineIsStarted = false;
                 }
             }
         }
@@ -257,12 +267,12 @@ namespace test11.Managers
         public void TimeFailed(){
             _audioSource.clip = clipLost;
             _audioSource.Play();
-            FailedMenu.SetActive(true);
+            TimeFailedMenu.SetActive(true);
             PlayerPrefs.SetInt("TotalFailed", PlayerPrefs.GetInt("TotalFailed") + 1);
-            TimerCountMen.SetActive(false);
+            TimerCountMenu.SetActive(false);
             CountDownText.gameObject.SetActive(false);
-            _levelManager.SpawnedPlayerVehicle.GetComponent<CarController>().EngineSwitch();
-            _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
+             _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().engineIsStarted = false;
+             _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<ParkingManager>().enabled = false;
             _text.text = "00:00";
         }
