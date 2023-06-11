@@ -8,7 +8,7 @@ namespace test11
     {
         public GameObject[] Levels;
 
-        void Start ()
+        void Awake()
         {
             // First we want to disable all levels
             for (int a = 0; a < Levels.Length; a++)

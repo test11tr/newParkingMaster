@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 namespace test11.Managers
@@ -27,6 +28,11 @@ namespace test11.Managers
             p_spawnedPlayerVehicle.transform.rotation = SpawnPoint.rotation;
             p_spawnedPlayerVehicle.SetActive(true);
             print("Player is in a Vehicle");
+        }
+
+        private void ReloadScene(){
+            string currentScene = SceneManager.GetActiveScene ().name; 
+            SceneManager.LoadScene(currentScene);
         }
 
         void OnDrawGizmos()

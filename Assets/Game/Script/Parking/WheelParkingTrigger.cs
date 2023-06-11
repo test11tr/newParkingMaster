@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using test11.Managers;
+using UniqueVehicleController;
 
 namespace test11.Managers
 {
@@ -9,7 +10,7 @@ namespace test11.Managers
     {
         [Header("Important References - Don't Assign")]
         [SerializeField] private LevelManager _levelManager;
-        [SerializeField] private CarController _carController;
+        [SerializeField] private UVCUniqueVehicleController _carController;
         [SerializeField] private ParkingManager _parkingManager;
         
         [Header("Setup Settings")]
@@ -31,7 +32,7 @@ namespace test11.Managers
             }
             if (_carController == null)
             {
-                _carController = _levelManager.SpawnedPlayerVehicle.GetComponent<CarController>();
+                _carController = _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>();
             }
             if (_parkingManager == null)
             {
@@ -40,7 +41,7 @@ namespace test11.Managers
         }
 
         void OnTriggerStay(Collider other) {
-            if(other.tag == "p_vehicle"){
+            if(other.tag == "Player"){
                 if(_colliderChecker == colliderChecker.FL){
                     _parkingManager.fl = true;
                     print("fl = true");
@@ -70,7 +71,7 @@ namespace test11.Managers
         }
 
         void OnTriggerExit(Collider other){
-            if(other.tag == "p_vehicle"){
+            if(other.tag == "Player"){
                 if(_colliderChecker == colliderChecker.FL){
                     _parkingManager.fl = false;
                     print("fl = false");
