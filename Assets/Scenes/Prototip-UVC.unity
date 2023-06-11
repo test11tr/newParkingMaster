@@ -16599,9 +16599,9 @@ MonoBehaviour:
   Distance: 6.5
   minDistance: 6.5
   maxDistance: 12.25
-  Speed: 1
-  SpeedX: 20
-  SpeedY: 20
+  Speed: 4
+  SpeedX: 50
+  SpeedY: 50
   PinchSpeed: 0
   yMinLimit: 25
   yMaxLimit: 50
