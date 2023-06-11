@@ -16,6 +16,7 @@ TagManager:
   - MainCameraPosition
   - HUD
   - parkingManager
+  - Ground
   layers:
   - Default
   - TransparentFX

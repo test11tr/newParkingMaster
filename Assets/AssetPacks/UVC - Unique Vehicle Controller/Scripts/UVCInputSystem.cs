@@ -26,6 +26,7 @@ namespace UniqueVehicleController
         public Image GearN;
         public Image GearR;
         public Image GearP;
+        public GameObject Gear;
 
         [Header("Buttons")]
         public GameObject EngineStartButton;
@@ -1289,6 +1290,7 @@ namespace UniqueVehicleController
 
             if (Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
             {
+                Gear.SetActive(true);
                 if (Lights)
                 {
                     if (Lights.GetComponent<UVCVehicleLights>().foglightsfound > 0)
@@ -1404,6 +1406,8 @@ namespace UniqueVehicleController
                         }
                     }
                 }
+            }else{
+                Gear.SetActive(false);
             }
 
             if (!FirstGear)

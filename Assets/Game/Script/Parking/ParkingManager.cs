@@ -23,7 +23,6 @@ namespace test11.Managers
         public GameObject TimerCountMenu;
         public GameObject FailedMenu;
         public GameObject TimeFailedMenu;
-        public GameObject ParkingGearMenu;
 
         [Header("Score Settings")]
         public int CollisionScore0 = 0;
@@ -42,6 +41,7 @@ namespace test11.Managers
         
         [Header("Visual Stuff")]
         public MeshRenderer ParkingArea;
+        public MeshRenderer ParkingAreaEmission;
         public GameObject Helper;
         public GameObject star1, star2, star3;
 
@@ -72,7 +72,7 @@ namespace test11.Managers
             {
                 _hud = GameObject.FindGameObjectWithTag("HUD");
             }
-
+            
             if(timeLimit)
                 TimeDownMenu.SetActive(true);
             else{
@@ -85,41 +85,38 @@ namespace test11.Managers
             CountDownText.text = "3";
 
             // Audiosource
-            _audioSource = gameObject.AddComponent<AudioSource>();
-            _audioSource.spatialBlend = 0;
-            _audioSource.playOnAwake = false;
-            _audioSource.loop = false;
+            //_audioSource = gameObject.AddComponent<AudioSource>();
+            //_audioSource.spatialBlend = 0;
+            //_audioSource.playOnAwake = false;
+            //_audioSource.loop = false;
             
-            yield return new WaitForSeconds(.033f);
+            yield return new WaitForSeconds(.03f);
         }
 
         void Update(){
             if(!Finished){
-                if(fl && fr && rl && rr && front && rear){
-                    if(!_levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().isparking){
-                        ParkingGearMenu.SetActive(true);
-                    }else{
-                        ParkingGearMenu.SetActive(false);
-                        //checking when timer is reaching to 0
-                        StartCoroutine(CheckTimeToFinished());
-                        isFinish = true;
+                if(fl && fr && rl && rr && front && rear && _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().speedOnKmh < 5){
                         ParkingArea.material.color = Color.green;
+                        ParkingAreaEmission.gameObject.SetActive(true);
+                        if(_levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().isparking == true){
+                            //checking when timer is reaching to 0
+                            StartCoroutine(CheckTimeToFinished());
+                            isFinish = true;
+                            
+                            if(canLoad){
+                                TimerCountMenu.SetActive(true);
+                                CountDownText.gameObject.SetActive(true);
+                            }
 
-                        if(canLoad){
-                            TimerCountMenu.SetActive(true);
-                            CountDownText.gameObject.SetActive(true);
+                            int timeLeft = (int)(endTime - Time.time);
+                            if(timeLeft < 0){
+                                timeLeft = 0;
+                            }
+                            print("timeleft: " + timeLeft);
+                            //Timer to 3..2..1..
+                            CountDownText.text = timeLeft.ToString();
                         }
-
-                        int timeLeft = (int)(endTime - Time.time);
-                        if(timeLeft < 0){
-                            timeLeft = 0;
-                        }
-
-                        //Timer to 3..2..1..
-                        CountDownText.text = timeLeft.ToString();
-                    }
                 }else{
-                    ParkingGearMenu.SetActive(false);
                     //Not parked correctly
                     StopCoroutine(CheckTimeToFinished());
                     isFinish = false;
@@ -127,6 +124,7 @@ namespace test11.Managers
                     endTime = Time.time + 4;
                     CountDownText.text = "3";
                     ParkingArea.material.color = Color.white;
+                    ParkingAreaEmission.gameObject.SetActive(false);
                 }
 
                 if(timeLimit)
@@ -143,11 +141,11 @@ namespace test11.Managers
 
                     if(CollisionCount == 0){
                         PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore0);
-                        FinishScoreText.text = "Awarded Coins : " + CollisionScore0.ToString();
+                        FinishScoreText.text = CollisionScore0.ToString();
                         star3.SetActive(true);
                         PlayerPrefs.SetInt("Star" + PlayerPrefs.GetInt("LevelID").ToString(), 3);
-                        _audioSource.clip = clipSuccess;
-                        _audioSource.Play();
+                        //_audioSource.clip = clipSuccess;
+                        //_audioSource.Play();
 
                         if (PlayerPrefs.GetFloat ("Minutes" + PlayerPrefs.GetInt ("LevelID").ToString ()) == minutes) {
                             if (PlayerPrefs.GetFloat ("Seconds" + PlayerPrefs.GetInt ("LevelID").ToString ()) != seconds) {
@@ -155,12 +153,12 @@ namespace test11.Managers
                                     PlayerPrefs.SetFloat ("Seconds" + PlayerPrefs.GetInt ("LevelID").ToString (), seconds);
                             }
                         }
-                        {
+                        
                             if (PlayerPrefs.GetFloat ("Minutes" + PlayerPrefs.GetInt ("LevelID").ToString ()) < minutes) {
                                 PlayerPrefs.SetFloat ("Minutes" + PlayerPrefs.GetInt ("LevelID").ToString (), minutes);
                                 PlayerPrefs.SetFloat ("Seconds" + PlayerPrefs.GetInt ("LevelID").ToString (), seconds);
                             }
-                        }
+                        
 
                         PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore0);
                         bestTime.text = ReadBestTime();
@@ -170,11 +168,11 @@ namespace test11.Managers
 
                     if(CollisionCount == 1){
                         PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore1);
-                        FinishScoreText.text = "Awarded Coins : " + CollisionScore1.ToString();
+                        FinishScoreText.text = CollisionScore1.ToString();
                         star3.SetActive(true);
                         PlayerPrefs.SetInt("Star" + PlayerPrefs.GetInt("LevelID").ToString(), 3);
-                        _audioSource.clip = clipSuccess;
-                        _audioSource.Play();
+                        //_audioSource.clip = clipSuccess;
+                        //_audioSource.Play();
 
                         if (PlayerPrefs.GetFloat ("Minutes" + PlayerPrefs.GetInt ("LevelID").ToString ()) == minutes) {
                             if (PlayerPrefs.GetFloat ("Seconds" + PlayerPrefs.GetInt ("LevelID").ToString ()) != seconds) {
@@ -182,12 +180,12 @@ namespace test11.Managers
                                     PlayerPrefs.SetFloat ("Seconds" + PlayerPrefs.GetInt ("LevelID").ToString (), seconds);
                             }
                         }
-                        {
+                        
                             if (PlayerPrefs.GetFloat ("Minutes" + PlayerPrefs.GetInt ("LevelID").ToString ()) < minutes) {
                                 PlayerPrefs.SetFloat ("Minutes" + PlayerPrefs.GetInt ("LevelID").ToString (), minutes);
                                 PlayerPrefs.SetFloat ("Seconds" + PlayerPrefs.GetInt ("LevelID").ToString (), seconds);
                             }
-                        }
+                        
 
                         PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore1);
                         bestTime.text = ReadBestTime();
@@ -197,11 +195,11 @@ namespace test11.Managers
 
                     if(CollisionCount == 2){
                         PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore2);
-                        FinishScoreText.text = "Awarded Coins : " + CollisionScore2.ToString();
+                        FinishScoreText.text = CollisionScore2.ToString();
                         star3.SetActive(true);
                         PlayerPrefs.SetInt("Star" + PlayerPrefs.GetInt("LevelID").ToString(), 3);
-                        _audioSource.clip = clipSuccess;
-                        _audioSource.Play();
+                        //_audioSource.clip = clipSuccess;
+                        //_audioSource.Play();
 
                         if (PlayerPrefs.GetFloat ("Minutes" + PlayerPrefs.GetInt ("LevelID").ToString ()) == minutes) {
                             if (PlayerPrefs.GetFloat ("Seconds" + PlayerPrefs.GetInt ("LevelID").ToString ()) != seconds) {
@@ -209,12 +207,12 @@ namespace test11.Managers
                                     PlayerPrefs.SetFloat ("Seconds" + PlayerPrefs.GetInt ("LevelID").ToString (), seconds);
                             }
                         }
-                        {
+                        
                             if (PlayerPrefs.GetFloat ("Minutes" + PlayerPrefs.GetInt ("LevelID").ToString ()) < minutes) {
                                 PlayerPrefs.SetFloat ("Minutes" + PlayerPrefs.GetInt ("LevelID").ToString (), minutes);
                                 PlayerPrefs.SetFloat ("Seconds" + PlayerPrefs.GetInt ("LevelID").ToString (), seconds);
                             }
-                        }
+                        
 
                         PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore2);
                         bestTime.text = ReadBestTime();
@@ -224,11 +222,11 @@ namespace test11.Managers
 
                     if(CollisionCount == 3){
                         PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore3);
-                        FinishScoreText.text = "Awarded Coins : " + CollisionScore3.ToString();
+                        FinishScoreText.text = CollisionScore3.ToString();
                         star3.SetActive(true);
                         PlayerPrefs.SetInt("Star" + PlayerPrefs.GetInt("LevelID").ToString(), 3);
-                        _audioSource.clip = clipSuccess;
-                        _audioSource.Play();
+                        //_audioSource.clip = clipSuccess;
+                        //_audioSource.Play();
 
                         if (PlayerPrefs.GetFloat ("Minutes" + PlayerPrefs.GetInt ("LevelID").ToString ()) == minutes) {
                             if (PlayerPrefs.GetFloat ("Seconds" + PlayerPrefs.GetInt ("LevelID").ToString ()) != seconds) {
@@ -236,12 +234,12 @@ namespace test11.Managers
                                     PlayerPrefs.SetFloat ("Seconds" + PlayerPrefs.GetInt ("LevelID").ToString (), seconds);
                             }
                         }
-                        {
+                        
                             if (PlayerPrefs.GetFloat ("Minutes" + PlayerPrefs.GetInt ("LevelID").ToString ()) < minutes) {
                                 PlayerPrefs.SetFloat ("Minutes" + PlayerPrefs.GetInt ("LevelID").ToString (), minutes);
                                 PlayerPrefs.SetFloat ("Seconds" + PlayerPrefs.GetInt ("LevelID").ToString (), seconds);
                             }
-                        }
+                        
 
                         PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore3);
                         bestTime.text = ReadBestTime();
@@ -265,8 +263,8 @@ namespace test11.Managers
         }
 
         public void TimeFailed(){
-            _audioSource.clip = clipLost;
-            _audioSource.Play();
+            //_audioSource.clip = clipLost;
+            //_audioSource.Play();
             TimeFailedMenu.SetActive(true);
             PlayerPrefs.SetInt("TotalFailed", PlayerPrefs.GetInt("TotalFailed") + 1);
             TimerCountMenu.SetActive(false);
@@ -277,7 +275,7 @@ namespace test11.Managers
             _text.text = "00:00";
         }
 
-        public Text _text;
+        public TMP_Text _text;
         public float seconds = 59;
         public float minutes = 0;
 

@@ -161,7 +161,7 @@ namespace UniqueVehicleController
                 sensorStartPos += transform.right * frontSideSensorPosition;
                 if (Physics.Raycast(sensorStartPos, transform.forward, out hit, DetectionLength))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(sensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.Detection = true;
@@ -170,7 +170,7 @@ namespace UniqueVehicleController
                 }
                 if (Physics.Raycast(sensorStartPos, transform.forward, out hit, CloseDetectionLenght))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(sensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.CloseDetection = true;
@@ -179,7 +179,7 @@ namespace UniqueVehicleController
                 }
                 if (Physics.Raycast(sensorStartPos, transform.forward, out hit, TooCloseDetectionLenght))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(sensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.TooCloseDetection = true;
@@ -189,7 +189,7 @@ namespace UniqueVehicleController
                 //Front Right Side Sensor
                 else if (Physics.Raycast(sensorStartPos, Quaternion.AngleAxis(frontSensorAngle, transform.up) * transform.forward, out hit, DetectionLength))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(sensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.Detection = true;
@@ -198,7 +198,7 @@ namespace UniqueVehicleController
                 }
                 if (Physics.Raycast(sensorStartPos, Quaternion.AngleAxis(frontSensorAngle, transform.up) * transform.forward, out hit, CloseDetectionLenght))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(sensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.CloseDetection = true;
@@ -207,7 +207,7 @@ namespace UniqueVehicleController
                 }
                 if (Physics.Raycast(sensorStartPos, Quaternion.AngleAxis(frontSensorAngle, transform.up) * transform.forward, out hit, TooCloseDetectionLenght))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(sensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.TooCloseDetection = true;
@@ -219,7 +219,7 @@ namespace UniqueVehicleController
                 sensorStartPos -= transform.right * frontSideSensorPosition * 2;
                 if (Physics.Raycast(sensorStartPos, transform.forward, out hit, DetectionLength))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(sensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.Detection = true;
@@ -228,7 +228,7 @@ namespace UniqueVehicleController
                 }
                 if (Physics.Raycast(sensorStartPos, transform.forward, out hit, CloseDetectionLenght))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(sensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.CloseDetection = true;
@@ -237,7 +237,7 @@ namespace UniqueVehicleController
                 }
                 if (Physics.Raycast(sensorStartPos, transform.forward, out hit, TooCloseDetectionLenght))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(sensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.TooCloseDetection = true;
@@ -247,7 +247,7 @@ namespace UniqueVehicleController
                 //Front Left Side Sensor
                 else if (Physics.Raycast(sensorStartPos, Quaternion.AngleAxis(-frontSensorAngle, transform.up) * transform.forward, out hit, DetectionLength))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(sensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.Detection = true;
@@ -256,7 +256,7 @@ namespace UniqueVehicleController
                 }
                 if (Physics.Raycast(sensorStartPos, Quaternion.AngleAxis(-frontSensorAngle, transform.up) * transform.forward, out hit, CloseDetectionLenght))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(sensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.CloseDetection = true;
@@ -265,7 +265,7 @@ namespace UniqueVehicleController
                 }
                 if (Physics.Raycast(sensorStartPos, Quaternion.AngleAxis(-frontSensorAngle, transform.up) * transform.forward, out hit, TooCloseDetectionLenght))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(sensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.TooCloseDetection = true;
@@ -280,7 +280,7 @@ namespace UniqueVehicleController
                 rearsensorStartPos += transform.right * frontSideSensorPosition;
                 if (Physics.Raycast(rearsensorStartPos, transform.forward * -1, out hit, DetectionLength))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(rearsensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.Detection = true;
@@ -289,7 +289,7 @@ namespace UniqueVehicleController
                 }
                 if (Physics.Raycast(rearsensorStartPos, transform.forward * -1, out hit, CloseDetectionLenght))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(rearsensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.CloseDetection = true;
@@ -298,7 +298,7 @@ namespace UniqueVehicleController
                 }
                 if (Physics.Raycast(rearsensorStartPos, transform.forward * -1, out hit, TooCloseDetectionLenght))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(rearsensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.TooCloseDetection = true;
@@ -308,7 +308,7 @@ namespace UniqueVehicleController
                 //Rear Right Side Sensor
                 else if (Physics.Raycast(rearsensorStartPos, Quaternion.AngleAxis(-rearSensorAngle, transform.up) * transform.forward * -1, out hit, DetectionLength))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(rearsensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.Detection = true;
@@ -317,7 +317,7 @@ namespace UniqueVehicleController
                 }
                 if (Physics.Raycast(rearsensorStartPos, Quaternion.AngleAxis(-rearSensorAngle, transform.up) * transform.forward * -1, out hit, CloseDetectionLenght))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(rearsensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.CloseDetection = true;
@@ -326,7 +326,7 @@ namespace UniqueVehicleController
                 }
                 if (Physics.Raycast(rearsensorStartPos, Quaternion.AngleAxis(-rearSensorAngle, transform.up) * transform.forward * -1, out hit, TooCloseDetectionLenght))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(rearsensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.TooCloseDetection = true;
@@ -337,7 +337,7 @@ namespace UniqueVehicleController
                 rearsensorStartPos -= transform.right * frontSideSensorPosition * 2;
                 if (Physics.Raycast(rearsensorStartPos, transform.forward * -1, out hit, DetectionLength))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(rearsensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.Detection = true;
@@ -346,7 +346,7 @@ namespace UniqueVehicleController
                 }
                 if (Physics.Raycast(rearsensorStartPos, transform.forward * -1, out hit, CloseDetectionLenght))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(rearsensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.CloseDetection = true;
@@ -355,7 +355,7 @@ namespace UniqueVehicleController
                 }
                 if (Physics.Raycast(rearsensorStartPos, transform.forward * -1, out hit, TooCloseDetectionLenght))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(rearsensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.TooCloseDetection = true;
@@ -365,7 +365,7 @@ namespace UniqueVehicleController
                 //Rear Left Side Sensor
                 else if (Physics.Raycast(rearsensorStartPos, Quaternion.AngleAxis(rearSensorAngle, transform.up) * transform.forward * -1, out hit, DetectionLength))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(rearsensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.Detection = true;
@@ -374,7 +374,7 @@ namespace UniqueVehicleController
                 }
                 if (Physics.Raycast(rearsensorStartPos, Quaternion.AngleAxis(rearSensorAngle, transform.up) * transform.forward * -1, out hit, CloseDetectionLenght))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(rearsensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.CloseDetection = true;
@@ -383,7 +383,7 @@ namespace UniqueVehicleController
                 }
                 if (Physics.Raycast(rearsensorStartPos, Quaternion.AngleAxis(rearSensorAngle, transform.up) * transform.forward * -1, out hit, TooCloseDetectionLenght))
                 {
-                    if (!hit.collider.CompareTag("Terrain") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
+                    if (!hit.collider.CompareTag("Ground") && Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
                     {
                         Debug.DrawLine(rearsensorStartPos, hit.point);
                         UVCParkingSensorsConfig.PSUI.TooCloseDetection = true;

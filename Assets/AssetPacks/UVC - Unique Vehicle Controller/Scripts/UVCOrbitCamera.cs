@@ -35,6 +35,7 @@ namespace UniqueVehicleController
         private float y = 0.0f;
 
         public bool Dragging;
+        private bool notCourutine = true;
 
         private Touch Touch;
 
@@ -85,28 +86,38 @@ namespace UniqueVehicleController
                     }
                     #endif
 
-                    y = ClampAngle(y, yMinLimit, yMaxLimit);
-                    Quaternion rotation = Quaternion.Euler(y, x, 0);
-                    Vector3 vTemp = new Vector3(0.0f, 0.0f, -Distance);
-                    Vector3 position = rotation * vTemp + new Vector3(Car.position.x, Car.position.y + yOffset, Car.position.z);
-                    transform.position = Vector3.Lerp(transform.position, position, Speed);
-                    transform.rotation = rotation;
+                   
                 }
             }
+
+            y = ClampAngle(y, yMinLimit, yMaxLimit);
+            Quaternion rotation = Quaternion.Euler(y, x, 0);
+            Vector3 vTemp = new Vector3(0.0f, 0.0f, -Distance);
+            Vector3 position = rotation * vTemp + new Vector3(Car.position.x, Car.position.y + yOffset, Car.position.z);
+            transform.position = Vector3.Lerp(transform.position, position, Speed);
+            transform.rotation = rotation;
         }
 
         void FixedUpdate()
         {
-            if (!Dragging)
+            if (!Dragging && notCourutine)
             {
-                Vector3 dPos = MainCameraPos.position + OffSet;
-                Vector3 sPos = Vector3.Lerp(transform.position, dPos, Speed * Time.deltaTime * 10);
-                transform.position = sPos;
-                transform.LookAt(Car.transform.position);
-                Vector3 angles = transform.eulerAngles;
-                x = angles.y;
-                y = angles.x;
+                notCourutine = false;
+                StopCoroutine(ResetCamera());
+                StartCoroutine(ResetCamera());
             }
+        }
+
+        IEnumerator ResetCamera(){
+            yield return new WaitForSeconds(5f);
+            Vector3 dPos = MainCameraPos.position + OffSet;
+            Vector3 sPos = Vector3.Lerp(transform.position, dPos, Speed * Time.deltaTime * 10);
+            transform.position = sPos;
+            transform.LookAt(Car.transform.position);
+            Vector3 angles = transform.eulerAngles;
+            x = angles.y;
+            y = angles.x;
+            notCourutine = true;
         }
 
         static float ClampAngle(float angle, float min, float max)
