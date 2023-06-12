@@ -1247,7 +1247,7 @@ namespace UniqueVehicleController
                 AddFullTank();
             }
 
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.P))
             {
                 StopEngine();
             }
