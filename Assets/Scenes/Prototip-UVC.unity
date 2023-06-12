@@ -154,12 +154,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &52763363 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 3490457313206983416, guid: f3c5a438b72b24ad39a2ff8780b13807,
-    type: 3}
-  m_PrefabInstance: {fileID: 3026618149745989248}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &67302098 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3321538580290793023, guid: 9972c2a9c774f4c38a1707ebaf629f50,
@@ -4127,30 +4121,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1873174111}
     m_Modifications:
-    - target: {fileID: 3026618148250568725, guid: f3c5a438b72b24ad39a2ff8780b13807,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3026618149447962635, guid: f3c5a438b72b24ad39a2ff8780b13807,
         type: 3}
       propertyPath: m_Name
       value: ParkingManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026618149447962635, guid: f3c5a438b72b24ad39a2ff8780b13807,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026618149447962635, guid: f3c5a438b72b24ad39a2ff8780b13807,
-        type: 3}
-      propertyPath: m_TagString
-      value: parkingManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
-        type: 3}
-      propertyPath: _hud
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
         type: 3}
@@ -4174,19 +4148,9 @@ PrefabInstance:
       objectReference: {fileID: 484712855}
     - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
         type: 3}
-      propertyPath: minutes
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
-        type: 3}
       propertyPath: bestTime
       value: 
       objectReference: {fileID: 501336395}
-    - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
-        type: 3}
-      propertyPath: timeLimit
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
         type: 3}
       propertyPath: FailedMenu
@@ -4209,9 +4173,9 @@ PrefabInstance:
       objectReference: {fileID: 879119066}
     - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
         type: 3}
-      propertyPath: CountDownText
+      propertyPath: parkingNotify
       value: 
-      objectReference: {fileID: 1909894670}
+      objectReference: {fileID: 3321538580357979374}
     - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
         type: 3}
       propertyPath: TimeFailedMenu
@@ -4219,54 +4183,14 @@ PrefabInstance:
       objectReference: {fileID: 1774440505}
     - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
         type: 3}
-      propertyPath: TimerCountMenu
-      value: 
-      objectReference: {fileID: 1319455248}
-    - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
-        type: 3}
-      propertyPath: CollisionScore0
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
-        type: 3}
-      propertyPath: CollisionScore1
-      value: 350
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
-        type: 3}
-      propertyPath: CollisionScore2
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
-        type: 3}
-      propertyPath: CollisionScore3
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
-        type: 3}
       propertyPath: FinishScoreText
       value: 
       objectReference: {fileID: 1555761450}
     - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
         type: 3}
-      propertyPath: ParkingGearMenu
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
-        type: 3}
       propertyPath: CollisionCountText
       value: 
       objectReference: {fileID: 201450063}
-    - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
-        type: 3}
-      propertyPath: SetParkingGearMenu
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026618149447962636, guid: f3c5a438b72b24ad39a2ff8780b13807,
-        type: 3}
-      propertyPath: ParkingAreaEmission
-      value: 
-      objectReference: {fileID: 52763363}
     - target: {fileID: 3026618149447962637, guid: f3c5a438b72b24ad39a2ff8780b13807,
         type: 3}
       propertyPath: m_RootOrder
@@ -4331,41 +4255,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3321538580552635959, guid: 9972c2a9c774f4c38a1707ebaf629f50,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3321538580935912183, guid: 9972c2a9c774f4c38a1707ebaf629f50,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3321538580935912183, guid: 9972c2a9c774f4c38a1707ebaf629f50,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3321538580935912183, guid: 9972c2a9c774f4c38a1707ebaf629f50,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3321538581029281622, guid: 9972c2a9c774f4c38a1707ebaf629f50,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3321538581029281622, guid: 9972c2a9c774f4c38a1707ebaf629f50,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3321538581246587768, guid: 9972c2a9c774f4c38a1707ebaf629f50,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3321538581544119788, guid: 9972c2a9c774f4c38a1707ebaf629f50,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4488,6 +4377,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9972c2a9c774f4c38a1707ebaf629f50, type: 3}
+--- !u!1 &3321538580357979374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4778474412945622948, guid: 9972c2a9c774f4c38a1707ebaf629f50,
+    type: 3}
+  m_PrefabInstance: {fileID: 3321538580357979373}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4622981727834089746
 PrefabInstance:
   m_ObjectHideFlags: 0

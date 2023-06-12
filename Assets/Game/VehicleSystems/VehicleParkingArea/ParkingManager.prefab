@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 3026618149447962636}
   m_Layer: 0
   m_Name: ParkingManager
-  m_TagString: Untagged
+  m_TagString: parkingManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -361,7 +361,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3026618149447962635}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -387,6 +387,7 @@ MonoBehaviour:
   _carController: {fileID: 0}
   _parkingManager: {fileID: 0}
   _hud: {fileID: 0}
+  parkingNotify: {fileID: 0}
   fl: 0
   fr: 0
   rl: 0
@@ -394,20 +395,18 @@ MonoBehaviour:
   front: 0
   rear: 0
   FinishMenu: {fileID: 0}
-  TimerCountMenu: {fileID: 0}
   FailedMenu: {fileID: 0}
   TimeFailedMenu: {fileID: 0}
-  CollisionScore0: 3
-  CollisionScore1: 2
-  CollisionScore2: 1
-  CollisionScore3: 0
+  CollisionScore0: 500
+  CollisionScore1: 350
+  CollisionScore2: 200
+  CollisionScore3: 100
   collisionLimit: 3
-  CountDownText: {fileID: 0}
   CollisionCountText: {fileID: 0}
   FinishScoreText: {fileID: 0}
   CollisionCount: 0
   ParkingArea: {fileID: 3026618148250568726}
-  Helper: {fileID: 0}
+  ParkingAreaEmission: {fileID: 3490457313206983416}
   star1: {fileID: 0}
   star2: {fileID: 0}
   star3: {fileID: 0}
@@ -420,7 +419,7 @@ MonoBehaviour:
   clipLost: {fileID: 0}
   _text: {fileID: 0}
   seconds: 59
-  minutes: 0
+  minutes: 1
 --- !u!1 &3026618149714740046
 GameObject:
   m_ObjectHideFlags: 0
