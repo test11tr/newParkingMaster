@@ -33,6 +33,8 @@ namespace UniqueVehicleController
         private float yOffset;
         private float x = 0.0f;
         private float y = 0.0f;
+        public int camResetTime = 5;
+        private float resetTimer;
 
         public bool Dragging;
         private bool notCourutine = true;
@@ -100,24 +102,21 @@ namespace UniqueVehicleController
 
         void FixedUpdate()
         {
-            if (!Dragging && notCourutine)
+            if (!Dragging)
             {
-                notCourutine = false;
-                StopCoroutine(ResetCamera());
-                StartCoroutine(ResetCamera());
+                resetTimer += Time.deltaTime;
+                if(resetTimer > camResetTime){
+                    Vector3 dPos = MainCameraPos.position + OffSet;
+                    Vector3 sPos = Vector3.Lerp(transform.position, dPos, Speed * Time.deltaTime * 2);
+                    transform.position = sPos;
+                    transform.LookAt(Car.transform.position);
+                    Vector3 angles = transform.eulerAngles;
+                    x = angles.y;
+                    y = angles.x;
+                }    
+            }else{
+                resetTimer = 0;
             }
-        }
-
-        IEnumerator ResetCamera(){
-            yield return new WaitForSeconds(5f);
-            Vector3 dPos = MainCameraPos.position + OffSet;
-            Vector3 sPos = Vector3.Lerp(transform.position, dPos, Speed * Time.deltaTime * 10);
-            transform.position = sPos;
-            transform.LookAt(Car.transform.position);
-            Vector3 angles = transform.eulerAngles;
-            x = angles.y;
-            y = angles.x;
-            notCourutine = true;
         }
 
         static float ClampAngle(float angle, float min, float max)
