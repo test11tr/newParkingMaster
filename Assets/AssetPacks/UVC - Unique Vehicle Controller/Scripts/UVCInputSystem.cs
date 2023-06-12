@@ -1167,14 +1167,14 @@ namespace UniqueVehicleController
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 if (Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true && Car.GetComponent<UVCUniqueVehicleController>().isoutofFuel == false)
                 {
                     Car.GetComponent<UVCUniqueVehicleController>().isaccelerating = true;
                 }
             }
-            else if (Input.GetKeyUp(KeyCode.Z))
+            else if (Input.GetKeyUp(KeyCode.W))
             {
                 if (Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true && Car.GetComponent<UVCUniqueVehicleController>().isoutofFuel == false)
                 {
@@ -1184,7 +1184,7 @@ namespace UniqueVehicleController
 
             if (Car.GetComponent<UVCUniqueVehicleController>().usingarrows == false)
             {
-                if (Input.GetKey(KeyCode.Q))
+                if (Input.GetKey(KeyCode.A))
                 {
                     Car.GetComponent<UVCUniqueVehicleController>().goingleft = true;
                 }
@@ -1193,7 +1193,7 @@ namespace UniqueVehicleController
                     Car.GetComponent<UVCUniqueVehicleController>().goingleft = false;
                 }
 
-                if (Input.GetKeyUp(KeyCode.Q))
+                if (Input.GetKeyUp(KeyCode.A))
                 {
                     Car.GetComponent<UVCUniqueVehicleController>().goingleft = false;
                 }
