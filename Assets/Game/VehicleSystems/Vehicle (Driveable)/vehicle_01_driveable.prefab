@@ -3454,7 +3454,7 @@ MonoBehaviour:
   centerOfMass: {x: 0, y: 0.14, z: 0}
   maxEngineTorque: 90
   maxEngineSpeed: 120
-  maxBrakeTorque: 500
+  maxBrakeTorque: 1000
   SteeringWheel: {fileID: 3426384509146707973}
   minSteeringAngle: 5
   maxSteeringAngle: 30
@@ -3474,9 +3474,15 @@ MonoBehaviour:
     Drive: 0
     steering: 0
   wheelRadius: 0.35
-  suspensionSpring: 45000
-  Damper: 5500
-  suspensionDistance: 0.1
+  suspensionSpring: 20000
+  Damper: 650
+  suspensionDistance: 0.25
+  carMaterials:
+  - {fileID: 2100000, guid: 244cf37b097fc224ba218a8f73bbb9f3, type: 2}
+  - {fileID: 2100000, guid: 795398b93aa6a3b40a0d70f6eed0d3c7, type: 2}
+  - {fileID: 2100000, guid: fb2ab18a8d946034fa188ace09bfe055, type: 2}
+  - {fileID: 2100000, guid: fdf77876c4d24334f80697b68e292ed9, type: 2}
+  - {fileID: 2100000, guid: 8e85ed6c04a0b8a4a958f2ef6792771f, type: 2}
   vehicleType: 1
   engineIsStarted: 0
   isbraking: 0
@@ -3511,5 +3517,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9112633, y: 1.4626195, z: 4.347089}
-  m_Center: {x: 0, y: 0.9604459, z: 0.1502837}
+  m_Size: {x: 1.9112633, y: 1.0253177, z: 4.7772217}
+  m_Center: {x: 0, y: 1.1790967, z: 0.014074802}

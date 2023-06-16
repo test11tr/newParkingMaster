@@ -54,13 +54,12 @@ namespace UniqueVehicleController
         public WheelsColliders[] WheelColliders;
         [Range(0.1f, 5f)]
         public float wheelRadius = 0.35f;
-        [Range(10000f, 70000f)]
+        [Range(5000f, 70000f)]
         public float suspensionSpring = 35000f;
-        [Range(1000f, 6500f)]
+        [Range(500f, 6500f)]
         public float Damper = 4500f;
         [Range(0f, 10f)]
         public float suspensionDistance = 0.1f;
-
 
         [Header("GearBox Setup")]
         public VehicleType vehicleType;

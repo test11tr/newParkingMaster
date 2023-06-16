@@ -78,6 +78,9 @@ namespace UniqueVehicleController
         public float AcceleratorReleaseSpeed = 0.02f;
         public float BrakesReleaseSpeed = 0.02f;
 
+        [Header("Materials")]
+        public Material[] carMaterials;
+
         float CarMaxSpeed;
         float CurrentSpeed;
         float MaxRevSpeed;
@@ -121,6 +124,12 @@ namespace UniqueVehicleController
         void Start()
         {
             UIS = this;
+
+            foreach (var material in carMaterials)
+                {
+                    print(material);
+                    material.DisableKeyword("_EMISSION");
+                }
 
             if (GearD && GearN && GearR && GearP)
             {
@@ -195,6 +204,12 @@ namespace UniqueVehicleController
                 GearStickDrive.Stop();
                 GearStickReverse.Stop();
                 GearStickParkNeutral.Stop();
+
+                foreach (var material in carMaterials)
+                {
+                    material.EnableKeyword("_EMISSION");
+                }
+
                 if (Mobile)
                 {
                     if (EngineStartButton)
@@ -241,6 +256,12 @@ namespace UniqueVehicleController
                 isfoglights = false;
                 islowbeam = false;
                 ishighbeam = false;
+
+                foreach (var material in carMaterials)
+                {
+                    material.DisableKeyword("_EMISSION");
+                }
+
                 if (Mobile)
                 {
                     if (EngineStartButton)
