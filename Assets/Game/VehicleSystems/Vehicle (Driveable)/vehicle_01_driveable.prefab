@@ -3447,10 +3447,10 @@ MonoBehaviour:
   DetectionLength: 1.2
   CloseDetectionLenght: 0.85
   TooCloseDetectionLenght: 0.5
-  frontSensorPosition: {x: 0, y: 0.46, z: 2.26}
+  frontSensorPosition: {x: 0, y: 0.83, z: 2.26}
   frontSideSensorPosition: 0.33
   frontSensorAngle: 60
-  rearSensorPosition: {x: 0, y: 0.46, z: -1.92}
+  rearSensorPosition: {x: 0, y: 0.83, z: -1.92}
   rearSideSensorPosition: 0.33
   rearSensorAngle: 60
   isOnEditMode: 1
