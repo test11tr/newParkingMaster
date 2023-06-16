@@ -40,12 +40,19 @@ namespace test11.Managers
         [Header("Visual Stuff")]
         public MeshRenderer ParkingArea;
         public MeshRenderer ParkingAreaEmission;
-        public GameObject star1, star2, star3;
+        public GameObject star0, star1, star2, star3;
 
         [Header("Is Time Limited?")]
         public bool timeLimit;
         public GameObject TimeDownMenu;
         public TMP_Text bestTime, currentTime;
+        
+        [Header("Is Bonus Rewarded?")]
+        public bool isBonusRewarded;
+        public GameObject bonusInfoText;
+        public int bonusDiamondAmount;
+        public GameObject bonusReward;
+        public TMP_Text bonusText;
 
         [Header("Audio Related")]
         public AudioSource AlarmSound;
@@ -141,13 +148,19 @@ namespace test11.Managers
                         bestTime.text = ReadBestTime();
                         currentTime.text = ReadCurrentTime();
                         _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
+
+                        if(isBonusRewarded){
+                            PlayerPrefs.SetInt("Diamonds", PlayerPrefs.GetInt("Diamonds") + bonusDiamondAmount);
+                            bonusReward.SetActive(true);
+                            bonusText.text = bonusDiamondAmount.ToString();
+                        }
                     }
 
                     if(CollisionCount == 1){
                         PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore1);
                         FinishScoreText.text = CollisionScore1.ToString();
-                        star3.SetActive(true);
-                        PlayerPrefs.SetInt("Star" + PlayerPrefs.GetInt("LevelID").ToString(), 3);
+                        star2.SetActive(true);
+                        PlayerPrefs.SetInt("Star" + PlayerPrefs.GetInt("LevelID").ToString(), 2);
                         //_audioSource.clip = clipSuccess;
                         //_audioSource.Play();
 
@@ -168,13 +181,17 @@ namespace test11.Managers
                         bestTime.text = ReadBestTime();
                         currentTime.text = ReadCurrentTime();
                         _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
+
+                        if(isBonusRewarded){
+                            bonusInfoText.SetActive(true);
+                        }
                     }
 
                     if(CollisionCount == 2){
                         PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore2);
                         FinishScoreText.text = CollisionScore2.ToString();
-                        star3.SetActive(true);
-                        PlayerPrefs.SetInt("Star" + PlayerPrefs.GetInt("LevelID").ToString(), 3);
+                        star1.SetActive(true);
+                        PlayerPrefs.SetInt("Star" + PlayerPrefs.GetInt("LevelID").ToString(), 1);
                         //_audioSource.clip = clipSuccess;
                         //_audioSource.Play();
 
@@ -195,13 +212,17 @@ namespace test11.Managers
                         bestTime.text = ReadBestTime();
                         currentTime.text = ReadCurrentTime();
                         _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
+
+                        if(isBonusRewarded){
+                            bonusInfoText.SetActive(true);
+                        }
                     }
 
                     if(CollisionCount == 3){
                         PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore3);
                         FinishScoreText.text = CollisionScore3.ToString();
-                        star3.SetActive(true);
-                        PlayerPrefs.SetInt("Star" + PlayerPrefs.GetInt("LevelID").ToString(), 3);
+                        star0.SetActive(true);
+                        PlayerPrefs.SetInt("Star" + PlayerPrefs.GetInt("LevelID").ToString(), 0);
                         //_audioSource.clip = clipSuccess;
                         //_audioSource.Play();
 
@@ -222,6 +243,10 @@ namespace test11.Managers
                         bestTime.text = ReadBestTime();
                         currentTime.text = ReadCurrentTime();
                         _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
+
+                        if(isBonusRewarded){
+                            bonusInfoText.SetActive(true);
+                        }
                     }
 
                     PlayerPrefs.SetInt("TotalPassed", PlayerPrefs.GetInt("TotalPassed") + 1);

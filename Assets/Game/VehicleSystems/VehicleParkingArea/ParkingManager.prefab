@@ -388,6 +388,7 @@ MonoBehaviour:
   _parkingManager: {fileID: 0}
   _hud: {fileID: 0}
   parkingNotify: {fileID: 0}
+  _animator: {fileID: 0}
   fl: 0
   fr: 0
   rl: 0

@@ -11,11 +11,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniqueVehicleController;
 using UnityEngine.UI;
+using test11.Managers;
 
 namespace UniqueVehicleController
 {
     public class UVCInputSystem : MonoBehaviour
     {
+        [Header("Manager")]
+        [SerializeField] private ParkingManager _parkingManager;
+
         [Header("Visuals")]
         public Text SpeedText;
         public RectTransform SpeedNeedle;
@@ -176,6 +180,7 @@ namespace UniqueVehicleController
             Audio = GameObject.FindWithTag("Audio");
             Lights = GameObject.FindWithTag("Lights");
             Camera = GameObject.FindWithTag("Camera");
+            _parkingManager = GameObject.FindWithTag("parkingManager").GetComponent<ParkingManager>();
 
             ChangeSpeedUnit();
         }
@@ -1291,13 +1296,13 @@ namespace UniqueVehicleController
 
             if (Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
             {
-                /*if(Car.GetComponent<UVCUniqueVehicleController>().isparking == true)
+                if(Car.GetComponent<UVCUniqueVehicleController>().isparking == true && !_parkingManager.front && !_parkingManager.rear)
                 {
                     DriveNotify.SetActive(true);
                 }else{
                     DriveNotify.SetActive(false);
-                }*/
-                
+                }
+
                 Gear.SetActive(true);
                 if (Lights)
                 {
