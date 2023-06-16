@@ -64,6 +64,9 @@ namespace UniqueVehicleController
         [Header("GearBox Setup")]
         public VehicleType vehicleType;
 
+        [Header("Effects")]
+        public ParticleSystem exhaustEffect;
+
         [HideInInspector]
         public bool engineIsStarted = false;
         [HideInInspector]

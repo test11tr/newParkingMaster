@@ -205,6 +205,7 @@ namespace UniqueVehicleController
                 GearStickReverse.Stop();
                 GearStickParkNeutral.Stop();
 
+                Car.GetComponent<UVCUniqueVehicleController>().exhaustEffect.Play();
                 foreach (var material in carMaterials)
                 {
                     material.EnableKeyword("_EMISSION");
@@ -257,6 +258,7 @@ namespace UniqueVehicleController
                 islowbeam = false;
                 ishighbeam = false;
 
+                Car.GetComponent<UVCUniqueVehicleController>().exhaustEffect.Stop();
                 foreach (var material in carMaterials)
                 {
                     material.DisableKeyword("_EMISSION");
