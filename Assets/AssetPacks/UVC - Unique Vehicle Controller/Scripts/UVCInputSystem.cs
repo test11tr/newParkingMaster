@@ -27,6 +27,7 @@ namespace UniqueVehicleController
         public Image GearR;
         public Image GearP;
         public GameObject Gear;
+        public GameObject DriveNotify;
 
         [Header("Buttons")]
         public GameObject EngineStartButton;
@@ -1290,6 +1291,13 @@ namespace UniqueVehicleController
 
             if (Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true)
             {
+                /*if(Car.GetComponent<UVCUniqueVehicleController>().isparking == true)
+                {
+                    DriveNotify.SetActive(true);
+                }else{
+                    DriveNotify.SetActive(false);
+                }*/
+                
                 Gear.SetActive(true);
                 if (Lights)
                 {

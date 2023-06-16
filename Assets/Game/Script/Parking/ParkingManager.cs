@@ -30,7 +30,7 @@ namespace test11.Managers
         public int CollisionScore2 = 0;
         public int CollisionScore3 = 0;
         public int collisionLimit = 3;
-        private bool isFinish, Finished, Score = true;
+        private bool isFinish, Finished, Score;
 
         [Header("UI Text References")]
         public TMP_Text CollisionCountText;
@@ -92,12 +92,12 @@ namespace test11.Managers
                         if(_levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().isparking == true){
                             parkingNotify.SetActive(false);
                             //checking when timer is reaching to 0
-                            StartCoroutine(CheckTimeToFinished());
+                            CheckTimeToFinished();
                             isFinish = true;
                         }
                 }else{
                     //Not parked correctly
-                    StopCoroutine(CheckTimeToFinished());
+                    //StopCoroutine(CheckTimeToFinished());
                     parkingNotify.SetActive(false);
                     isFinish = false;
                     ParkingArea.material.color = Color.white;
@@ -109,8 +109,8 @@ namespace test11.Managers
             }
         }
 
-        IEnumerator CheckTimeToFinished(){
-            yield return new WaitForSeconds(4f);
+        void CheckTimeToFinished(){
+            //yield return new WaitForSeconds(4f);
             if(isFinish){
                 if(!Score){
                     Score = true;
