@@ -34,6 +34,7 @@ namespace UniqueVehicleController
         public GameObject DriveNotify;
 
         [Header("Buttons")]
+        public GameObject SensorsUI;
         public GameObject EngineStartButton;
         public Image EngineStartFill;
         public GameObject EngineStopButton;
@@ -840,11 +841,13 @@ namespace UniqueVehicleController
             switch (FrontSensors){
                 case false:
                     CarSensorToggleButton.SetActive(true);
+                    SensorsUI.SetActive(true);
                     FrontSensors = true;
                     RearSensors = true;
                     break;
                 case true:
                     CarSensorToggleButton.SetActive(false);
+                    SensorsUI.SetActive(false);
                     FrontSensors = false;
                     RearSensors = false;
                     break;
