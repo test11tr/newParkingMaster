@@ -19304,7 +19304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a558a4fe6bfd58f43a514a15af9a30fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerVehicle: {fileID: 8127038688179591734, guid: 59765f591abec4d398e2adca292f7516,
+  PlayerVehicle: {fileID: 8127038688179591734, guid: 83aeff343081d4e2e9598df325d4b95d,
     type: 3}
   SpawnPoint: {fileID: 8148463029848675992}
   drawGizmos: 1
@@ -21345,7 +21345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a558a4fe6bfd58f43a514a15af9a30fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerVehicle: {fileID: 8127038688179591734, guid: 59765f591abec4d398e2adca292f7516,
+  PlayerVehicle: {fileID: 8127038688179591734, guid: 83aeff343081d4e2e9598df325d4b95d,
     type: 3}
   SpawnPoint: {fileID: 8148463029848675992}
   drawGizmos: 1
