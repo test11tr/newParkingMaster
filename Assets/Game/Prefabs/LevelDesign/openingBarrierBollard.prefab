@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 4616945846791418369}
   - component: {fileID: 4641565715950503419}
   - component: {fileID: 4633912908775838071}
+  - component: {fileID: 8153764145882235876}
   m_Layer: 0
   m_Name: barrier_bollard
   m_TagString: Untagged
@@ -297,6 +298,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8153764145882235876
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4620623048597940177}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6669937, y: 0.07045938, z: 0.6669893}
+  m_Center: {x: 0, y: 0.03522969, z: 0}
 --- !u!1 &8302018116302063277
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,6 +436,7 @@ GameObject:
   - component: {fileID: 8302018116327511700}
   - component: {fileID: 8302018116327511704}
   - component: {fileID: 8302018116327511703}
+  - component: {fileID: 4455402056012193645}
   m_Layer: 0
   m_Name: barrier_bollard (2)
   m_TagString: Untagged
@@ -495,6 +510,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4455402056012193645
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8302018116327511699}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6669937, y: 0.07045938, z: 0.6669893}
+  m_Center: {x: 0, y: 0.03522969, z: 0}
 --- !u!1 &8302018116765133060
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +534,7 @@ GameObject:
   - component: {fileID: 8302018116765133061}
   - component: {fileID: 8302018116765133065}
   - component: {fileID: 8302018116765133064}
+  - component: {fileID: 5693767163317824029}
   m_Layer: 0
   m_Name: barrier_bollard (1)
   m_TagString: Untagged
@@ -579,6 +608,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5693767163317824029
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8302018116765133060}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6669937, y: 0.07045938, z: 0.6669893}
+  m_Center: {x: 0, y: 0.03522969, z: 0}
 --- !u!1 &8302018116809833171
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +746,7 @@ GameObject:
   - component: {fileID: 8302018116837660056}
   - component: {fileID: 8302018116837660060}
   - component: {fileID: 8302018116837660059}
+  - component: {fileID: 2114324178300485718}
   m_Layer: 0
   m_Name: barrier_bollard (3)
   m_TagString: Untagged
@@ -777,6 +820,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2114324178300485718
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8302018116837660055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6669937, y: 0.07045938, z: 0.6669893}
+  m_Center: {x: 0, y: 0.03522969, z: 0}
 --- !u!1 &8302018116900324927
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +844,7 @@ GameObject:
   - component: {fileID: 8302018116900324896}
   - component: {fileID: 8302018116900324900}
   - component: {fileID: 8302018116900324899}
+  - component: {fileID: 5257247715966717237}
   m_Layer: 0
   m_Name: barrier_bollard (4)
   m_TagString: Untagged
@@ -861,6 +918,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5257247715966717237
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8302018116900324927}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6669937, y: 0.07045938, z: 0.6669893}
+  m_Center: {x: 0, y: 0.03522969, z: 0}
 --- !u!1 &8302018116971044754
 GameObject:
   m_ObjectHideFlags: 0
