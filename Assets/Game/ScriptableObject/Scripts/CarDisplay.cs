@@ -33,6 +33,8 @@ namespace test11
             if(carHolder.childCount > 0){
                 Destroy(carHolder.GetChild(0).gameObject);
             }
+
+            Instantiate(_car.carVisualPrefab, carHolder.position, carHolder.rotation, carHolder);
         }
     }
 }

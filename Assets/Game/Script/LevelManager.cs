@@ -7,19 +7,26 @@ namespace test11.Managers
 {
     public class LevelManager : MonoBehaviour
     {
-        [SerializeField] private GameObject PlayerVehicle;
+        [SerializeField] private Car[] _playerVehicles;
         [SerializeField] private Transform SpawnPoint;
 
         private GameObject p_spawnedPlayerVehicle;
         public GameObject SpawnedPlayerVehicle => p_spawnedPlayerVehicle;
 
         [SerializeField] bool drawGizmos = true;
+        private int currentCarIndex;
 
         private void Awake()
         {
             //Pool Vehicle
-            p_spawnedPlayerVehicle = Instantiate(PlayerVehicle, new Vector3(SpawnPoint.position.x, SpawnPoint.position.y, SpawnPoint.position.z), Quaternion.identity);
-            p_spawnedPlayerVehicle.SetActive(false);
+            currentCarIndex = PlayerPrefs.GetInt("CurrentCar");
+            if(SceneManager.GetActiveScene().name == "00-MainMenu"){
+                p_spawnedPlayerVehicle = Instantiate(_playerVehicles[currentCarIndex].carVisualPrefab, SpawnPoint.position, Quaternion.identity, SpawnPoint);
+            }else{
+                p_spawnedPlayerVehicle = Instantiate(_playerVehicles[currentCarIndex].carPlayablePrefab, SpawnPoint.position, Quaternion.identity, SpawnPoint);
+            }
+            
+            //p_spawnedPlayerVehicle.SetActive(false);
         }
         
         private void Start()
