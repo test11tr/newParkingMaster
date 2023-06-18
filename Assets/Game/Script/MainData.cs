@@ -8,12 +8,13 @@ namespace test11
     {
         public GameObject Loading;
         public int startingCoin;
+        public Object defaultFirstWorld;
 
         private void Awake() {
             // 1 => true, 0 => false
             if(PlayerPrefs.GetInt("FirstRun") != 1){
                 PlayerPrefs.SetInt("FirstRun", 1);
-                PlayerPrefs.SetInt("LevelNum", 1);
+                PlayerPrefs.SetInt(defaultFirstWorld.name + "LevelNum", 1);
                 PlayerPrefs.SetInt("LevelXP",1);
                 PlayerPrefs.SetInt("Coins", startingCoin);
                 PlayerPrefs.SetInt("Car0",1);

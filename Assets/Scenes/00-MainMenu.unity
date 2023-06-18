@@ -6640,6 +6640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Loading: {fileID: 2071237908}
   startingCoin: 1000
+  defaultFirstWorld: {fileID: 102900000, guid: 45851306928bc496a985225ccb3cd61a, type: 3}
 --- !u!1 &208656302
 GameObject:
   m_ObjectHideFlags: 0

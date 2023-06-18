@@ -31,7 +31,7 @@ namespace test11
                 completeBg[a].SetActive(false);
             }
 
-            temp = PlayerPrefs.GetInt("LevelNum");
+            temp = PlayerPrefs.GetInt(levelName + "LevelNum");
             for (int b = 0; b <= temp; b++){
                 if (temp > b){
                     Locks[b].SetActive(false);
@@ -40,28 +40,28 @@ namespace test11
             }
 
             for (int c = 0; c < Level.Length; c++){
-                if (PlayerPrefs.GetInt ("Star" + c.ToString ()) == 3) 
+                if (PlayerPrefs.GetInt ("Star" + (levelName + c.ToString ())) == 3) 
                 {
                     completeBg[c].SetActive(true);
                     star1Level [c].SetActive (true);
                     star2Level [c].SetActive (true);
                     star3Level [c].SetActive (true);
                 }
-                if (PlayerPrefs.GetInt ("Star" + c.ToString ()) == 2) 
+                if (PlayerPrefs.GetInt ("Star" + (levelName + c.ToString ())) == 2) 
                 {
                     completeBg[c].SetActive(true);
                     star1Level [c].SetActive (true);
                     star2Level [c].SetActive (true);
                     star3Level [c].SetActive (false);
                 }
-                if (PlayerPrefs.GetInt ("Star" + c.ToString ()) == 1) 
+                if (PlayerPrefs.GetInt ("Star" + (levelName + c.ToString ())) == 1) 
                 {
                     completeBg[c].SetActive(true);
                     star1Level [c].SetActive (true);
                     star2Level [c].SetActive (false);
                     star3Level [c].SetActive (false);
                 }
-                if (PlayerPrefs.GetInt ("Star" + c.ToString ()) == 0) 
+                if (PlayerPrefs.GetInt ("Star" + (levelName + c.ToString ())) == 0) 
                 {
                     star1Level [c].SetActive (false);
                     star2Level [c].SetActive (false);

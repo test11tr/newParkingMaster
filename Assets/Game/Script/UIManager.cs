@@ -23,8 +23,7 @@ namespace test11.Managers
         }
 
         public void LoadMainMenuScene(){
-            string currentScene = SceneManager.GetActiveScene ().name; 
-            SceneManager.LoadScene(currentScene);
+            SceneManager.LoadScene("00-MainMenu");
         }
     }
 }
