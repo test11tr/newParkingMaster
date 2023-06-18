@@ -22486,6 +22486,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4622981726915795297, guid: 3ef9db34160794bfc8ea69389d90ec1b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 973214944}
+    - target: {fileID: 4622981726915795297, guid: 3ef9db34160794bfc8ea69389d90ec1b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     - target: {fileID: 4622981727046225232, guid: 3ef9db34160794bfc8ea69389d90ec1b,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -22715,7 +22725,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 3ef9db34160794bfc8ea69389d90ec1b, type: 3}
 --- !u!1 &4622981727834089747 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4622981727126164084, guid: 3ef9db34160794bfc8ea69389d90ec1b,
+  m_CorrespondingSourceObject: {fileID: 4622981726750301851, guid: 3ef9db34160794bfc8ea69389d90ec1b,
     type: 3}
   m_PrefabInstance: {fileID: 4622981727834089746}
   m_PrefabAsset: {fileID: 0}
