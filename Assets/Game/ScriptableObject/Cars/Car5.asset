@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d2136f1b0f664fcfbede13584c3fe3c, type: 3}
-  m_Name: Car0
+  m_Name: Car5
   m_EditorClassIdentifier: 
-  carName: Pinnacle
-  carDescription: This small but mighty car was indeed the pinnacle of Rally Tracks
-    in the 80s!
-  carPrice: 0
-  carSpeed: 30
-  carAcceleration: 25
-  carHandling: 40
-  carVisualPrefab: {fileID: 8342632144920366626, guid: 826d26dcd857346d59a8898aeb9ef750,
+  carName: Horizon
+  carDescription: Long road, nature trips, camping lovers' and explorers' preference
+    for more than 50 years.
+  carPrice: 2500
+  carSpeed: 25
+  carAcceleration: 15
+  carHandling: 80
+  carVisualPrefab: {fileID: 5223052020402516738, guid: 38069acf071684982a8208f5e51d81d8,
     type: 3}
-  carPlayablePrefab: {fileID: 8127038688179591734, guid: 83aeff343081d4e2e9598df325d4b95d,
+  carPlayablePrefab: {fileID: 1302337768377123024, guid: 73e313e9f91dc4bc8bbc22c4924644c8,
     type: 3}

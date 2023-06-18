@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d2136f1b0f664fcfbede13584c3fe3c, type: 3}
-  m_Name: Car0
+  m_Name: Car4
   m_EditorClassIdentifier: 
-  carName: Pinnacle
-  carDescription: This small but mighty car was indeed the pinnacle of Rally Tracks
-    in the 80s!
-  carPrice: 0
-  carSpeed: 30
-  carAcceleration: 25
+  carName: Dominator
+  carDescription: The whipper of American asphalt, the ancestor of the horsepower,
+    the last gas-drinker.
+  carPrice: 6000
+  carSpeed: 60
+  carAcceleration: 30
   carHandling: 40
-  carVisualPrefab: {fileID: 8342632144920366626, guid: 826d26dcd857346d59a8898aeb9ef750,
+  carVisualPrefab: {fileID: 8978711583886379622, guid: 4ee1c587081af4202afa099c90e946bf,
     type: 3}
-  carPlayablePrefab: {fileID: 8127038688179591734, guid: 83aeff343081d4e2e9598df325d4b95d,
+  carPlayablePrefab: {fileID: 3664828077504066911, guid: c63ed478a70844142a6629c8fcc8e4b4,
     type: 3}
