@@ -40,7 +40,6 @@ namespace test11
             }
   
             for (int c = 0; c < Level.Length; c++){
-                print(PlayerPrefs.GetInt (levelName+"Star" + c.ToString ()));
                 if (PlayerPrefs.GetInt (levelName+"Star" + c.ToString ()) == 3) 
                 {
                     completeBg[c].SetActive(true);
