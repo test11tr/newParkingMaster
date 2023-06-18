@@ -23,6 +23,13 @@ namespace test11
                 PlayerPrefs.SetInt("LevelXP",1);
                 PlayerPrefs.SetInt("Coins", startingCoin);
                 PlayerPrefs.SetInt("Diamonds", startingDiamond);
+                //unlockableWorlds
+                PlayerPrefs.SetInt("World0",0);
+                PlayerPrefs.SetInt("CurrentWorld",0);
+                PlayerPrefs.SetInt("World1",0);
+                PlayerPrefs.SetInt("World2",0);
+                PlayerPrefs.SetInt("World3",0);
+                //unlockableCars
                 PlayerPrefs.SetInt("Car0",1);
                 PlayerPrefs.SetInt("CurrentCar",0);
                 PlayerPrefs.SetInt("Car1",0);
@@ -46,8 +53,17 @@ namespace test11
             if (Input.GetKeyDown (KeyCode.E))
                 PlayerPrefs.SetInt ("Coins", PlayerPrefs.GetInt ("Coins") + 1000);
 
-            totalCoins.text = PlayerPrefs.GetInt("Coins").ToString() + " C";
-            totalDiamonds.text = PlayerPrefs.GetInt("Diamonds").ToString();
+            if(PlayerPrefs.GetInt("Coins") > 0){
+                totalCoins.text = PlayerPrefs.GetInt("Coins").ToString() + " C";
+            }else{
+                totalCoins.text = "0 C";
+            }
+            
+            if(PlayerPrefs.GetInt("Diamonds") > 0){
+                totalDiamonds.text = PlayerPrefs.GetInt("Diamonds").ToString();
+            }else{
+                totalDiamonds.text = "0";
+            }
         }
     }
 }

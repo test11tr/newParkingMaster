@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2136f1b0f664fcfbede13584c3fe3c, type: 3}
   m_Name: Car1
   m_EditorClassIdentifier: 
+  carIndex: Car1
   carName: Heritage
   carDescription: Japanese but exactly the muscle it should be. Carrying the heritage
     of a Japanese legend under its hood, this vehicle is a horsepower beast.

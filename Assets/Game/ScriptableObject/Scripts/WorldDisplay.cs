@@ -26,7 +26,7 @@ namespace test11
             worldDescription.text = _world.worldDescription;
             worldImage.sprite = _world.worldImage;
         
-            bool worldUnlocked = PlayerPrefs.GetInt("currentScene", 0) >= _world.worldIndex;
+            bool worldUnlocked = PlayerPrefs.GetInt("currentWorld", 0) >= _world.worldIndex;
             lockIcon.SetActive(!worldUnlocked);
             playButton.interactable = worldUnlocked;
             if(worldUnlocked){
@@ -34,8 +34,6 @@ namespace test11
             }else{
                 worldImage.color = Color.gray;
             }
-
-
         }
 
         public void SetLevelSet(){

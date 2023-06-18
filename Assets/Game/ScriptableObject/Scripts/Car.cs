@@ -8,6 +8,7 @@ namespace test11
     public class Car : ScriptableObject
     {
        [Header("Car Info")]
+       public string carIndex;
        public string carName;
        public string carDescription;
 

@@ -9,9 +9,11 @@ namespace test11
     public class CarDisplay : MonoBehaviour
     {
         [Header("Car Info")]
+        [SerializeField] private string carIndex;
         [SerializeField] private TMP_Text carName;
         [SerializeField] private TMP_Text carDescription;
         [SerializeField] private TMP_Text carPrice;
+        [SerializeField] private int carPriceInt;
 
         [Header("Car Stats")]
         [SerializeField] private Image carSpeed;
@@ -20,11 +22,19 @@ namespace test11
 
         [Header("Car Model")]
         [SerializeField] public Transform carHolder;
+
+        [Header("Menus")]
+        [SerializeField] private GameObject BuyButton;
+        [SerializeField] private GameObject SelectButton;
+        [SerializeField] private GameObject notEnoughtMenu;
+        [SerializeField] private GameObject vehicleSelected;
         
         public void DisplayCar(Car _car){
+            carIndex = _car.carIndex;
             carName.text = _car.carName;
             carDescription.text = _car.carDescription;
             carPrice.text = _car.carPrice.ToString() + " C";
+            carPriceInt = _car.carPrice;
 
             carSpeed.fillAmount = _car.carSpeed / 100;
             carHandling.fillAmount = _car.carHandling / 100;
@@ -35,6 +45,29 @@ namespace test11
             }
 
             Instantiate(_car.carVisualPrefab, carHolder.position, carHolder.rotation, carHolder);
+
+            if(PlayerPrefs.GetInt(_car.carIndex) == 1){
+                SelectButton.SetActive(true);
+                BuyButton.SetActive(false);
+                carPrice.text = "- C";
+            }else if(PlayerPrefs.GetInt(_car.carIndex) == 0){
+                SelectButton.SetActive(false);
+                BuyButton.SetActive(true);
+                carPrice.text = _car.carPrice.ToString() + " C";
+            }
+        }
+
+        public void BuyVehicle(){
+            if(PlayerPrefs.GetInt("Coins") >= carPriceInt){
+                PlayerPrefs.SetInt("Coins", - carPriceInt);
+                PlayerPrefs.SetInt(carIndex, 1); 
+            }else{
+                notEnoughtMenu.SetActive(true);
+            }
+        }
+
+        public void SelectVehicle(){
+            //continue, select vehicle code is not written, select button after purchase not changing immedeatly.
         }
     }
 }

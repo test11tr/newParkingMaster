@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2136f1b0f664fcfbede13584c3fe3c, type: 3}
   m_Name: Car6
   m_EditorClassIdentifier: 
+  carIndex: Car6
   carName: Legend
   carDescription: Literally the legend! A pure power machine that turns into a work
     of art in the hands of modders.

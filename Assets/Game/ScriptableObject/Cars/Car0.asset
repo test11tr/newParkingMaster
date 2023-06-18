@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2136f1b0f664fcfbede13584c3fe3c, type: 3}
   m_Name: Car0
   m_EditorClassIdentifier: 
+  carIndex: Car0
   carName: Pinnacle
   carDescription: This small but mighty car was indeed the pinnacle of Rally Tracks
     in the 80s!

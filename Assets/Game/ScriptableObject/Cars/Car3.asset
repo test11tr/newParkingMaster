@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2136f1b0f664fcfbede13584c3fe3c, type: 3}
   m_Name: Car3
   m_EditorClassIdentifier: 
+  carIndex: Car3
   carName: Touring
   carDescription: A German highway rat. This 20-year-old model is still the perfect
     blend of comfort, luxury and high speed.
