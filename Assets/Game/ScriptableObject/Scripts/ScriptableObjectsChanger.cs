@@ -9,9 +9,24 @@ namespace test11
     {
         [SerializeField] private ScriptableObject[] _scriptableObjects;
         [SerializeField] private WorldDisplay _worldDisplay;
+        private int currentIndex;
 
         private void Awake() {
-            _worldDisplay.DisplayWorld((World)_scriptableObjects[0]);
+            ChangeScriptableObject(0);
+        }
+
+        public void ChangeScriptableObject(int _change){
+            currentIndex += _change;
+
+            if(currentIndex < 0){
+                currentIndex = _scriptableObjects.Length - 1;
+            }else if(currentIndex > _scriptableObjects.Length -1){
+                currentIndex = 0;
+            }
+
+            if(_worldDisplay != null){
+                _worldDisplay.DisplayWorld((World)_scriptableObjects[currentIndex]);
+            }
         }
     }
 }

@@ -10,8 +10,6 @@ namespace test11
        public int worldIndex;
        public string worldName;
        public string worldDescription;
-       public Color nameColor;
        public Sprite worldImage;
-       public Object sceneToLoad;
     }
 }

@@ -254,11 +254,9 @@ namespace test11.Managers
                         PlayerPrefs.SetInt ("LevelNum", PlayerPrefs.GetInt ("LevelNum") + 1);
                         PlayerPrefs.SetInt ("PassedLevels", PlayerPrefs.GetInt ("PassedLevels") + 1);
                     }
-                    print("here");
                     _hud.SetActive(false);
                     FinishMenu.SetActive (true);
                     _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().engineIsStarted = false;
-                    print("here2");
                 }
             }
         }
