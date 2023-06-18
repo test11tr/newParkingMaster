@@ -13,9 +13,11 @@ namespace test11
         public GameObject LoadingMenu;
         [HideInInspector]public ParkingManager _parkingManager;
         public string mainMenu = "MainMenu" ;
+        private string levelName;
 
         void Start ()
         {
+            levelName = SceneManager.GetActiveScene().name;
              if (_parkingManager == null)
             {
                 _parkingManager = GameObject.FindGameObjectWithTag("parkingManager").GetComponent<ParkingManager>();
@@ -26,7 +28,7 @@ namespace test11
         public void Continue ()
         {
             LoadingMenu.SetActive(true);
-            PlayerPrefs.SetInt ("LevelID", PlayerPrefs.GetInt ("LevelID") + 1);
+            PlayerPrefs.SetInt (levelName+"LevelID", PlayerPrefs.GetInt (levelName+"LevelID") + 1);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 

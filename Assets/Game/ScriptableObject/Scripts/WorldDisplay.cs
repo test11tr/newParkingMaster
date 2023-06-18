@@ -17,11 +17,11 @@ namespace test11
         [SerializeField] private GameObject lockIcon;
         [SerializeField] private LevelSelect _levelSelect;
 
-        private string tempworldname;
+        private string worldSceneName;
 
         public void DisplayWorld(World _world){
             worldName.text = _world.worldName;
-            tempworldname = _world.worldName;
+            worldSceneName = _world.worldSceneName.name;
             //worldName.color = _world.nameColor;
             worldDescription.text = _world.worldDescription;
             worldImage.sprite = _world.worldImage;
@@ -39,7 +39,7 @@ namespace test11
         }
 
         public void SetLevelSet(){
-            _levelSelect.levelName = tempworldname;
+            _levelSelect.levelName = worldSceneName;
         }
     }
 }

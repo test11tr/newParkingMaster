@@ -46,7 +46,6 @@ namespace test11.Managers
         [Header("Is Time Limited?")]
         public bool timeLimit;
         public GameObject TimeDownMenu;
-        public TMP_Text bestTime, currentTime;
         
         [Header("Is Bonus Rewarded?")]
         public bool isBonusRewarded;
@@ -60,10 +59,10 @@ namespace test11.Managers
         public AudioClip clipSuccess, clipLost;
         private AudioSource _audioSource;
 
-        private string  sceneName;
+        private string  levelName;
 
         void Start(){
-            sceneName = SceneManager.GetActiveScene().name;
+            levelName = SceneManager.GetActiveScene().name;
 
             if (_levelManager == null)
             {
@@ -132,26 +131,11 @@ namespace test11.Managers
                         PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore0);
                         FinishScoreText.text = CollisionScore0.ToString();
                         star3.SetActive(true);
-                        PlayerPrefs.SetInt("Star" + PlayerPrefs.GetInt(sceneName + "LevelID").ToString(), 3);
+                        PlayerPrefs.SetInt(levelName+"Star" + PlayerPrefs.GetInt(levelName+"LevelID").ToString(), 3);
                         //_audioSource.clip = clipSuccess;
                         //_audioSource.Play();
 
-                        if (PlayerPrefs.GetFloat ("Minutes" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ()) == minutes) {
-                            if (PlayerPrefs.GetFloat ("Seconds" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ()) != seconds) {
-                                if (PlayerPrefs.GetFloat ("Seconds" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ()) < seconds)
-                                    PlayerPrefs.SetFloat ("Seconds" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString (), seconds);
-                            }
-                        }
-                        
-                            if (PlayerPrefs.GetFloat ("Minutes" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ()) < minutes) {
-                                PlayerPrefs.SetFloat ("Minutes" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString (), minutes);
-                                PlayerPrefs.SetFloat ("Seconds" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString (), seconds);
-                            }
-                        
-
                         PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore0);
-                        bestTime.text = ReadBestTime();
-                        currentTime.text = ReadCurrentTime();
                         _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
 
                         if(isBonusRewarded){
@@ -165,26 +149,11 @@ namespace test11.Managers
                         PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore1);
                         FinishScoreText.text = CollisionScore1.ToString();
                         star2.SetActive(true);
-                        PlayerPrefs.SetInt("Star" + PlayerPrefs.GetInt(sceneName + "LevelID").ToString(), 2);
+                        PlayerPrefs.SetInt(levelName+"Star" + PlayerPrefs.GetInt(levelName+"LevelID").ToString(), 2);
                         //_audioSource.clip = clipSuccess;
                         //_audioSource.Play();
 
-                        if (PlayerPrefs.GetFloat ("Minutes" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ()) == minutes) {
-                            if (PlayerPrefs.GetFloat ("Seconds" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ()) != seconds) {
-                                if (PlayerPrefs.GetFloat ("Seconds" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ()) < seconds)
-                                    PlayerPrefs.SetFloat ("Seconds" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString (), seconds);
-                            }
-                        }
-                        
-                            if (PlayerPrefs.GetFloat ("Minutes" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ()) < minutes) {
-                                PlayerPrefs.SetFloat ("Minutes" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString (), minutes);
-                                PlayerPrefs.SetFloat ("Seconds" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString (), seconds);
-                            }
-                        
-
                         PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore1);
-                        bestTime.text = ReadBestTime();
-                        currentTime.text = ReadCurrentTime();
                         _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
 
                         if(isBonusRewarded){
@@ -196,26 +165,11 @@ namespace test11.Managers
                         PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore2);
                         FinishScoreText.text = CollisionScore2.ToString();
                         star1.SetActive(true);
-                        PlayerPrefs.SetInt("Star" + PlayerPrefs.GetInt(sceneName + "LevelID").ToString(), 1);
+                        PlayerPrefs.SetInt(levelName+"Star" + PlayerPrefs.GetInt(levelName+"LevelID").ToString(), 1);
                         //_audioSource.clip = clipSuccess;
                         //_audioSource.Play();
 
-                        if (PlayerPrefs.GetFloat ("Minutes" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ()) == minutes) {
-                            if (PlayerPrefs.GetFloat ("Seconds" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ()) != seconds) {
-                                if (PlayerPrefs.GetFloat ("Seconds" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ()) < seconds)
-                                    PlayerPrefs.SetFloat ("Seconds" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString (), seconds);
-                            }
-                        }
-                        
-                            if (PlayerPrefs.GetFloat ("Minutes" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ()) < minutes) {
-                                PlayerPrefs.SetFloat ("Minutes" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString (), minutes);
-                                PlayerPrefs.SetFloat ("Seconds" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString (), seconds);
-                            }
-                        
-
                         PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore2);
-                        bestTime.text = ReadBestTime();
-                        currentTime.text = ReadCurrentTime();
                         _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
 
                         if(isBonusRewarded){
@@ -227,26 +181,11 @@ namespace test11.Managers
                         PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore3);
                         FinishScoreText.text = CollisionScore3.ToString();
                         star0.SetActive(true);
-                        PlayerPrefs.SetInt("Star" + PlayerPrefs.GetInt(sceneName + "LevelID").ToString(), 0);
+                        PlayerPrefs.SetInt(levelName+"Star" + PlayerPrefs.GetInt(levelName+"LevelID").ToString(), 0);
                         //_audioSource.clip = clipSuccess;
                         //_audioSource.Play();
 
-                        if (PlayerPrefs.GetFloat ("Minutes" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ()) == minutes) {
-                            if (PlayerPrefs.GetFloat ("Seconds" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ()) != seconds) {
-                                if (PlayerPrefs.GetFloat ("Seconds" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ()) < seconds)
-                                    PlayerPrefs.SetFloat ("Seconds" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString (), seconds);
-                            }
-                        }
-                        
-                            if (PlayerPrefs.GetFloat ("Minutes" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ()) < minutes) {
-                                PlayerPrefs.SetFloat ("Minutes" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString (), minutes);
-                                PlayerPrefs.SetFloat ("Seconds" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString (), seconds);
-                            }
-                        
-
                         PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore3);
-                        bestTime.text = ReadBestTime();
-                        currentTime.text = ReadCurrentTime();
                         _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
 
                         if(isBonusRewarded){
@@ -254,10 +193,10 @@ namespace test11.Managers
                         }
                     }
 
-                    PlayerPrefs.SetInt(sceneName + "TotalPassed", PlayerPrefs.GetInt(sceneName + "TotalPassed") + 1);
-                    if (PlayerPrefs.GetInt (sceneName + "LevelID") + 1 == PlayerPrefs.GetInt (sceneName + "LevelNum")) {
-                        PlayerPrefs.SetInt (sceneName + "LevelNum", PlayerPrefs.GetInt (sceneName + "LevelNum") + 1);
-                        PlayerPrefs.SetInt (sceneName + "PassedLevels", PlayerPrefs.GetInt (sceneName + "PassedLevels") + 1);
+                    PlayerPrefs.SetInt(levelName + "TotalPassed", PlayerPrefs.GetInt(levelName + "TotalPassed") + 1);
+                    if (PlayerPrefs.GetInt (levelName+"LevelID") + 1 == PlayerPrefs.GetInt (levelName+"LevelNum")) {
+                        PlayerPrefs.SetInt (levelName+"LevelNum", PlayerPrefs.GetInt (levelName+"LevelNum") + 1);
+                        PlayerPrefs.SetInt (levelName+"PassedLevels", PlayerPrefs.GetInt (levelName+"PassedLevels") + 1);
                     }
                     _hud.SetActive(false);
                     FinishMenu.SetActive (true);
@@ -270,7 +209,7 @@ namespace test11.Managers
             //_audioSource.clip = clipLost;
             //_audioSource.Play();
             TimeFailedMenu.SetActive(true);
-            PlayerPrefs.SetInt(sceneName + "TotalFailed", PlayerPrefs.GetInt(sceneName + "TotalFailed") + 1);
+            PlayerPrefs.SetInt("TotalFailed", PlayerPrefs.GetInt("TotalFailed") + 1);
              _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().engineIsStarted = false;
              _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<ParkingManager>().enabled = false;
@@ -314,45 +253,6 @@ namespace test11.Managers
 
             if (minutes <= 0 && seconds <= 0)
                 TimeFailed ();
-        }
-
-        string ReadBestTime()
-        {
-            float min = 0, secn = 0 ;
-
-            min = PlayerPrefs.GetFloat ("Minutes" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ());
-            secn = PlayerPrefs.GetFloat ("Seconds" + PlayerPrefs.GetInt (sceneName + "LevelID").ToString ());
-            string minS,secS;
-
-            minS = min.ToString ();
-            secS = Mathf.Floor(secn).ToString ();
-
-            if (min < 10)
-                minS = "0" + min.ToString ();
-
-            if (secn < 10)
-                secS = "0" + Mathf.Floor(secn).ToString ();
-
-            return "Best Time : "+ minS + ":"+secS;
-        }
-
-        string ReadCurrentTime()
-        {
-
-            string min;
-            string sec;
-
-            if (minutes < 10)
-                min = "0" + minutes.ToString ();
-            else
-                min = minutes.ToString ();
-
-            if (seconds < 10)
-                sec = "0" +( Mathf.FloorToInt(seconds)).ToString ();
-            else
-                sec = (Mathf.FloorToInt(seconds)).ToString ();
-
-            return "CurrentTime : "+min + ":"+ sec;
         }
     }
 }

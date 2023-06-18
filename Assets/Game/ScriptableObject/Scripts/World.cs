@@ -11,5 +11,6 @@ namespace test11
        public string worldName;
        public string worldDescription;
        public Sprite worldImage;
+       public Object worldSceneName;
     }
 }

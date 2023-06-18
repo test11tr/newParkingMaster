@@ -16,3 +16,4 @@ MonoBehaviour:
   worldName: 01-Driving School
   worldDescription: You have driving school tests to complete before you drive outside.
   worldImage: {fileID: 21300000, guid: 0f21c15598e524bfcae8cb6bd65c3440, type: 3}
+  worldSceneName: {fileID: 102900000, guid: 45851306928bc496a985225ccb3cd61a, type: 3}
