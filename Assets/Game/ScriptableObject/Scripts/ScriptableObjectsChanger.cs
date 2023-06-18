@@ -9,6 +9,8 @@ namespace test11
     {
         [SerializeField] private ScriptableObject[] _scriptableObjects;
         [SerializeField] private WorldDisplay _worldDisplay;
+        [SerializeField] private CarDisplay _carDisplay;
+
         private int currentIndex;
 
         private void Awake() {
@@ -26,6 +28,10 @@ namespace test11
 
             if(_worldDisplay != null){
                 _worldDisplay.DisplayWorld((World)_scriptableObjects[currentIndex]);
+            }
+
+            if(_carDisplay != null){
+                _carDisplay.DisplayCar((Car)_scriptableObjects[currentIndex]);
             }
         }
     }
