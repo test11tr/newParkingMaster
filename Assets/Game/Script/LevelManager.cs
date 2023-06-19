@@ -42,6 +42,17 @@ namespace test11.Managers
             SceneManager.LoadScene(currentScene);
         }
 
+        public void PlayerCarInstantiate(){
+            currentCarIndex = PlayerPrefs.GetInt("CurrentCar");
+            if(SpawnPoint.childCount > 0){
+                for (int i = 0; i < SpawnPoint.childCount; i++)
+                {
+                    Destroy(SpawnPoint.GetChild(i).gameObject);
+                }
+                p_spawnedPlayerVehicle = Instantiate(_playerVehicles[currentCarIndex].carVisualPrefab, SpawnPoint.position, Quaternion.identity, SpawnPoint);
+            }
+        }
+
         void OnDrawGizmos()
         {
             if(drawGizmos){

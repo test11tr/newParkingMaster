@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Car4
   m_EditorClassIdentifier: 
   carIndex: Car4
+  carNumberIndex: 4
   carName: Dominator
   carDescription: The whipper of American asphalt, the ancestor of the horsepower,
-    the last gas-drinker.
+    the last gas-drinker. It's never the last ride.
   carPrice: 6000
   carSpeed: 60
   carAcceleration: 30

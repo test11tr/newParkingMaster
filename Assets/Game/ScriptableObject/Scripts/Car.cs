@@ -9,6 +9,7 @@ namespace test11
     {
        [Header("Car Info")]
        public string carIndex;
+       public int carNumberIndex;
        public string carName;
        public string carDescription;
 

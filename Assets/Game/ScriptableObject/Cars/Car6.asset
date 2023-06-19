@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Car6
   m_EditorClassIdentifier: 
   carIndex: Car6
+  carNumberIndex: 6
   carName: Legend
   carDescription: Literally the legend! A pure power machine that turns into a work
     of art in the hands of modders.

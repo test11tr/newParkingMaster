@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Car5
   m_EditorClassIdentifier: 
   carIndex: Car5
+  carNumberIndex: 5
   carName: Horizon
   carDescription: Long road, nature trips, camping lovers' and explorers' preference
     for more than 50 years.

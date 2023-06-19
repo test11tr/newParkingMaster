@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Car8
   m_EditorClassIdentifier: 
   carIndex: Car8
+  carNumberIndex: 8
   carName: Volt
   carDescription: Quiet, quick, fast. The modern definition of luxury. The most iconic
     of electric vehicles.

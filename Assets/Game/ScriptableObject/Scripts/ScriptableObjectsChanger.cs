@@ -17,6 +17,18 @@ namespace test11
             ChangeScriptableObject(0);
         }
 
+        public void ResetScriptableObject(int _change){
+            currentIndex = _change;
+
+            if(_worldDisplay != null){
+                _worldDisplay.DisplayWorld((World)_scriptableObjects[currentIndex]);
+            }
+
+            if(_carDisplay != null){
+                _carDisplay.DisplayCar((Car)_scriptableObjects[currentIndex]);
+            }
+        }
+
         public void ChangeScriptableObject(int _change){
             currentIndex += _change;
 

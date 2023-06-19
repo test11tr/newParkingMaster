@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Car9
   m_EditorClassIdentifier: 
   carIndex: Car9
+  carNumberIndex: 9
   carName: Diablo
   carDescription: Translation results Translation result star_border The pinnacle
     of Italian design, elegance and power. Ruler of European roads and tracks.

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Car7
   m_EditorClassIdentifier: 
   carIndex: Car7
+  carNumberIndex: 7
   carName: Turbo
   carDescription: The symbol of Stuttgart with its iconic design, the definition
     of speed in German.
