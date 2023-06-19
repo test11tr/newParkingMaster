@@ -73,7 +73,7 @@ namespace test11
 
         public void SetLevelSet(){
             PlayerPrefs.SetInt("CurrentWorld", worldNumberIndex);
-            _levelSelect.levelName = worldSceneName;
+            _levelSelect.UpdateLevelName(worldSceneName);
         }
     }
 }

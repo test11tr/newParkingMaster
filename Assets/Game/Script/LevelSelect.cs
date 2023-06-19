@@ -23,7 +23,63 @@ namespace test11
 
         public string levelName = "00-MainMenu";
 
-        void FixedUpdate(){
+        void Start(){
+            LevelSetPages[0].SetActive(true);
+
+            for(int a = 0; a < Level.Length; a++){
+                normalBg[a].SetActive(false);
+                completeBg[a].SetActive(false);
+                Locks[a].SetActive(true);
+            }
+
+            temp = PlayerPrefs.GetInt(levelName + "LevelNum");
+            for (int b = 0; b <= temp; b++){
+                if (temp > b){
+                    Locks[b].SetActive(false);
+                    normalBg[b].SetActive(true);
+                }
+            }
+  
+            for (int c = 0; c < Level.Length; c++){
+                if (PlayerPrefs.GetInt (levelName+"Star" + c.ToString ()) == 3) 
+                {
+                    completeBg[c].SetActive(true);
+                    star1Level [c].SetActive (true);
+                    star2Level [c].SetActive (true);
+                    star3Level [c].SetActive (true);
+                }
+                if (PlayerPrefs.GetInt (levelName+"Star" + c.ToString ()) == 2) 
+                {
+                    completeBg[c].SetActive(true);
+                    star1Level [c].SetActive (true);
+                    star2Level [c].SetActive (true);
+                    star3Level [c].SetActive (false);
+                }
+                if (PlayerPrefs.GetInt ("Star" + c.ToString ()) == 1) 
+                {
+                    completeBg[c].SetActive(true);
+                    star1Level [c].SetActive (true);
+                    star2Level [c].SetActive (false);
+                    star3Level [c].SetActive (false);
+                }
+                if (PlayerPrefs.GetInt (levelName+"Star" + c.ToString ()) == 0) 
+                {
+                    star1Level [c].SetActive (false);
+                    star2Level [c].SetActive (false);
+                    star3Level [c].SetActive (false);
+                }
+            }
+        }
+
+        void resetUI(){
+            for(int a = 0; a < Level.Length; a++){
+                normalBg[a].SetActive(false);
+                completeBg[a].SetActive(false);
+                Locks[a].SetActive(true);
+            }
+        }
+
+        void UpdateStart(){
             LevelSetPages[0].SetActive(true);
 
             for(int a = 0; a < Level.Length; a++){
@@ -68,6 +124,12 @@ namespace test11
                     star3Level [c].SetActive (false);
                 }
             }
+        }
+
+        public void UpdateLevelName(string _name){
+            levelName = _name;
+            resetUI();
+            UpdateStart();
         }
 
         public void ChangeLevelPage(int _change){
