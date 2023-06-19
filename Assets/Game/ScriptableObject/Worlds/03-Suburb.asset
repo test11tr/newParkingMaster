@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3046d69e9eddf416c9b9deecb2d13c87, type: 3}
   m_Name: 03-Suburb
   m_EditorClassIdentifier: 
-  worldIndex: 2
+  worldIndex: World2
+  worldNumberIndex: 2
+  worldPriceAsDiamond: 100
   worldName: 03-Suburbs
   worldDescription: 'A calm neigbourhood environment '
   worldImage: {fileID: 21300000, guid: e04309cf1c0874245a45c619b88a1a4a, type: 3}

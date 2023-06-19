@@ -44,28 +44,28 @@ namespace test11.Managers
             if(other.tag == "Player"){
                 if(_colliderChecker == colliderChecker.FL){
                     _parkingManager.fl = true;
-                    print("fl = true");
+                    //print("fl = true");
                 }else if (_colliderChecker == colliderChecker.FR){
                     _parkingManager.fr = true;
-                    print("fr = true");
+                    //print("fr = true");
                 }else if (_colliderChecker == colliderChecker.RL){
                     _parkingManager.rl = true;
-                    print("rl = true");
+                    //print("rl = true");
                 }else if (_colliderChecker == colliderChecker.RR){
                     _parkingManager.rr = true;
-                    print("rr = true");
+                    //print("rr = true");
                 }
             }    
         
             if(_colliderChecker == colliderChecker.VehicleFront){
                 if(other.tag == "p_vehicle_front"){
                     _parkingManager.front = true;
-                    print("front = true");
+                    //print("front = true");
                 }
             }else if (_colliderChecker == colliderChecker.VehicleRear){
                 if(other.tag == "p_vehicle_rear"){
                     _parkingManager.rear = true;
-                    print("rear = true");
+                    //print("rear = true");
                 }
             }   
         }
@@ -74,28 +74,28 @@ namespace test11.Managers
             if(other.tag == "Player"){
                 if(_colliderChecker == colliderChecker.FL){
                     _parkingManager.fl = false;
-                    print("fl = false");
+                    //print("fl = false");
                 }else if (_colliderChecker == colliderChecker.FR){
                     _parkingManager.fr = false;
-                     print("fr = false");
+                     //print("fr = false");
                 }else if (_colliderChecker == colliderChecker.RL){
                     _parkingManager.rl = false;
-                     print("rl = false");
+                     //print("rl = false");
                 }else if (_colliderChecker == colliderChecker.RR){
                     _parkingManager.rr = false;
-                     print("rr = false");
+                     //print("rr = false");
                 }
             }   
 
             if(_colliderChecker == colliderChecker.VehicleFront){
                 if(other.tag == "p_vehicle_front"){
                     _parkingManager.front = false;
-                     print("front = false");
+                     //print("front = false");
                 }
             }else if (_colliderChecker == colliderChecker.VehicleRear){
                 if(other.tag == "p_vehicle_rear"){
                     _parkingManager.rear = false;
-                     print("rear = false");
+                     //print("rear = false");
                 }
             }  
         }

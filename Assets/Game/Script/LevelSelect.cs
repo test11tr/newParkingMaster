@@ -23,7 +23,7 @@ namespace test11
 
         public string levelName = "00-MainMenu";
 
-        async void Start(){
+        void FixedUpdate(){
             LevelSetPages[0].SetActive(true);
 
             for(int a = 0; a < Level.Length; a++){

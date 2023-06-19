@@ -24,7 +24,7 @@ namespace test11
                 PlayerPrefs.SetInt("Coins", startingCoin);
                 PlayerPrefs.SetInt("Diamonds", startingDiamond);
                 //unlockableWorlds
-                PlayerPrefs.SetInt("World0",0);
+                PlayerPrefs.SetInt("World0",1);
                 PlayerPrefs.SetInt("CurrentWorld",0);
                 PlayerPrefs.SetInt("World1",0);
                 PlayerPrefs.SetInt("World2",0);
@@ -50,15 +50,22 @@ namespace test11
 			Debug.Log ("PlayerPrefs.DeleteAll ();");
             }
 
+            //Cheat
             if (Input.GetKeyDown (KeyCode.E))
                 PlayerPrefs.SetInt ("Coins", PlayerPrefs.GetInt ("Coins") + 1000);
 
+            //Cheat
+            if (Input.GetKeyDown (KeyCode.D))
+                PlayerPrefs.SetInt ("Diamonds", PlayerPrefs.GetInt ("Diamonds") + 1000);
+
+            //Update Coins UI
             if(PlayerPrefs.GetInt("Coins") > 0){
                 totalCoins.text = PlayerPrefs.GetInt("Coins").ToString() + " C";
             }else{
                 totalCoins.text = "0 C";
             }
             
+            //Update Diamonds UI
             if(PlayerPrefs.GetInt("Diamonds") > 0){
                 totalDiamonds.text = PlayerPrefs.GetInt("Diamonds").ToString();
             }else{

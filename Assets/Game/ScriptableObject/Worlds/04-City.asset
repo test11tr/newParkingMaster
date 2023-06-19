@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3046d69e9eddf416c9b9deecb2d13c87, type: 3}
   m_Name: 04-City
   m_EditorClassIdentifier: 
-  worldIndex: 3
+  worldIndex: World3
+  worldNumberIndex: 3
+  worldPriceAsDiamond: 150
   worldName: 04-City
   worldDescription: A dense populated City with challenging parking areas. You need
     to be careful here.

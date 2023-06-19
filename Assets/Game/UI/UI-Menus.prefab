@@ -12401,7 +12401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoadingMenu: {fileID: 4622981728609821648}
   _parkingManager: {fileID: 0}
-  mainMenu: MainMenu
+  mainMenu: 00-MainMenu
 --- !u!1 &4622981728224671579
 GameObject:
   m_ObjectHideFlags: 0

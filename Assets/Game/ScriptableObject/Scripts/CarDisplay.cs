@@ -51,11 +51,11 @@ namespace test11
                 Instantiate(_car.carVisualPrefab, carHolder.position, carHolder.rotation, carHolder);
             }
 
-            if(PlayerPrefs.GetInt(_car.carIndex) == 1){
+            if(PlayerPrefs.GetInt(carIndex) == 1){
                 SelectButton.SetActive(true);
                 BuyButton.SetActive(false);
                 carPrice.text = "- C";
-            }else if(PlayerPrefs.GetInt(_car.carIndex) == 0){
+            }else if(PlayerPrefs.GetInt(carIndex) == 0){
                 SelectButton.SetActive(false);
                 BuyButton.SetActive(true);
                 carPrice.text = _car.carPrice.ToString() + " C";
@@ -64,7 +64,7 @@ namespace test11
 
         public void BuyVehicle(){
             if(PlayerPrefs.GetInt("Coins") >= carPriceInt){
-                PlayerPrefs.SetInt("Coins", - carPriceInt);
+                PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") - carPriceInt);
                 PlayerPrefs.SetInt(carIndex, 1); 
                 SelectButton.SetActive(true);
                 BuyButton.SetActive(false);

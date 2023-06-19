@@ -196,6 +196,7 @@ namespace test11.Managers
                     PlayerPrefs.SetInt(levelName + "TotalPassed", PlayerPrefs.GetInt(levelName + "TotalPassed") + 1);
                     if (PlayerPrefs.GetInt (levelName+"LevelID") + 1 == PlayerPrefs.GetInt (levelName+"LevelNum")) {
                         PlayerPrefs.SetInt (levelName+"LevelNum", PlayerPrefs.GetInt (levelName+"LevelNum") + 1);
+                        print("levelNum: " + PlayerPrefs.GetInt(levelName+"LevelNum"));
                         PlayerPrefs.SetInt (levelName+"PassedLevels", PlayerPrefs.GetInt (levelName+"PassedLevels") + 1);
                     }
                     _hud.SetActive(false);

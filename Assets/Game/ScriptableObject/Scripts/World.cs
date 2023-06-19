@@ -8,7 +8,9 @@ namespace test11
     public class World : ScriptableObject
     {
        [Header("World Info")] 
-       public int worldIndex;
+       public string worldIndex;
+       public int worldNumberIndex;
+       public int worldPriceAsDiamond;
        public string worldName;
        public string worldDescription;
 

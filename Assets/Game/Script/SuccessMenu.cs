@@ -12,7 +12,7 @@ namespace test11
         [Header("Success Menu Manager")]
         public GameObject LoadingMenu;
         [HideInInspector]public ParkingManager _parkingManager;
-        public string mainMenu = "MainMenu" ;
+        public string mainMenu = "00-MainMenu" ;
         private string levelName;
 
         void Start ()

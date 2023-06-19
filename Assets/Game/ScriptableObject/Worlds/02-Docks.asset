@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3046d69e9eddf416c9b9deecb2d13c87, type: 3}
   m_Name: 02-Docks
   m_EditorClassIdentifier: 
-  worldIndex: 1
+  worldIndex: World1
+  worldNumberIndex: 1
+  worldPriceAsDiamond: 50
   worldName: 02-Docks
   worldDescription: Challenging parking missions in dense Dock Environment
   worldImage: {fileID: 21300000, guid: 29104cbbea7474defbe69bc21d61cabc, type: 3}

@@ -34,7 +34,6 @@ namespace test11.Managers
             p_spawnedPlayerVehicle.transform.position = SpawnPoint.position;
             p_spawnedPlayerVehicle.transform.rotation = SpawnPoint.rotation;
             p_spawnedPlayerVehicle.SetActive(true);
-            print("Player is in a Vehicle");
         }
 
         private void ReloadScene(){
