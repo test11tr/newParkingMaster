@@ -72,5 +72,13 @@ namespace test11
                 totalDiamonds.text = "0";
             }
         }
+
+        public void AddMoney(){
+            PlayerPrefs.SetInt ("Coins", PlayerPrefs.GetInt ("Coins") + 1000);
+        }
+        
+        public void AddDiamond(){
+            PlayerPrefs.SetInt ("Diamonds", PlayerPrefs.GetInt ("Diamonds") + 1000);
+        }
     }
 }
