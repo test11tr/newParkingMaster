@@ -127,7 +127,6 @@ namespace UniqueVehicleController
 
             foreach (var material in carMaterials)
                 {
-                    print(material);
                     material.DisableKeyword("_EMISSION");
                 }
 
