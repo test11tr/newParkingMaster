@@ -17,6 +17,7 @@ namespace test11
 
         private void Awake() {
             // 1 => true, 0 => false
+            //Camera.main.aspect = 16f / 9f;
             if(PlayerPrefs.GetInt("FirstRun") != 1){
                 PlayerPrefs.SetInt("FirstRun", 1);
                 PlayerPrefs.SetInt(defaultFirstWorld.name + "LevelNum", 1);
