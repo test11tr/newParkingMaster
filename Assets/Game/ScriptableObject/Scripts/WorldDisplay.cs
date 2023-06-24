@@ -38,7 +38,7 @@ namespace test11
             worldName.text = _world.worldName;
             worldPriceAsDiamond.text = _world.worldPriceAsDiamond.ToString();
             worldPriceAsDiamondInt = _world.worldPriceAsDiamond;
-            worldSceneName = _world.worldSceneName.name;
+            worldSceneName = _world.worldSceneName;
             worldDescription.text = _world.worldDescription;
             worldImage.sprite = _world.worldImage;
 

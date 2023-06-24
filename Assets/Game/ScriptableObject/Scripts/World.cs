@@ -16,6 +16,6 @@ namespace test11
 
        [Header("World References")] 
        public Sprite worldImage;
-       public Object worldSceneName;
+       public string worldSceneName;
     }
 }
