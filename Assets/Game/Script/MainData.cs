@@ -17,12 +17,10 @@ namespace test11
 
         private void Awake() {
             // 1 => true, 0 => false
-            //Camera.main.aspect = 16f / 9f;
-            Debug.Log("Works1");
+            //Camera.main.aspect = 16f / 9f;za<as>
             if(PlayerPrefs.GetInt("FirstRun", 0) != 1){
-                Debug.Log("Works2");
                 PlayerPrefs.SetInt("FirstRun", 1);
-                PlayerPrefs.SetInt("00-MainMenu" + "LevelNum", 1);
+                PlayerPrefs.SetInt("01-DrivingSchool" + "LevelNum", 1);
                 PlayerPrefs.SetInt("LevelXP",1);
                 PlayerPrefs.SetInt("Coins", startingCoin);
                 PlayerPrefs.SetInt("Diamonds", startingDiamond);
