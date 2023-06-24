@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33471106286831530}
   - component: {fileID: 23460171027223582}
   - component: {fileID: 8553651957534912701}
+  - component: {fileID: 6248443860030660354}
   m_Layer: 0
   m_Name: SM_Prop_Container_Doors_02
   m_TagString: Untagged
@@ -99,6 +100,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.093815, y: 2.59, z: 2.4299998}
   m_Center: {x: -0.011496663, y: 1.295, z: 0}
+--- !u!114 &6248443860030660354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302631688500474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5163856d7743f44d6bd6288bafa95d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelManager: {fileID: 0}
+  _parkingManager: {fileID: 0}
+  _carController: {fileID: 0}
 --- !u!1 &1337935180895638
 GameObject:
   m_ObjectHideFlags: 0
