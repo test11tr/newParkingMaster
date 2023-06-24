@@ -23,7 +23,7 @@ namespace test11.Managers
             if(SceneManager.GetActiveScene().name == "00-MainMenu"){
                 p_spawnedPlayerVehicle = Instantiate(_playerVehicles[currentCarIndex].carVisualPrefab, SpawnPoint.position, Quaternion.identity, SpawnPoint);
             }else{
-                p_spawnedPlayerVehicle = Instantiate(_playerVehicles[currentCarIndex].carPlayablePrefab, SpawnPoint.position, Quaternion.identity, SpawnPoint);
+                p_spawnedPlayerVehicle = Instantiate(_playerVehicles[currentCarIndex].carPlayablePrefab, SpawnPoint.position, Quaternion.identity);
             }
             
             //p_spawnedPlayerVehicle.SetActive(false);
