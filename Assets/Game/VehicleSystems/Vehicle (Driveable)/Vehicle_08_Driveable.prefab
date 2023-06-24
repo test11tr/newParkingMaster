@@ -3143,14 +3143,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caaf37dc2d9f5b48ad35ac2a88f9c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DetectionLength: 1.2
-  CloseDetectionLenght: 0.85
-  TooCloseDetectionLenght: 0.5
-  frontSensorPosition: {x: 0, y: 0.83, z: 2.26}
+  DetectionLength: 0.6
+  CloseDetectionLenght: 0.3
+  TooCloseDetectionLenght: 0.2
+  frontSensorPosition: {x: 0, y: 0.92, z: 1.97}
   frontSideSensorPosition: 0.33
   frontSensorAngle: 60
-  rearSensorPosition: {x: 0, y: 0.83, z: -2.39}
-  rearSideSensorPosition: 0.33
+  rearSensorPosition: {x: 0, y: 0.92, z: -2.01}
+  rearSideSensorPosition: 0.4
   rearSensorAngle: 60
   isOnEditMode: 1
 --- !u!114 &8043611374510684427

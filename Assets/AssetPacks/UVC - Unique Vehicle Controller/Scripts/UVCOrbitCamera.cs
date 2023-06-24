@@ -77,6 +77,12 @@ namespace UniqueVehicleController
 					    	x += Touch.deltaPosition.x * SpeedX * 0.02f;
 					    	y -= Touch.deltaPosition.y * SpeedY * 0.02f;
 					    }
+
+                        if (Input.GetMouseButton(0))
+                        {
+                            x += Input.GetAxis("Mouse X") * SpeedX * 0.02f;
+                            y -= Input.GetAxis("Mouse Y") * SpeedY * 0.02f;
+                        }
 				    }
                     #else
                     {
