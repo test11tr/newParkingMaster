@@ -43,6 +43,7 @@ namespace test11.Managers
         public MeshRenderer ParkingAreaEmission;
         public GameObject star0, star1, star2, star3;
         public ParticleSystem confettiEffect;
+        public float finishMenuDelay;
 
         [Header("Is Time Limited?")]
         public bool timeLimit;
@@ -127,6 +128,7 @@ namespace test11.Managers
                 if(!Score){
                     Score = true;
                     Finished = true;
+                    _hud.SetActive(false);
                     confettiEffect.Play();
                     StartCoroutine(CalculateFinish());
                 }
@@ -134,7 +136,7 @@ namespace test11.Managers
         }
 
         IEnumerator CalculateFinish(){
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(finishMenuDelay);
             if(CollisionCount == 0){
                 PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore0);
                 FinishScoreText.text = CollisionScore0.ToString();
@@ -207,7 +209,6 @@ namespace test11.Managers
                 print("levelNum: " + PlayerPrefs.GetInt(levelName+"LevelNum"));
                 PlayerPrefs.SetInt (levelName+"PassedLevels", PlayerPrefs.GetInt (levelName+"PassedLevels") + 1);
             }
-            _hud.SetActive(false);
             FinishMenu.SetActive (true);
             _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().engineIsStarted = false;
         }

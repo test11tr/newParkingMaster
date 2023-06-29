@@ -413,6 +413,7 @@ MonoBehaviour:
   star2: {fileID: 0}
   star3: {fileID: 0}
   confettiEffect: {fileID: 1392363647025346234}
+  finishMenuDelay: 2
   timeLimit: 0
   TimeDownMenu: {fileID: 0}
   isBonusRewarded: 0
@@ -738,12 +739,12 @@ PrefabInstance:
     - target: {fileID: 1488291241087577569, guid: dd39f79b989354ba09b23bdad40257df,
         type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1488291241087577569, guid: dd39f79b989354ba09b23bdad40257df,
         type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minScalar
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1488291241087577571, guid: dd39f79b989354ba09b23bdad40257df,
         type: 3}

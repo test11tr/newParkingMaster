@@ -63,66 +63,70 @@ namespace UniqueVehicleController
 
         void Update()
         {
-            if (Dragging)
-            {
-                if (Car && GetComponent<Camera>())
+            //if(Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted){
+                if (Dragging)
                 {
-                    Distance = Mathf.Clamp(Distance, minDistance, maxDistance);
-
-                    #if UNITY_ANDROID
-				    {
-				    	if (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Moved) 
-				    	{
-					    	Touch = Input.GetTouch (0);
-					    	x += Touch.deltaPosition.x * SpeedX * 0.02f;
-					    	y -= Touch.deltaPosition.y * SpeedY * 0.02f;
-					    }
-
-                        if (Input.GetMouseButton(0))
-                        {
-                            x += Input.GetAxis("Mouse X") * SpeedX * 0.02f;
-                            y -= Input.GetAxis("Mouse Y") * SpeedY * 0.02f;
-                        }
-				    }
-                    #else
+                    if (Car && GetComponent<Camera>())
                     {
-                        if (Input.GetMouseButton(0))
+                        Distance = Mathf.Clamp(Distance, minDistance, maxDistance);
+
+                        #if UNITY_ANDROID
                         {
-                            x += Input.GetAxis("Mouse X") * SpeedX * 0.02f;
-                            y -= Input.GetAxis("Mouse Y") * SpeedY * 0.02f;
+                            if (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Moved) 
+                            {
+                                Touch = Input.GetTouch (0);
+                                x += Touch.deltaPosition.x * SpeedX * 0.02f;
+                                y -= Touch.deltaPosition.y * SpeedY * 0.02f;
+                            }
+
+                            if (Input.GetMouseButton(0))
+                            {
+                                x += Input.GetAxis("Mouse X") * SpeedX * 0.02f;
+                                y -= Input.GetAxis("Mouse Y") * SpeedY * 0.02f;
+                            }
                         }
+                        #else
+                        {
+                            if (Input.GetMouseButton(0))
+                            {
+                                x += Input.GetAxis("Mouse X") * SpeedX * 0.02f;
+                                y -= Input.GetAxis("Mouse Y") * SpeedY * 0.02f;
+                            }
+                        }
+                        #endif
+
+                    
                     }
-                    #endif
-
-                   
                 }
-            }
 
-            y = ClampAngle(y, yMinLimit, yMaxLimit);
-            Quaternion rotation = Quaternion.Euler(y, x, 0);
-            Vector3 vTemp = new Vector3(0.0f, 0.0f, -Distance);
-            Vector3 position = rotation * vTemp + new Vector3(Car.position.x, Car.position.y + yOffset, Car.position.z);
-            transform.position = Vector3.Lerp(transform.position, position, Speed);
-            transform.rotation = rotation;
+                y = ClampAngle(y, yMinLimit, yMaxLimit);
+                Quaternion rotation = Quaternion.Euler(y, x, 0);
+                Vector3 vTemp = new Vector3(0.0f, 0.0f, -Distance);
+                Vector3 position = rotation * vTemp + new Vector3(Car.position.x, Car.position.y + yOffset, Car.position.z);
+                transform.position = Vector3.Lerp(transform.position, position, Speed);
+                transform.rotation = rotation;
+            //}
         }
 
         void FixedUpdate()
         {
-            if (!Dragging)
-            {
-                resetTimer += Time.deltaTime;
-                if(resetTimer > camResetTime){
-                    Vector3 dPos = MainCameraPos.position + OffSet;
-                    Vector3 sPos = Vector3.Lerp(transform.position, dPos, Speed * Time.deltaTime * 2);
-                    transform.position = sPos;
-                    transform.LookAt(Car.transform.position);
-                    Vector3 angles = transform.eulerAngles;
-                    x = angles.y;
-                    y = angles.x;
-                }    
-            }else{
-                resetTimer = 0;
-            }
+            //if(Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted){
+                if (!Dragging)
+                {
+                    resetTimer += Time.deltaTime;
+                    if(resetTimer > camResetTime){
+                        Vector3 dPos = MainCameraPos.position + OffSet;
+                        Vector3 sPos = Vector3.Lerp(transform.position, dPos, Speed * Time.deltaTime * 2);
+                        transform.position = sPos;
+                        transform.LookAt(Car.transform.position);
+                        Vector3 angles = transform.eulerAngles;
+                        x = angles.y;
+                        y = angles.x;
+                    }    
+                }else{
+                    resetTimer = 0;
+                }
+            //}
         }
 
         static float ClampAngle(float angle, float min, float max)

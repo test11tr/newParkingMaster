@@ -20,7 +20,7 @@ namespace test11
             //Camera.main.aspect = 16f / 9f;za<as>
             if(PlayerPrefs.GetInt("FirstRun", 0) != 1){
                 PlayerPrefs.SetInt("FirstRun", 1);
-                PlayerPrefs.SetInt("01-DrivingSchool" + "LevelNum", 1);
+                PlayerPrefs.SetInt("01-Mall" + "LevelNum", 1);
                 PlayerPrefs.SetInt("LevelXP",1);
                 PlayerPrefs.SetInt("Coins", startingCoin);
                 PlayerPrefs.SetInt("Diamonds", startingDiamond);
