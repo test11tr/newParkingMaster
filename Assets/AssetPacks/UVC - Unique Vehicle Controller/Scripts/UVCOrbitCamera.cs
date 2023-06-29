@@ -57,7 +57,7 @@ namespace UniqueVehicleController
 
             Car = GameObject.FindGameObjectWithTag("Player").transform;
             MainCameraPos = GameObject.FindGameObjectWithTag("MainCameraPosition").transform;
-
+            resetTimer = camResetTime;
             yield return new WaitForSeconds(0.3f);
         }
 

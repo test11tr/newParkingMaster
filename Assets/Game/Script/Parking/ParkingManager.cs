@@ -42,6 +42,7 @@ namespace test11.Managers
         public MeshRenderer ParkingArea;
         public MeshRenderer ParkingAreaEmission;
         public GameObject star0, star1, star2, star3;
+        public ParticleSystem confettiEffect;
 
         [Header("Is Time Limited?")]
         public bool timeLimit;
@@ -126,84 +127,89 @@ namespace test11.Managers
                 if(!Score){
                     Score = true;
                     Finished = true;
-
-                    if(CollisionCount == 0){
-                        PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore0);
-                        FinishScoreText.text = CollisionScore0.ToString();
-                        star3.SetActive(true);
-                        PlayerPrefs.SetInt(levelName+"Star" + PlayerPrefs.GetInt(levelName+"LevelID").ToString(), 3);
-                        //_audioSource.clip = clipSuccess;
-                        //_audioSource.Play();
-
-                        PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore0);
-                        _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
-
-                        if(isBonusRewarded){
-                            PlayerPrefs.SetInt("Diamonds", PlayerPrefs.GetInt("Diamonds") + bonusDiamondAmount);
-                            bonusReward.SetActive(true);
-                            bonusText.text = bonusDiamondAmount.ToString();
-                        }
-                    }
-
-                    if(CollisionCount == 1){
-                        PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore1);
-                        FinishScoreText.text = CollisionScore1.ToString();
-                        star2.SetActive(true);
-                        PlayerPrefs.SetInt(levelName+"Star" + PlayerPrefs.GetInt(levelName+"LevelID").ToString(), 2);
-                        //_audioSource.clip = clipSuccess;
-                        //_audioSource.Play();
-
-                        PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore1);
-                        _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
-
-                        if(isBonusRewarded){
-                            bonusInfoText.SetActive(true);
-                        }
-                    }
-
-                    if(CollisionCount == 2){
-                        PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore2);
-                        FinishScoreText.text = CollisionScore2.ToString();
-                        star1.SetActive(true);
-                        PlayerPrefs.SetInt(levelName+"Star" + PlayerPrefs.GetInt(levelName+"LevelID").ToString(), 1);
-                        //_audioSource.clip = clipSuccess;
-                        //_audioSource.Play();
-
-                        PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore2);
-                        _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
-
-                        if(isBonusRewarded){
-                            bonusInfoText.SetActive(true);
-                        }
-                    }
-
-                    if(CollisionCount == 3){
-                        PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore3);
-                        FinishScoreText.text = CollisionScore3.ToString();
-                        star0.SetActive(true);
-                        PlayerPrefs.SetInt(levelName+"Star" + PlayerPrefs.GetInt(levelName+"LevelID").ToString(), 0);
-                        //_audioSource.clip = clipSuccess;
-                        //_audioSource.Play();
-
-                        PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore3);
-                        _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
-
-                        if(isBonusRewarded){
-                            bonusInfoText.SetActive(true);
-                        }
-                    }
-
-                    PlayerPrefs.SetInt(levelName + "TotalPassed", PlayerPrefs.GetInt(levelName + "TotalPassed") + 1);
-                    if (PlayerPrefs.GetInt (levelName+"LevelID") + 1 == PlayerPrefs.GetInt (levelName+"LevelNum")) {
-                        PlayerPrefs.SetInt (levelName+"LevelNum", PlayerPrefs.GetInt (levelName+"LevelNum") + 1);
-                        print("levelNum: " + PlayerPrefs.GetInt(levelName+"LevelNum"));
-                        PlayerPrefs.SetInt (levelName+"PassedLevels", PlayerPrefs.GetInt (levelName+"PassedLevels") + 1);
-                    }
-                    _hud.SetActive(false);
-                    FinishMenu.SetActive (true);
-                    _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().engineIsStarted = false;
+                    confettiEffect.Play();
+                    StartCoroutine(CalculateFinish());
                 }
             }
+        }
+
+        IEnumerator CalculateFinish(){
+            yield return new WaitForSeconds(2.5f);
+            if(CollisionCount == 0){
+                PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore0);
+                FinishScoreText.text = CollisionScore0.ToString();
+                star3.SetActive(true);
+                PlayerPrefs.SetInt(levelName+"Star" + PlayerPrefs.GetInt(levelName+"LevelID").ToString(), 3);
+                //_audioSource.clip = clipSuccess;
+                //_audioSource.Play();
+
+                PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore0);
+                _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
+
+                if(isBonusRewarded){
+                    PlayerPrefs.SetInt("Diamonds", PlayerPrefs.GetInt("Diamonds") + bonusDiamondAmount);
+                    bonusReward.SetActive(true);
+                    bonusText.text = bonusDiamondAmount.ToString();
+                }
+            }
+
+            if(CollisionCount == 1){
+                PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore1);
+                FinishScoreText.text = CollisionScore1.ToString();
+                star2.SetActive(true);
+                PlayerPrefs.SetInt(levelName+"Star" + PlayerPrefs.GetInt(levelName+"LevelID").ToString(), 2);
+                //_audioSource.clip = clipSuccess;
+                //_audioSource.Play();
+
+                PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore1);
+                _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
+
+                if(isBonusRewarded){
+                    bonusInfoText.SetActive(true);
+                }
+            }
+
+            if(CollisionCount == 2){
+                PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore2);
+                FinishScoreText.text = CollisionScore2.ToString();
+                star1.SetActive(true);
+                PlayerPrefs.SetInt(levelName+"Star" + PlayerPrefs.GetInt(levelName+"LevelID").ToString(), 1);
+                //_audioSource.clip = clipSuccess;
+                //_audioSource.Play();
+
+                PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore2);
+                _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
+
+                if(isBonusRewarded){
+                    bonusInfoText.SetActive(true);
+                }
+            }
+
+            if(CollisionCount == 3){
+                PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore3);
+                FinishScoreText.text = CollisionScore3.ToString();
+                star0.SetActive(true);
+                PlayerPrefs.SetInt(levelName+"Star" + PlayerPrefs.GetInt(levelName+"LevelID").ToString(), 0);
+                //_audioSource.clip = clipSuccess;
+                //_audioSource.Play();
+
+                PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore3);
+                _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
+
+                if(isBonusRewarded){
+                    bonusInfoText.SetActive(true);
+                }
+            }
+
+            PlayerPrefs.SetInt(levelName + "TotalPassed", PlayerPrefs.GetInt(levelName + "TotalPassed") + 1);
+            if (PlayerPrefs.GetInt (levelName+"LevelID") + 1 == PlayerPrefs.GetInt (levelName+"LevelNum")) {
+                PlayerPrefs.SetInt (levelName+"LevelNum", PlayerPrefs.GetInt (levelName+"LevelNum") + 1);
+                print("levelNum: " + PlayerPrefs.GetInt(levelName+"LevelNum"));
+                PlayerPrefs.SetInt (levelName+"PassedLevels", PlayerPrefs.GetInt (levelName+"PassedLevels") + 1);
+            }
+            _hud.SetActive(false);
+            FinishMenu.SetActive (true);
+            _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().engineIsStarted = false;
         }
 
         public void TimeFailed(){
