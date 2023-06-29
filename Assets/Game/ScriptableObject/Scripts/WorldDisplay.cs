@@ -53,6 +53,8 @@ namespace test11
                 if(worldPriceAsDiamondInt == 0){
                     comingSoonButton.SetActive(true);
                     unlockButton.SetActive(false);
+                    lockIcon.SetActive(true);
+                    worldImage.color = Color.gray;
                 }else{
                     comingSoonButton.SetActive(false);
                     playButton.SetActive(false);
