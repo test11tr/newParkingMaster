@@ -27,6 +27,7 @@ namespace test11
         [Header("Menus")]
         [SerializeField] private GameObject BuyButton;
         [SerializeField] private GameObject SelectButton;
+        [SerializeField] private GameObject SelectedButton;
         [SerializeField] private GameObject notEnoughtMenu;
         [SerializeField] private GameObject vehicleSelected;
         [SerializeField] private GameObject vehicleBought;
@@ -51,13 +52,20 @@ namespace test11
                 Instantiate(_car.carVisualPrefab, carHolder.position, carHolder.rotation, carHolder);
             }
 
-            if(PlayerPrefs.GetInt(carIndex) == 1){
+            if(PlayerPrefs.GetInt(carIndex) == 1 && PlayerPrefs.GetInt("CurrentCar") == carIndexNumber){
+                SelectButton.SetActive(false);
+                BuyButton.SetActive(false);
+                SelectedButton.SetActive(true);
+                carPrice.text = "- C";
+            }else if(PlayerPrefs.GetInt(carIndex) == 1){
                 SelectButton.SetActive(true);
                 BuyButton.SetActive(false);
+                SelectedButton.SetActive(false);
                 carPrice.text = "- C";
             }else if(PlayerPrefs.GetInt(carIndex) == 0){
                 SelectButton.SetActive(false);
                 BuyButton.SetActive(true);
+                SelectedButton.SetActive(false);
                 carPrice.text = _car.carPrice.ToString() + " C";
             }
         }
@@ -77,6 +85,8 @@ namespace test11
 
         public void SelectVehicle(){
             PlayerPrefs.SetInt("CurrentCar", carIndexNumber);
+            SelectButton.SetActive(false);
+            SelectedButton.SetActive(true);
             //continue, select vehicle code is not written, select button after purchase not changing immedeatly.
         }
     }

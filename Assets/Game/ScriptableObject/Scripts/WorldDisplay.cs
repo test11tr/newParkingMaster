@@ -25,6 +25,7 @@ namespace test11
 
         [SerializeField] private GameObject playButton;
         [SerializeField] private GameObject unlockButton;
+        [SerializeField] private GameObject comingSoonButton;
         [SerializeField] private GameObject buyWorldDialog;
         [SerializeField] private GameObject worldBought;
         [SerializeField] private GameObject notEnoughMoney;
@@ -47,12 +48,20 @@ namespace test11
                 unlockButton.SetActive(false);
                 lockIcon.SetActive(false);
                 worldImage.color = Color.white;
+                comingSoonButton.SetActive(false);
             }else if(PlayerPrefs.GetInt(worldIndex) == 0){
-                playButton.SetActive(false);
-                unlockButton.SetActive(true);
-                worldPriceAsDiamond.text = "x " + _world.worldPriceAsDiamond.ToString();
-                lockIcon.SetActive(true);
-                worldImage.color = Color.gray;
+                if(worldPriceAsDiamondInt == 0){
+                    comingSoonButton.SetActive(true);
+                    unlockButton.SetActive(false);
+                }else{
+                    comingSoonButton.SetActive(false);
+                    playButton.SetActive(false);
+                    unlockButton.SetActive(true);
+                    worldPriceAsDiamond.text = "x " + _world.worldPriceAsDiamond.ToString();
+                    lockIcon.SetActive(true);
+                    worldImage.color = Color.gray;
+                }
+                
             }
         }
 

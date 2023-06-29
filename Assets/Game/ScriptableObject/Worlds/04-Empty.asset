@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worldIndex: World3
   worldNumberIndex: 3
-  worldPriceAsDiamond: 150
+  worldPriceAsDiamond: 0
   worldName: Coming Soon
   worldDescription: Details will be added soon.
-  worldImage: {fileID: 21300000, guid: 5804f00c36a414c1a84240981f19ca24, type: 3}
+  worldImage: {fileID: 21300000, guid: d980d85c745084c45abf111bb30f33ca, type: 3}
   worldSceneName: temp
