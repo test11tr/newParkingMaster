@@ -926,7 +926,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3426384509146276915}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.947992, y: 0.4649712, z: -1.6789166}
+  m_LocalPosition: {x: 0.94799215, y: 0.4649712, z: -1.6789167}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2707,6 +2707,37 @@ Transform:
   m_Father: {fileID: 1131203473486012613}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5728945080094905020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1556984377425509417}
+  m_Layer: 0
+  m_Name: COM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1556984377425509417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5728945080094905020}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0.003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8127038688179591731}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6820011279880125598
 GameObject:
   m_ObjectHideFlags: 0
@@ -3413,6 +3444,7 @@ Transform:
   - {fileID: 4621870508279886722}
   - {fileID: 618332861953001588}
   - {fileID: 8733496529358055573}
+  - {fileID: 1556984377425509417}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3488,15 +3520,15 @@ MonoBehaviour:
   ABSSystem: 1
   carID: 1
   engineStartDuration: 8
-  centerOfMass: {x: 0, y: 0.14, z: 0}
-  maxEngineTorque: 90
-  maxEngineSpeed: 120
+  centerOfMass: {x: 0, y: 0.2, z: 0.03}
+  maxEngineTorque: 80
+  maxEngineSpeed: 80
   maxBrakeTorque: 1000
   SteeringWheel: {fileID: 3426384509146707973}
   minSteeringAngle: 5
   maxSteeringAngle: 30
   arrowSteeringSpeed: 0.01
-  handling: 1.3
+  handling: 0.5
   AntiRoll: 550
   PowerSteering: 1
   driveType: 0
@@ -3511,8 +3543,8 @@ MonoBehaviour:
     Drive: 0
     steering: 0
   wheelRadius: 0.35
-  suspensionSpring: 20000
-  Damper: 650
+  suspensionSpring: 40000
+  Damper: 3000
   suspensionDistance: 0.25
   vehicleType: 1
   exhaustEffect: {fileID: 5884773561241475125}

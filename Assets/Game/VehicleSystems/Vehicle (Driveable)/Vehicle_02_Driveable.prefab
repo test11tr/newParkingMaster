@@ -3452,7 +3452,7 @@ MonoBehaviour:
   ABSSystem: 1
   carID: 1
   engineStartDuration: 8
-  centerOfMass: {x: 0, y: 0.14, z: 0}
+  centerOfMass: {x: 0, y: 0.2, z: 0.003}
   maxEngineTorque: 90
   maxEngineSpeed: 120
   maxBrakeTorque: 1000
