@@ -1390,7 +1390,7 @@ MonoBehaviour:
   maxEngineTorque: 120
   maxEngineSpeed: 150
   maxBrakeTorque: 2000
-  SteeringWheel: {fileID: 0}
+  SteeringWheel: {fileID: 3246930717528864182}
   minSteeringAngle: 5
   maxSteeringAngle: 30
   arrowSteeringSpeed: 0.03
@@ -1400,12 +1400,12 @@ MonoBehaviour:
   driveType: 2
   WheelCalipers: []
   WheelColliders:
-  - leftWheel: {fileID: 0}
-    rightWheel: {fileID: 0}
+  - leftWheel: {fileID: 5888759697841233617}
+    rightWheel: {fileID: 2607232778000663504}
     Drive: 0
     steering: 1
-  - leftWheel: {fileID: 0}
-    rightWheel: {fileID: 0}
+  - leftWheel: {fileID: 4774343244759716205}
+    rightWheel: {fileID: 7047995526282117116}
     Drive: 0
     steering: 0
   wheelRadius: 0.35
