@@ -3492,7 +3492,7 @@ MonoBehaviour:
   maxEngineTorque: 90
   maxEngineSpeed: 80
   maxBrakeTorque: 2000
-  SteeringWheel: {fileID: 3426384509146707975}
+  SteeringWheel: {fileID: 3426384509146707973}
   minSteeringAngle: 5
   maxSteeringAngle: 30
   arrowSteeringSpeed: 0.03
