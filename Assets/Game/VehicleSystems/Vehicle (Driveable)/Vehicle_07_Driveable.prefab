@@ -1386,34 +1386,34 @@ MonoBehaviour:
   ABSSystem: 1
   carID: 1
   engineStartDuration: 8
-  centerOfMass: {x: 0, y: 0.2, z: 0.003}
-  maxEngineTorque: 90
-  maxEngineSpeed: 120
-  maxBrakeTorque: 1000
-  SteeringWheel: {fileID: 3246930717528864182}
+  centerOfMass: {x: 0, y: 0.2, z: 0.275}
+  maxEngineTorque: 120
+  maxEngineSpeed: 150
+  maxBrakeTorque: 2000
+  SteeringWheel: {fileID: 0}
   minSteeringAngle: 5
   maxSteeringAngle: 30
-  arrowSteeringSpeed: 0.01
-  handling: 1.3
-  AntiRoll: 550
+  arrowSteeringSpeed: 0.03
+  handling: 0.5
+  AntiRoll: 1000
   PowerSteering: 1
-  driveType: 0
+  driveType: 2
   WheelCalipers: []
   WheelColliders:
-  - leftWheel: {fileID: 5888759697841233617}
-    rightWheel: {fileID: 2607232778000663504}
+  - leftWheel: {fileID: 0}
+    rightWheel: {fileID: 0}
     Drive: 0
     steering: 1
-  - leftWheel: {fileID: 4774343244759716205}
-    rightWheel: {fileID: 7047995526282117116}
+  - leftWheel: {fileID: 0}
+    rightWheel: {fileID: 0}
     Drive: 0
     steering: 0
   wheelRadius: 0.35
-  suspensionSpring: 20000
-  Damper: 650
+  suspensionSpring: 45000
+  Damper: 3000
   suspensionDistance: 0.25
   vehicleType: 1
-  exhaustEffect: {fileID: 8901341590901906003}
+  exhaustEffect: {fileID: 0}
   engineIsStarted: 0
   isbraking: 0
   isaccelerating: 0
@@ -3875,12 +3875,6 @@ PrefabInstance:
 --- !u!4 &7408336680381102039 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8108054607958759423, guid: 4bd4a8da0a4413a4bacec14aa6efdfb9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606142673964851240}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &8901341590901906003 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7912192615651162747, guid: 4bd4a8da0a4413a4bacec14aa6efdfb9,
     type: 3}
   m_PrefabInstance: {fileID: 1606142673964851240}
   m_PrefabAsset: {fileID: 0}
