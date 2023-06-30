@@ -34321,7 +34321,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 2
+  m_Antialiasing: 0
   m_AntialiasingQuality: 0
   m_StopNaN: 0
   m_Dithering: 0
@@ -41204,6 +41204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279e36dd29f234b5cadcbdc0c9fd916b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFPSCounterEnabled: 1
+  _targetFPS: 120
 --- !u!4 &1163881686
 Transform:
   m_ObjectHideFlags: 0

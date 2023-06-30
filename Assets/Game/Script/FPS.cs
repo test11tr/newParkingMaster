@@ -8,6 +8,8 @@ namespace test11
     public class FPS : MonoBehaviour
     {
         private float count;
+        public bool isFPSCounterEnabled;
+        public int _targetFPS;
         
         private IEnumerator Start()
         {
@@ -31,6 +33,7 @@ namespace test11
         }
 
         private void Awake() {
+            Application.targetFrameRate = _targetFPS;
             DontDestroyOnLoad(gameObject);
         }
     }
