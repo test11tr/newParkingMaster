@@ -3511,7 +3511,7 @@ MonoBehaviour:
   Damper: 3000
   suspensionDistance: 0.25
   vehicleType: 1
-  exhaustEffect: {fileID: 0}
+  exhaustEffect: {fileID: 5715607399776038021}
   engineIsStarted: 0
   isbraking: 0
   isaccelerating: 0
@@ -3872,6 +3872,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bd4a8da0a4413a4bacec14aa6efdfb9, type: 3}
+--- !u!198 &5715607399776038021 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7912192615651162747, guid: 4bd4a8da0a4413a4bacec14aa6efdfb9,
+    type: 3}
+  m_PrefabInstance: {fileID: 2493916563340891902}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5915956757002993921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8108054607958759423, guid: 4bd4a8da0a4413a4bacec14aa6efdfb9,
