@@ -3488,9 +3488,9 @@ MonoBehaviour:
   ABSSystem: 1
   carID: 1
   engineStartDuration: 8
-  centerOfMass: {x: 0, y: 0.2, z: 0.03}
-  maxEngineTorque: 90
-  maxEngineSpeed: 80
+  centerOfMass: {x: 0, y: 0.2, z: 0.038}
+  maxEngineTorque: 100
+  maxEngineSpeed: 110
   maxBrakeTorque: 2000
   SteeringWheel: {fileID: 3426384509146707973}
   minSteeringAngle: 5
