@@ -24,6 +24,7 @@ namespace test11
                 PlayerPrefs.SetInt("LevelXP",1);
                 PlayerPrefs.SetInt("Coins", startingCoin);
                 PlayerPrefs.SetInt("Diamonds", startingDiamond);
+                PlayerPrefs.SetInt("ControllerType",0); // 0 = direksiyon, 1 = arrow
                 //unlockableWorlds
                 PlayerPrefs.SetInt("World0",1);
                 PlayerPrefs.SetInt("CurrentWorld",0);

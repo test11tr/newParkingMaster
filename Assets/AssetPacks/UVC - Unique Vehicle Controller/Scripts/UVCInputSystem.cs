@@ -497,33 +497,19 @@ namespace UniqueVehicleController
 
         public void SwitchSteeringToArrows()
         {
-            if (Car)
-            {
-                Car.GetComponent<UVCUniqueVehicleController>().usingarrows = true;
-            }
-            if (SteeringArrows)
-            {
+            if(PlayerPrefs.GetInt("ControllerType") == 0){
                 SteeringArrows.SetActive(true);
-            }
-            if (SteeringWheel)
-            {
                 SteeringWheel.SetActive(false);
-            }
+                PlayerPrefs.SetInt("ControllerType", 1);
+            }   
         }
 
         public void SwitchSteeringToWheel()
         {
-            if (Car)
-            {
-                Car.GetComponent<UVCUniqueVehicleController>().usingarrows = false;
-            }
-            if (SteeringArrows)
-            {
+            if(PlayerPrefs.GetInt("ControllerType") == 1){
                 SteeringArrows.SetActive(false);
-            }
-            if (SteeringWheel)
-            {
                 SteeringWheel.SetActive(true);
+                PlayerPrefs.SetInt("ControllerType", 0);
             }
         }
 
@@ -1329,6 +1315,13 @@ namespace UniqueVehicleController
                 }
 
                 Gear.SetActive(true);
+                ClickPedals.SetActive(true);
+
+                if(PlayerPrefs.GetInt("ControllerType") == 1){
+                    SteeringArrows.SetActive(true);
+                }else{
+                    SteeringWheel.SetActive(true);
+                }
                 if (Lights)
                 {
                     if (Lights.GetComponent<UVCVehicleLights>().foglightsfound > 0)

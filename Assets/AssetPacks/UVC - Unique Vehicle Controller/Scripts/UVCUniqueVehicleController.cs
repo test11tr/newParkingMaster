@@ -490,16 +490,18 @@ namespace UniqueVehicleController
                             arrowSteeringSpeed = tempArrowSteeringSpeed;
                         }
                     }
-
-                    if (SteeringWheel)
-                    {
-                        if (isbraking && !ABSSystem)
+                    
+                    if(engineIsStarted){
+                        if (SteeringWheel)
                         {
-                            SteeringWheel.rotation = transform.rotation * Quaternion.Euler(34f, 0, wheelsColliders.rightWheel.m_wheelSteerAngleNoABS * (UVCSteeringWheel.UVCSW.maxSteeringAngle / maxSteeringAngle) * -1);
-                        }
-                        else
-                        {
-                            SteeringWheel.rotation = transform.rotation * Quaternion.Euler(34f, 0, wheelsColliders.rightWheel.m_wheelSteerAngle * (UVCSteeringWheel.UVCSW.maxSteeringAngle / maxSteeringAngle) * -1);
+                            if (isbraking && !ABSSystem)
+                            {
+                                SteeringWheel.rotation = transform.rotation * Quaternion.Euler(34f, 0, wheelsColliders.rightWheel.m_wheelSteerAngleNoABS * (UVCSteeringWheel.UVCSW.maxSteeringAngle / maxSteeringAngle) * -1);
+                            }
+                            else
+                            {
+                                SteeringWheel.rotation = transform.rotation * Quaternion.Euler(34f, 0, wheelsColliders.rightWheel.m_wheelSteerAngle * (UVCSteeringWheel.UVCSW.maxSteeringAngle / maxSteeringAngle) * -1);
+                            }
                         }
                     }
                 }
