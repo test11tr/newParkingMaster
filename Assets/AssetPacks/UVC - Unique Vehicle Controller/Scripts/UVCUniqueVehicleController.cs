@@ -66,6 +66,7 @@ namespace UniqueVehicleController
 
         [Header("Effects")]
         public ParticleSystem exhaustEffect;
+        public ParticleSystem onCollisionEffect;
 
         [HideInInspector]
         public bool engineIsStarted = false;

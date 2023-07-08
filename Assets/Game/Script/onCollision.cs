@@ -37,6 +37,8 @@ namespace test11
                     // _parkingManager.AlarmSound.Play();
                     CanCollid = true;
                     _parkingManager.updateVisualStar();
+                    _carController.onCollisionEffect.Play();
+                    StartCoroutine(CanCollidCounter());
                     //_parkingManager.CollisionCountText.text = _parkingManager.collisionLimit + "/" + _parkingManager.CollisionCount.ToString();
                     /*if (_parkingManager.CollisionCount > _parkingManager.collisionLimit){
                         _parkingManager.FailedMenu.SetActive(true);
@@ -52,6 +54,7 @@ namespace test11
         IEnumerator CanCollidCounter(){
             yield return new WaitForSeconds(3f);
             CanCollid = false;
+            print("cancollid to false");
         }
     }
 }
