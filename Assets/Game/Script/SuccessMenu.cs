@@ -14,6 +14,9 @@ namespace test11
         [HideInInspector]public ParkingManager _parkingManager;
         public string mainMenu = "00-MainMenu" ;
         private string levelName;
+        [SerializeField] public LevelLoader _levelLoader; 
+        [SerializeField] public GameObject _continueButton; 
+        private int currentIndex;
 
         void Start ()
         {
@@ -28,8 +31,13 @@ namespace test11
         public void Continue ()
         {
             LoadingMenu.SetActive(true);
-            PlayerPrefs.SetInt (levelName+"LevelID", PlayerPrefs.GetInt (levelName+"LevelID") + 1);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if(PlayerPrefs.GetInt (levelName+"LevelID") >= _levelLoader.Levels.Length -1){
+                SceneManager.LoadScene(mainMenu);
+                PlayerPrefs.SetInt (levelName+"LevelID", PlayerPrefs.GetInt (levelName+"LevelID"));
+            }else{
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                PlayerPrefs.SetInt (levelName+"LevelID", PlayerPrefs.GetInt (levelName+"LevelID") + 1);
+            }
         }
 
         public void Retry ()
