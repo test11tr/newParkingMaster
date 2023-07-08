@@ -27,6 +27,7 @@ namespace test11.Managers
 
         public void LoadMainMenuScene(){
             SceneManager.LoadScene("00-MainMenu");
+            Time.timeScale = 1f;
         }
         
         public void PauseGame ()
