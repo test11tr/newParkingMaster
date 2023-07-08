@@ -38,13 +38,13 @@ namespace test11
                     CanCollid = true;
 
                     _parkingManager.CollisionCountText.text = _parkingManager.collisionLimit + "/" + _parkingManager.CollisionCount.ToString();
-                    if (_parkingManager.CollisionCount > _parkingManager.collisionLimit){
+                    /*if (_parkingManager.CollisionCount > _parkingManager.collisionLimit){
                         _parkingManager.FailedMenu.SetActive(true);
                         _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().engineIsStarted = false;
                         _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
                         PlayerPrefs.SetInt("TotalFailed", PlayerPrefs.GetInt("TotalFailed") + 1);
                         Destroy(_parkingManager);
-                    }
+                    }*/
                 }
             }
         }

@@ -17,7 +17,7 @@ MonoBehaviour:
   carName: Legend
   carDescription: Literally the legend! A pure power machine that turns into a work
     of art in the hands of modders.
-  carPrice: 10000
+  carPrice: 25000
   carSpeed: 60
   carAcceleration: 55
   carHandling: 40

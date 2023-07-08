@@ -7,6 +7,8 @@ namespace test11.Managers
 {
     public class UIManager : MonoBehaviour
     {
+        public bool gameIsPaused = false;
+
         public void SetTrue (GameObject target)
         {
             target.SetActive (true);
@@ -24,6 +26,21 @@ namespace test11.Managers
 
         public void LoadMainMenuScene(){
             SceneManager.LoadScene("00-MainMenu");
+        }
+        
+        public void PauseGame ()
+        {
+            print("here");
+            if(gameIsPaused)
+            {
+                gameIsPaused = false;
+                Time.timeScale = 1f;
+            }
+            else 
+            {
+                gameIsPaused = true;
+                Time.timeScale = 0f;
+            }
         }
     }
 }

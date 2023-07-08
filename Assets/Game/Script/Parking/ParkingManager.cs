@@ -30,7 +30,9 @@ namespace test11.Managers
         public int CollisionScore1 = 0;
         public int CollisionScore2 = 0;
         public int CollisionScore3 = 0;
+        public int CollisionScoreSoftfail = 0;
         public int collisionLimit = 3;
+        public GameObject youSuckText;
         private bool isFinish, Finished, Score;
 
         [Header("UI Text References")]
@@ -203,6 +205,21 @@ namespace test11.Managers
                 }
             }
 
+            if(CollisionCount > 3){
+                PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScoreSoftfail);
+                FinishScoreText.text = CollisionScoreSoftfail.ToString();
+                star0.SetActive(true);
+                PlayerPrefs.SetInt(levelName+"Star" + PlayerPrefs.GetInt(levelName+"LevelID").ToString(), 0);
+                //_audioSource.clip = clipSuccess;
+                //_audioSource.Play();
+
+                PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScoreSoftfail);
+                _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
+
+                youSuckText.SetActive(true);
+            }
+
+
             PlayerPrefs.SetInt(levelName + "TotalPassed", PlayerPrefs.GetInt(levelName + "TotalPassed") + 1);
             if (PlayerPrefs.GetInt (levelName+"LevelID") + 1 == PlayerPrefs.GetInt (levelName+"LevelNum")) {
                 PlayerPrefs.SetInt (levelName+"LevelNum", PlayerPrefs.GetInt (levelName+"LevelNum") + 1);
@@ -221,6 +238,7 @@ namespace test11.Managers
              _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().engineIsStarted = false;
              _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<ParkingManager>().enabled = false;
+            _hud.SetActive(false);
             _text.text = "00:00";
         }
 
