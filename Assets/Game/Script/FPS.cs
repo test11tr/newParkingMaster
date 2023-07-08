@@ -23,13 +23,15 @@ namespace test11
         
         private void OnGUI()
         {
-            Rect location = new Rect(5, 5, 350, 40);
-            string text = $"FPS: {Mathf.Round(count)}";
-            Texture black = Texture2D.linearGrayTexture;
-            GUI.DrawTexture(location, black, ScaleMode.StretchToFill);
-            GUI.color = Color.black;
-            GUI.skin.label.fontSize = 35;
-            GUI.Label(location, text);
+            if(isFPSCounterEnabled){
+                Rect location = new Rect(5, 5, 350, 40);
+                string text = $"FPS: {Mathf.Round(count)}";
+                Texture black = Texture2D.linearGrayTexture;
+                GUI.DrawTexture(location, black, ScaleMode.StretchToFill);
+                GUI.color = Color.black;
+                GUI.skin.label.fontSize = 35;
+                GUI.Label(location, text);
+            }
         }
 
         private void Awake() {

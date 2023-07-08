@@ -22,6 +22,7 @@ namespace test11.Managers
         public void ReloadScene(){
             string currentScene = SceneManager.GetActiveScene ().name; 
             SceneManager.LoadScene(currentScene);
+            Time.timeScale = 1f;
         }
 
         public void LoadMainMenuScene(){
