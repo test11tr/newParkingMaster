@@ -31,7 +31,7 @@ namespace test11
         private void OnCollisionEnter(Collision other) {
             if(!CanCollid){
                 if(other.gameObject.tag == "Player"){
-                    print("Collided with obstacle");
+                    //print("Collided with obstacle");
                     _parkingManager.CollisionCount++;
                     PlayerPrefs.SetInt("TotalCollisions", PlayerPrefs.GetInt("TotalCollisions" + 1));
                     // _parkingManager.AlarmSound.Play();
@@ -54,7 +54,7 @@ namespace test11
         IEnumerator CanCollidCounter(){
             yield return new WaitForSeconds(3f);
             CanCollid = false;
-            print("cancollid to false");
+            //print("cancollid to false");
         }
     }
 }
