@@ -33,6 +33,7 @@ namespace test11.Managers
         public int CollisionScoreSoftfail = 0;
         public int collisionLimit = 3;
         public GameObject youSuckText;
+        public GameObject visualstar1, visualstar2, visualstar3;
         private bool isFinish, Finished, Score;
 
         [Header("UI Text References")]
@@ -228,6 +229,26 @@ namespace test11.Managers
             }
             FinishMenu.SetActive (true);
             _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().engineIsStarted = false;
+        }
+
+        public void updateVisualStar(){
+            if (CollisionCount == 0){
+                visualstar1.SetActive(true);
+                visualstar2.SetActive(true);
+                visualstar3.SetActive(true);
+            }else if (CollisionCount == 1){
+                visualstar1.SetActive(true);
+                visualstar2.SetActive(true);
+                visualstar3.SetActive(false);
+            }else if (CollisionCount == 2){
+                visualstar1.SetActive(true);
+                visualstar2.SetActive(false);
+                visualstar3.SetActive(false);
+            }else if (CollisionCount >= 3){
+                visualstar1.SetActive(false);
+                visualstar2.SetActive(false);
+                visualstar3.SetActive(false);
+            }
         }
 
         public void TimeFailed(){

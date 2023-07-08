@@ -36,8 +36,8 @@ namespace test11
                     PlayerPrefs.SetInt("TotalCollisions", PlayerPrefs.GetInt("TotalCollisions" + 1));
                     // _parkingManager.AlarmSound.Play();
                     CanCollid = true;
-
-                    _parkingManager.CollisionCountText.text = _parkingManager.collisionLimit + "/" + _parkingManager.CollisionCount.ToString();
+                    _parkingManager.updateVisualStar();
+                    //_parkingManager.CollisionCountText.text = _parkingManager.collisionLimit + "/" + _parkingManager.CollisionCount.ToString();
                     /*if (_parkingManager.CollisionCount > _parkingManager.collisionLimit){
                         _parkingManager.FailedMenu.SetActive(true);
                         _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().engineIsStarted = false;
