@@ -3490,9 +3490,9 @@ MonoBehaviour:
   carID: 1
   engineStartDuration: 8
   centerOfMass: {x: 0, y: 0.2, z: 0.038}
-  maxEngineTorque: 100
+  maxEngineTorque: 200
   maxEngineSpeed: 110
-  maxBrakeTorque: 2000
+  maxBrakeTorque: 3500
   SteeringWheel: {fileID: 3426384509146707973}
   minSteeringAngle: 5
   maxSteeringAngle: 30
@@ -3512,8 +3512,8 @@ MonoBehaviour:
     Drive: 0
     steering: 0
   wheelRadius: 0.35
-  suspensionSpring: 45000
-  Damper: 3000
+  suspensionSpring: 20000
+  Damper: 1000
   suspensionDistance: 0.25
   vehicleType: 1
   exhaustEffect: {fileID: 5884773561241475125}
