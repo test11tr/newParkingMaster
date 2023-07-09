@@ -111,7 +111,10 @@ namespace test11.Managers
                             CheckTimeToFinished();
                             isFinish = true;
                         }
-                }else{
+                }else if(fl || fr || rl || rr || front || rear){
+                        ParkingArea.material.color = Color.yellow;
+                }
+                else{
                     //Not parked correctly
                     //StopCoroutine(CheckTimeToFinished());
                     parkingNotify.SetActive(false);

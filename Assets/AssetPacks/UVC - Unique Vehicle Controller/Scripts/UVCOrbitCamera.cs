@@ -99,12 +99,7 @@ namespace UniqueVehicleController
                     }
                 }
 
-                y = ClampAngle(y, yMinLimit, yMaxLimit);
-                Quaternion rotation = Quaternion.Euler(y, x, 0);
-                Vector3 vTemp = new Vector3(0.0f, 0.0f, -Distance);
-                Vector3 position = rotation * vTemp + new Vector3(Car.position.x, Car.position.y + yOffset, Car.position.z);
-                transform.position = Vector3.Lerp(transform.position, position, Speed);
-                transform.rotation = rotation;
+                
             //}
         }
 
@@ -126,6 +121,13 @@ namespace UniqueVehicleController
                 }else{
                     resetTimer = 0;
                 }
+
+                y = ClampAngle(y, yMinLimit, yMaxLimit);
+                Quaternion rotation = Quaternion.Euler(y, x, 0);
+                Vector3 vTemp = new Vector3(0.0f, 0.0f, -Distance);
+                Vector3 position = rotation * vTemp + new Vector3(Car.position.x, Car.position.y + yOffset, Car.position.z);
+                transform.position = Vector3.Lerp(transform.position, position, Speed);
+                transform.rotation = rotation;
             //}
         }
 
