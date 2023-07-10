@@ -40,6 +40,7 @@ namespace test11.Managers
         public TMP_Text CollisionCountText;
         public TMP_Text FinishScoreText;
         [HideInInspector] public int CollisionCount;
+        public TMP_Text levelHud;
         
         [Header("Visual Stuff")]
         public MeshRenderer ParkingArea;
@@ -91,6 +92,8 @@ namespace test11.Managers
             else{
                 TimeDownMenu.SetActive(false);
             }
+
+            levelHud.text = "LEVEL " + PlayerPrefs.GetInt(levelName + "LevelNum");
 
             // Audiosource
             //_audioSource = gameObject.AddComponent<AudioSource>();
@@ -271,19 +274,40 @@ namespace test11.Managers
         public float minutes = 0;
 
         public void TimeDown(){
-            if (seconds <= 0) {
-			    seconds = 59;
+            if(_levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().engineIsStarted){
+                if (seconds <= 0) {
+                    seconds = 59;
 
-                if (minutes >= 1) {
-                    minutes --;
-                } else {
-                    minutes = 0;
-                    seconds = 0;
-                    _text.text  = minutes.ToString ("f0") + ":0" + seconds.ToString ("f0");
+                    if (minutes >= 1) {
+                        minutes --;
+                    } else {
+                        minutes = 0;
+                        seconds = 0;
+                        _text.text  = minutes.ToString ("f0") + ":0" + seconds.ToString ("f0");
+                    }
+                } else 
+                {
+                    seconds -= Time.deltaTime;
+                    string min;
+                    string sec;
+
+                    if (minutes < 10)
+                        min = "0" + minutes.ToString ();
+                    else
+                        min = minutes.ToString ();
+
+                    if (seconds < 10)
+                        sec = "0" +( Mathf.FloorToInt(seconds)).ToString ();
+                    else
+                        sec = (Mathf.FloorToInt(seconds)).ToString ();
+
+
+                    _text.text = min + ":"+ sec;
                 }
-            } else 
-            {
-                seconds -= Time.deltaTime;
+
+                if (minutes <= 0 && seconds <= 0)
+                    TimeFailed ();
+            }else{
                 string min;
                 string sec;
 
@@ -300,9 +324,6 @@ namespace test11.Managers
 
                 _text.text = min + ":"+ sec;
             }
-
-            if (minutes <= 0 && seconds <= 0)
-                TimeFailed ();
         }
     }
 }

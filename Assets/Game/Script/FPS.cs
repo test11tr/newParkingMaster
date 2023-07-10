@@ -36,6 +36,7 @@ namespace test11
 
         private void Awake() {
             Application.targetFrameRate = _targetFPS;
+            Screen.sleepTimeout = SleepTimeout.NeverSleep;
             DontDestroyOnLoad(gameObject);
         }
     }
