@@ -47,19 +47,6 @@ namespace test11
         }
 
         private void Update() {
-            if (Input.GetKeyDown (KeyCode.H)) {
-			PlayerPrefs.DeleteAll ();
-			Debug.Log ("PlayerPrefs.DeleteAll ();");
-            }
-
-            //Cheat
-            if (Input.GetKeyDown (KeyCode.E))
-                PlayerPrefs.SetInt ("Coins", PlayerPrefs.GetInt ("Coins") + 1000);
-
-            //Cheat
-            if (Input.GetKeyDown (KeyCode.D))
-                PlayerPrefs.SetInt ("Diamonds", PlayerPrefs.GetInt ("Diamonds") + 1000);
-
             //Update Coins UI
             if(PlayerPrefs.GetInt("Coins") > 0){
                 totalCoins.text = PlayerPrefs.GetInt("Coins").ToString() + " C";
@@ -73,14 +60,6 @@ namespace test11
             }else{
                 totalDiamonds.text = "0";
             }
-        }
-
-        public void AddMoney(){
-            PlayerPrefs.SetInt ("Coins", PlayerPrefs.GetInt ("Coins") + 1000);
-        }
-        
-        public void AddDiamond(){
-            PlayerPrefs.SetInt ("Diamonds", PlayerPrefs.GetInt ("Diamonds") + 1000);
         }
     }
 }

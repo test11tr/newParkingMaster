@@ -22,6 +22,7 @@ namespace test11
         public GameObject loading;
 
         public string levelName = "00-MainMenu";
+        public int levelCount;
 
         void Start(){
             LevelSetPages[0].SetActive(true);
