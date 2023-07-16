@@ -22,7 +22,6 @@ namespace test11
         private void Start() {
             IsMenuOpened = false;
             mallButton.onClick.AddListener(delegate {ChangeLevelName("01-Mall");});
-            DontDestroyOnLoad(gameObject);
         }
 
         private void Update() {
