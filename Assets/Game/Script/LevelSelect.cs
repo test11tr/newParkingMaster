@@ -42,9 +42,7 @@ namespace test11
 
             if(PlayerPrefs.GetInt(levelName + "LevelNum") > Level.Length){
                 temp = Level.Length;
-                print("temp: " + temp);
                 for (int b = 0; b <= temp; b++){
-                    print("b: " + b);
                     if (temp > b){
                         Locks[b].SetActive(false);
                         normalBg[b].SetActive(true);
@@ -52,9 +50,7 @@ namespace test11
                 }
             }else{
                 temp = PlayerPrefs.GetInt(levelName + "LevelNum");
-                print("temp: " + temp);
                 for (int b = 0; b <= temp; b++){
-                    print("b: " + b);
                     if (temp > b){
                         Locks[b].SetActive(false);
                         normalBg[b].SetActive(true);
