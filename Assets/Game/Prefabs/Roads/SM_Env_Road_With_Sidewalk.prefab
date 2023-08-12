@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 547918493095463695}
   - component: {fileID: 570888506686151491}
   - component: {fileID: 558667215546508949}
-  - component: {fileID: 539661912329640361}
   m_Layer: 0
   m_Name: SM_Env_Sidewalk_Straight_02 (3)
   m_TagString: Untagged
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &539661912329640361
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545667959298751907}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5, y: 0.2651431, z: 5}
-  m_Center: {x: -2.5, y: -0.09772329, z: 2.5}
 --- !u!1 &2895970286923021953
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +94,6 @@ GameObject:
   - component: {fileID: 2898223902526474285}
   - component: {fileID: 2904298038590707809}
   - component: {fileID: 2910133915417044407}
-  - component: {fileID: 2945165150363507339}
   m_Layer: 0
   m_Name: SM_Env_Sidewalk_Straight_02 (2)
   m_TagString: Untagged
@@ -181,19 +166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2945165150363507339
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2895970286923021953}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5, y: 0.2651431, z: 5}
-  m_Center: {x: -2.5, y: -0.09772329, z: 2.5}
 --- !u!1 &3339342285437188511
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +177,6 @@ GameObject:
   - component: {fileID: 3340686921938540309}
   - component: {fileID: 3324873018696872553}
   - component: {fileID: 3316516128584591775}
-  - component: {fileID: 3367487316671838061}
   m_Layer: 0
   m_Name: SM_Env_Road_01
   m_TagString: Untagged
@@ -278,19 +249,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3367487316671838061
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3339342285437188511}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10, y: 1.0672615e-19, z: 10}
-  m_Center: {x: -5, y: 1.8189948e-14, z: 5}
 --- !u!1 &3426779701595856902
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +260,6 @@ GameObject:
   - component: {fileID: 3424529101076108970}
   - component: {fileID: 3454529159816152806}
   - component: {fileID: 3448648160069417776}
-  - component: {fileID: 3414155419533493260}
   m_Layer: 0
   m_Name: SM_Env_Sidewalk_Straight_02 (1)
   m_TagString: Untagged
@@ -375,19 +332,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3414155419533493260
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3426779701595856902}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5, y: 0.2651431, z: 5}
-  m_Center: {x: -2.5, y: -0.09772329, z: 2.5}
 --- !u!1 &4408994489190268858
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +379,6 @@ GameObject:
   - component: {fileID: 7323096195038627441}
   - component: {fileID: 7338177805659264573}
   - component: {fileID: 7348340879076502507}
-  - component: {fileID: 7297808737755927767}
   m_Layer: 0
   m_Name: SM_Env_Sidewalk_Straight_02
   m_TagString: Untagged
@@ -508,16 +451,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7297808737755927767
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7325350920857333981}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5, y: 0.2651431, z: 5}
-  m_Center: {x: -2.5, y: -0.09772329, z: 2.5}

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4847546619824624}
   - component: {fileID: 33017176669477144}
   - component: {fileID: 23321907130573852}
-  - component: {fileID: 65017856951227066}
   m_Layer: 0
   m_Name: SM_Env_Ground_Small_Crossing_01
   m_TagString: Untagged
@@ -84,16 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &65017856951227066
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687135248909244}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.0000196, y: 0.00000004, z: 4.999985}
-  m_Center: {x: -2.5000098, y: 0, z: 2.4999926}

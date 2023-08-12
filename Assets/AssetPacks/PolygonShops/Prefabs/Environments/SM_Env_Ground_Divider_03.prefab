@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4271334102876646}
   - component: {fileID: 33185160190046490}
   - component: {fileID: 23439628681453170}
-  - component: {fileID: 64143379188603776}
   m_Layer: 0
   m_Name: SM_Env_Ground_Divider_03
   m_TagString: Untagged
@@ -84,17 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64143379188603776
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392797294914264}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43985377652703384, guid: cac30f42bd09fe84e8c7de08da90d1bc, type: 2}

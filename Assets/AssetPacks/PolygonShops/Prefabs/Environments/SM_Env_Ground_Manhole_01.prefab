@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4733340231642798}
   - component: {fileID: 33725418226914308}
   - component: {fileID: 23051205976522090}
-  - component: {fileID: 64373787677426776}
   m_Layer: 0
   m_Name: SM_Env_Ground_Manhole_01
   m_TagString: Untagged
@@ -84,17 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64373787677426776
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1997007861374074}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43093029248051912, guid: dd71b8f2810d08146813934b97171a9e, type: 2}

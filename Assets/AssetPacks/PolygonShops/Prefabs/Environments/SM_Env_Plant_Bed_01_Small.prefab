@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4845147690909966}
   - component: {fileID: 33276085510363926}
   - component: {fileID: 23960155031771068}
-  - component: {fileID: 64722531631350706}
   m_Layer: 0
   m_Name: SM_Env_Plant_Bed_01_Small
   m_TagString: Untagged
@@ -85,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64722531631350706
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267095899365174}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43440426014592108, guid: 1c3327761314df945a225a28732138fc, type: 2}
 --- !u!1 &1356853826115164
 GameObject:
   m_ObjectHideFlags: 0

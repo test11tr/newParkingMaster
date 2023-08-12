@@ -5985,6 +5985,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9061358471741501690}
+  - component: {fileID: 6469693360526988546}
   m_Layer: 0
   m_Name: 10temsehpark
   m_TagString: Untagged
@@ -6239,6 +6240,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6469693360526988546
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839194116388002406}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 35.69511, y: 2.3372338, z: 47.657284}
+  m_Center: {x: -17.468296, y: 1.1548837, z: 8.473214}
 --- !u!1 &874457865565821844
 GameObject:
   m_ObjectHideFlags: 0

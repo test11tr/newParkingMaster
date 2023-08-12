@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4046145704421740}
   - component: {fileID: 33736630814246112}
   - component: {fileID: 23990588396302092}
-  - component: {fileID: 65652782452247100}
   m_Layer: 0
   m_Name: SM_Env_Sidewalk_01
   m_TagString: Untagged
@@ -84,16 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &65652782452247100
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212663809838876}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.5000026, y: 0.017460668, z: 2.5000021}
-  m_Center: {x: -1.2500013, y: 0.008730334, z: 1.2499989}

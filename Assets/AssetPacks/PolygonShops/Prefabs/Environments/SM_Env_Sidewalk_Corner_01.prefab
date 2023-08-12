@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4487566237266022}
   - component: {fileID: 33100949758534906}
   - component: {fileID: 23767367540985164}
-  - component: {fileID: 65273537703021428}
   m_Layer: 0
   m_Name: SM_Env_Sidewalk_Corner_01
   m_TagString: Untagged
@@ -84,16 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &65273537703021428
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1885154877631766}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.499998, y: 0.14999568, z: 2.500001}
-  m_Center: {x: -1.249999, y: -0.040149573, z: 1.2499976}
