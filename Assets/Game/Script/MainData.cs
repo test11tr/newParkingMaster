@@ -56,7 +56,7 @@ namespace test11
             
             //Update Diamonds UI
             if(PlayerPrefs.GetInt("Diamonds") > 0){
-                totalDiamonds.text = PlayerPrefs.GetInt("Diamonds").ToString();
+                totalDiamonds.text = PlayerPrefs.GetInt("Diamonds").ToString() + " D";
             }else{
                 totalDiamonds.text = "0";
             }
