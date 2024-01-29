@@ -367,20 +367,20 @@ namespace UniqueVehicleController
                     GearStickDrive.Play();
                 }
 
-                if (GearSlider.value == 1)
+                /*if (GearSlider.value == 1)
                 {
                     GearStickParkNeutral.Play();
-                }
+                }*/
 
-                if (GearSlider.value == 2)
+                if (GearSlider.value == 1)
                 {
                     GearStickReverse.Play();
                 }
 
-                if (GearSlider.value == 3)
+               /* if (GearSlider.value == 3)
                 {
                     GearStickParkNeutral.Play();
-                }
+                }*/
             }
         }
 
@@ -908,7 +908,7 @@ namespace UniqueVehicleController
         {
             if (GearSlider)
             {
-                if (GearSlider.value == 0)
+                if (GearSlider.value == 1)
                 {
                     if (GearD)
                     {
@@ -928,7 +928,7 @@ namespace UniqueVehicleController
                     }
                 }
 
-                if (GearSlider.value == 1)
+                /*if (GearSlider.value == 1)
                 {
                     if (GearN)
                     {
@@ -946,9 +946,9 @@ namespace UniqueVehicleController
                     }
 
                     Car.GetComponent<UVCUniqueVehicleController>().isneutral = false;
-                }
+                }*/
 
-                if (GearSlider.value == 2)
+                if (GearSlider.value == 0)
                 {
                     if (GearR)
                     {
@@ -978,7 +978,7 @@ namespace UniqueVehicleController
                     }
                 }
 
-                if (GearSlider.value == 3)
+                /*if (GearSlider.value == 3)
                 {
                     if (GearP)
                     {
@@ -1004,7 +1004,7 @@ namespace UniqueVehicleController
                     {
                         Lights.GetComponent<UVCVehicleLights>().DisableBrakeLight();
                     }
-                }
+                }*/
             }
         }
 
@@ -1174,7 +1174,7 @@ namespace UniqueVehicleController
                     float currentB = 0;
                     if (Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted)
                     {
-                        currenBra = Mathf.SmoothDamp(Brakes.value, Brakes.maxValue, ref currentB, BrakesReleaseSpeed);
+                        currenBra = Mathf.SmoothDamp(Brakes.value, Brakes.maxValue, ref currentB, BrakesReleaseSpeed / 10);
                     }
                     else
                     {

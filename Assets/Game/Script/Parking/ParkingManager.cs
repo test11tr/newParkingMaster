@@ -107,20 +107,22 @@ namespace test11.Managers
                 if(fl && fr && rl && rr && front && rear && _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().speedOnKmh < 5){
                         ParkingArea.material.color = Color.green;
                         ParkingAreaEmission.gameObject.SetActive(true);
-                        parkingNotify.SetActive(true);
-                        if(_levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().isparking == true){
-                            parkingNotify.SetActive(false);
+                        //parkingNotify.SetActive(true);
+                        //if(_levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().isparking == true){
+                            //parkingNotify.SetActive(false);
                             //checking when timer is reaching to 0
                             CheckTimeToFinished();
                             isFinish = true;
-                        }
-                }else if(fl || fr || rl || rr || front || rear){
+                            _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().isparking = true;
+                        //}
+                }
+                else if(fl || fr || rl || rr || front || rear){
                         ParkingArea.material.color = Color.yellow;
                 }
                 else{
                     //Not parked correctly
                     //StopCoroutine(CheckTimeToFinished());
-                    parkingNotify.SetActive(false);
+                    //parkingNotify.SetActive(false);
                     isFinish = false;
                     ParkingArea.material.color = Color.white;
                     ParkingAreaEmission.gameObject.SetActive(false);

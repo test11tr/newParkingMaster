@@ -1388,12 +1388,12 @@ MonoBehaviour:
   carID: 1
   engineStartDuration: 8
   centerOfMass: {x: 0, y: 0.2, z: 0.275}
-  maxEngineTorque: 250
+  maxEngineTorque: 450
   maxEngineSpeed: 150
-  maxBrakeTorque: 3600
+  maxBrakeTorque: 1500
   SteeringWheel: {fileID: 3246930717528864182}
   minSteeringAngle: 5
-  maxSteeringAngle: 30
+  maxSteeringAngle: 35
   arrowSteeringSpeed: 0.03
   handling: 0.5
   AntiRoll: 1000

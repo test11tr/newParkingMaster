@@ -85,17 +85,17 @@ namespace UniqueVehicleController
                 }
                 else if (wheelAngle > 0f)
                 {
-                    if (Car.GetComponent<UVCUniqueVehicleController>().ismoving == true && Car.GetComponent<UVCUniqueVehicleController>().isbraking == false)
-                    {
+                    //if (Car.GetComponent<UVCUniqueVehicleController>().ismoving == true && Car.GetComponent<UVCUniqueVehicleController>().isbraking == false)
+                    //{
                         wheelAngle -= deltaAngle;
-                    }
+                    //}
                 }
                 else
                 {
-                    if (Car.GetComponent<UVCUniqueVehicleController>().ismoving == true && Car.GetComponent<UVCUniqueVehicleController>().isbraking == false)
-                    {
+                    //if (Car.GetComponent<UVCUniqueVehicleController>().ismoving == true && Car.GetComponent<UVCUniqueVehicleController>().isbraking == false)
+                    //{
                         wheelAngle += deltaAngle;
-                    }
+                    //}
                 }
             }
             rectT.localEulerAngles = Vector3.back * wheelAngle;
