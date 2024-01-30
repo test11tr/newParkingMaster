@@ -284,6 +284,7 @@ namespace UniqueVehicleController
 
         public void FixedUpdate()
         {
+
             if (goingleft && !goingright)
             {
                 if (inputTemp > -1.00f)

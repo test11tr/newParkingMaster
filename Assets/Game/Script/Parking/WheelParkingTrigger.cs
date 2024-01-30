@@ -57,17 +57,19 @@ namespace test11.Managers
                 }
             }    
         
-            if(_colliderChecker == colliderChecker.VehicleFront){
+            /*if(_colliderChecker == colliderChecker.VehicleFront)
+            {
                 if(other.tag == "p_vehicle_front"){
                     _parkingManager.front = true;
                     //print("front = true");
                 }
-            }else if (_colliderChecker == colliderChecker.VehicleRear){
+            }else if (_colliderChecker == colliderChecker.VehicleRear)
+            {
                 if(other.tag == "p_vehicle_rear"){
                     _parkingManager.rear = true;
                     //print("rear = true");
                 }
-            }   
+            }   */
         }
 
         void OnTriggerExit(Collider other){
@@ -87,17 +89,19 @@ namespace test11.Managers
                 }
             }   
 
-            if(_colliderChecker == colliderChecker.VehicleFront){
+            /*if(_colliderChecker == colliderChecker.VehicleFront)
+            {
                 if(other.tag == "p_vehicle_front"){
                     _parkingManager.front = false;
                      //print("front = false");
                 }
-            }else if (_colliderChecker == colliderChecker.VehicleRear){
+            }else if (_colliderChecker == colliderChecker.VehicleRear)
+            {
                 if(other.tag == "p_vehicle_rear"){
                     _parkingManager.rear = false;
                      //print("rear = false");
                 }
-            }  
+            }*/
         }
     }
 }

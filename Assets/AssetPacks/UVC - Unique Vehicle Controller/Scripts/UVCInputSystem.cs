@@ -410,7 +410,7 @@ namespace UniqueVehicleController
         public IEnumerator ThrottleWithDelay()
         {
             // 2 saniye beklet
-            yield return new WaitForSeconds(.4f);
+            yield return new WaitForSeconds(.6f);
 
             // Sonrasında asıl işlemleri gerçekleştir
             if (Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true && Car.GetComponent<UVCUniqueVehicleController>().isoutofFuel == false)

@@ -104,28 +104,34 @@ namespace test11.Managers
 
         void Update(){
             if(!Finished){
-                if(fl && fr && rl && rr && front && rear && _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().speedOnKmh < 2.5f){
+                if(fl && fr && rl && rr && /*front && rear &&*/ _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().speedOnKmh < .1f){
                         ParkingArea.material.color = Color.green;
-                        ParkingAreaEmission.gameObject.SetActive(true);
-                        //parkingNotify.SetActive(true);
-                        //if(_levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().isparking == true){
-                            //parkingNotify.SetActive(false);
-                            //checking when timer is reaching to 0
-                            CheckTimeToFinished();
+                        //ParkingAreaEmission.gameObject.SetActive(true);
+                        ParkingAreaEmission.material.color = Color.green;
+                        ParkingAreaEmission.material.SetColor("_EmissionColor", Color.green);
+                    //parkingNotify.SetActive(true);
+                    //if(_levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().isparking == true){
+                    //parkingNotify.SetActive(false);
+                    //checking when timer is reaching to 0
+                    CheckTimeToFinished();
                             isFinish = true;
                             _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().isparking = true;
                         //}
                 }
-                else if(fl || fr || rl || rr || front || rear){
-                        ParkingArea.material.color = Color.yellow;
+                else if(fl || fr || rl || rr /*|| front || rear*/){
+                    //ParkingArea.material.color = Color.red;
+                    //ParkingAreaEmission.material.color = Color.red;
+                    //ParkingAreaEmission.material.SetColor("_EmissionColor", Color.red);
                 }
                 else{
                     //Not parked correctly
                     //StopCoroutine(CheckTimeToFinished());
                     //parkingNotify.SetActive(false);
                     isFinish = false;
-                    ParkingArea.material.color = Color.white;
-                    ParkingAreaEmission.gameObject.SetActive(false);
+                    ParkingArea.material.color = Color.yellow;
+                    ParkingAreaEmission.material.color = Color.yellow;
+                    ParkingAreaEmission.material.SetColor("_EmissionColor", Color.yellow);
+                    //ParkingAreaEmission.gameObject.SetActive(false);
                 }
 
                 if(timeLimit)
