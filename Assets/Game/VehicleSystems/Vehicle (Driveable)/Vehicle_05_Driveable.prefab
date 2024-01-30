@@ -2130,7 +2130,7 @@ MonoBehaviour:
   maxBrakeTorque: 2500
   SteeringWheel: {fileID: 4839318070413687722}
   minSteeringAngle: 5
-  maxSteeringAngle: 35
+  maxSteeringAngle: 55
   arrowSteeringSpeed: 0.03
   handling: 0.5
   AntiRoll: 1000
