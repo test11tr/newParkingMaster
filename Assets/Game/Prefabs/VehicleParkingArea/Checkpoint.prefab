@@ -4858,7 +4858,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854484411088824620}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.31, y: 0, z: 4.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4879,7 +4879,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.83, y: 1.12, z: 2.96}
+  m_Size: {x: 4.64, y: 4.51, z: 4.64}
   m_Center: {x: 0, y: 0.57, z: 0}
 --- !u!114 &8399313451076758325
 MonoBehaviour:
@@ -4893,8 +4893,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e59effc8fb604cf6ae1dc39b1a19c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsCheckpointActivates: []
-  objectsCheckpointDeactivates: []
+  objectsCheckpointActivates:
+  - {fileID: 0}
+  - {fileID: 0}
+  objectsCheckpointDeactivates:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2146975770699335977
 GameObject:
   m_ObjectHideFlags: 0
