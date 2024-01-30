@@ -18,7 +18,7 @@ namespace UniqueVehicleController
         [Header("Distance")]
         public float Distance = 6.5f;
         public float minDistance = 6.5f;
-        public float maxDistance = 12.25f;
+        public float maxDistance = 16f;
         [Header("Speed")]
         public float Speed = 1;
         public float SpeedX = 175.0f;
