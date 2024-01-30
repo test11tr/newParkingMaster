@@ -42,6 +42,7 @@ namespace UniqueVehicleController
         public float minSteeringAngle = 5;
         public float maxSteeringAngle = 30;
         public float arrowSteeringSpeed = 0.01f;
+        public float steeringSensitivity = 1f;
         [Range(0.5f, 1.5f)]
         public float handling = 1;
         [Range(50f, 1000f)]
@@ -451,7 +452,7 @@ namespace UniqueVehicleController
 
             if (touchSteeringWheelValue != 0)
             {
-                steering = currentSteeringAngle * touchSteeringWheelValue;
+                steering = currentSteeringAngle * touchSteeringWheelValue * steeringSensitivity;
             }
             else
             {
@@ -621,7 +622,7 @@ namespace UniqueVehicleController
                     }
                     else
                     {
-                        maxGearSpeed = maxEngineSpeed * gearRatios[currentGear] / (float)totalRatios;
+                        maxGearSpeed = maxEngineSpeed * 1.5f * gearRatios[currentGear] / (float)totalRatios;
                     }
                 }
 
