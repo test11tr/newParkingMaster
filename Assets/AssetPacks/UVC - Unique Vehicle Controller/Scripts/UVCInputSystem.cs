@@ -1023,6 +1023,13 @@ namespace UniqueVehicleController
             }
         }
 
+        public void ToggleGear()
+        {
+            // Eğer şu an D vitesindeyse R'ye geç, yoksa D'ye geç.
+            GearSlider.value = (GearSlider.value == 1) ? 0 : 1;
+            SwitchGear();
+        }
+
         private void Update()
         {
             CarMaxSpeed = Car.GetComponent<UVCUniqueVehicleController>().maxEngineSpeed;
