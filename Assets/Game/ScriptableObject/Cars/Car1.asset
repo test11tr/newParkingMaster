@@ -17,7 +17,7 @@ MonoBehaviour:
   carName: Heritage
   carDescription: Japanese but exactly the muscle it should be. Carrying the heritage
     of a Japanese legend under its hood, this vehicle is a horsepower beast.
-  carPrice: 4000
+  carPrice: 1500
   carSpeed: 50
   carAcceleration: 30
   carHandling: 40

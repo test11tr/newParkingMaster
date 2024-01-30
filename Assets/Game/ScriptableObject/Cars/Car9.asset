@@ -17,7 +17,7 @@ MonoBehaviour:
   carName: Diablo
   carDescription: Translation results Translation result star_border The pinnacle
     of Italian design, elegance and power. Ruler of European roads and tracks.
-  carPrice: 85000
+  carPrice: 15000
   carSpeed: 85
   carAcceleration: 80
   carHandling: 90

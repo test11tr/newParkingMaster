@@ -3483,7 +3483,7 @@ MonoBehaviour:
   startEngineOnAwake: 0
   ABSSystem: 1
   carID: 1
-  engineStartDuration: 8
+  engineStartDuration: 12
   centerOfMass: {x: 0, y: 0.2, z: 0.2}
   maxEngineTorque: 600
   maxEngineSpeed: 50

@@ -17,7 +17,7 @@ MonoBehaviour:
   carName: Volt
   carDescription: Quiet, quick, fast. The modern definition of luxury. The most iconic
     of electric vehicles.
-  carPrice: 50000
+  carPrice: 13500
   carSpeed: 60
   carAcceleration: 90
   carHandling: 70

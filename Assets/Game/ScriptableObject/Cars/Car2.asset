@@ -17,7 +17,7 @@ MonoBehaviour:
   carName: Elegance
   carDescription: Elegance, luxury, comfort. Although more than 20 years have passed
     since this model, it is still referred to as the literal meaning of elegance.
-  carPrice: 9000
+  carPrice: 2500
   carSpeed: 40
   carAcceleration: 35
   carHandling: 65

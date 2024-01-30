@@ -17,7 +17,7 @@ MonoBehaviour:
   carName: Turbo
   carDescription: The symbol of Stuttgart with its iconic design, the definition
     of speed in German.
-  carPrice: 40000
+  carPrice: 12000
   carSpeed: 70
   carAcceleration: 55
   carHandling: 60
