@@ -3621,7 +3621,7 @@ MonoBehaviour:
   engineStartDuration: 12
   centerOfMass: {x: 0, y: 0.2, z: 0.038}
   maxEngineTorque: 600
-  maxEngineSpeed: 30
+  maxEngineSpeed: 50
   maxBrakeTorque: 2500
   SteeringWheel: {fileID: 3426384509146707973}
   minSteeringAngle: 5
@@ -3671,9 +3671,6 @@ MonoBehaviour:
   steering: 0
   currentSteeringAngle: 0
   NonAbsRange: 0
-  pathLineRenderer: {fileID: 4857201955814093895}
-  lineSegmentCount: 100
-  pathLength: 50
 --- !u!65 &7863740149858192182
 BoxCollider:
   m_ObjectHideFlags: 0
