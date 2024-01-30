@@ -45,6 +45,7 @@ namespace test11.Managers
         [Header("Visual Stuff")]
         public MeshRenderer ParkingArea;
         public MeshRenderer ParkingAreaEmission;
+        public Color targetColor;
         public GameObject star0, star1, star2, star3;
         public ParticleSystem confettiEffect;
         public float finishMenuDelay;
@@ -108,7 +109,8 @@ namespace test11.Managers
                         ParkingArea.material.color = Color.green;
                         //ParkingAreaEmission.gameObject.SetActive(true);
                         ParkingAreaEmission.material.color = Color.green;
-                        ParkingAreaEmission.material.SetColor("_EmissionColor", Color.green);
+                        //ParkingAreaEmission.material.SetColor("_EmissionColor", Color.green);
+                        targetColor = Color.green;
                     //parkingNotify.SetActive(true);
                     //if(_levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().isparking == true){
                     //parkingNotify.SetActive(false);
@@ -129,8 +131,9 @@ namespace test11.Managers
                     //parkingNotify.SetActive(false);
                     isFinish = false;
                     ParkingArea.material.color = Color.yellow;
-                    ParkingAreaEmission.material.color = Color.yellow;
-                    ParkingAreaEmission.material.SetColor("_EmissionColor", Color.yellow);
+                    //ParkingAreaEmission.material.color = Color.yellow;
+                    //ParkingAreaEmission.material.SetColor("_EmissionColor", Color.yellow);
+                    targetColor = Color.yellow;
                     //ParkingAreaEmission.gameObject.SetActive(false);
                 }
 
@@ -335,3 +338,4 @@ namespace test11.Managers
         }
     }
 }
+
