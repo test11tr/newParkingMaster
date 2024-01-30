@@ -398,6 +398,21 @@ namespace UniqueVehicleController
 
         public void Throttle()
         {
+            StartCoroutine(ThrottleWithDelay());
+            //if (Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true && Car.GetComponent<UVCUniqueVehicleController>().isoutofFuel == false)
+            //{
+            //    Car.GetComponent<UVCUniqueVehicleController>().Accelerating(true);
+            //}
+            //AccisReleased = false;
+
+        }
+
+        public IEnumerator ThrottleWithDelay()
+        {
+            // 2 saniye beklet
+            yield return new WaitForSeconds(.4f);
+
+            // Sonrasında asıl işlemleri gerçekleştir
             if (Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true && Car.GetComponent<UVCUniqueVehicleController>().isoutofFuel == false)
             {
                 Car.GetComponent<UVCUniqueVehicleController>().Accelerating(true);

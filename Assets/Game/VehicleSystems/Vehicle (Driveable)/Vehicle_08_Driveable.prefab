@@ -3221,7 +3221,7 @@ MonoBehaviour:
   engineStartDuration: 8
   centerOfMass: {x: 0, y: 0.2, z: 0.148}
   maxEngineTorque: 600
-  maxEngineSpeed: 45
+  maxEngineSpeed: 30
   maxBrakeTorque: 2500
   SteeringWheel: {fileID: 4971720960124474056}
   minSteeringAngle: 5
