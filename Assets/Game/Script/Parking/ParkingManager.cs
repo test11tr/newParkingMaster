@@ -105,7 +105,7 @@ namespace test11.Managers
 
         void Update(){
             if(!Finished){
-                if(fl && fr && rl && rr && /*front && rear &&*/ _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().speedOnKmh < .1f){
+                if(fl && fr && rl && rr && /*front && rear &&*/ !_levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().ismoving){
                         ParkingArea.material.color = Color.green;
                         //ParkingAreaEmission.gameObject.SetActive(true);
                         ParkingAreaEmission.material.color = Color.green;
