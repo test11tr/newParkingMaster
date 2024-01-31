@@ -34,11 +34,23 @@ namespace test11
         // SuccessMenu continue button
         public void Continue()
         {
-            if (PlayerPrefs.GetInt(levelName + "LevelID") > 14)
+            LoadingMenu.SetActive(true);
+            if (PlayerPrefs.GetInt(levelName + "LevelID") >= _levelLoader.Levels.Length - 1)
             {
-                if (PlayerPrefs.GetInt("CurrentCar") < 3)
+                SceneManager.LoadScene(mainMenu);
+                PlayerPrefs.SetInt(levelName + "LevelID", PlayerPrefs.GetInt(levelName + "LevelID"));
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                PlayerPrefs.SetInt(levelName + "LevelID", PlayerPrefs.GetInt(levelName + "LevelID") + 1);
+            }
+
+            /*if (PlayerPrefs.GetInt(levelName + "LevelID") > 10)
+            {
+                if (PlayerPrefs.GetInt("CurrentCar") < 2)
                 {
-                    buyNewCarText.text = "Your vehicle is too old. Please buy the 3rd car or better!";
+                    buyNewCarText.text = "Your vehicle is too old. Please buy the second car or better!";
                     notEnoughVehicleLevelMenu.SetActive(true);
                 }
                 else
@@ -56,9 +68,9 @@ namespace test11
                     }
                 }
             }
-            else if (PlayerPrefs.GetInt(levelName + "LevelID") > 25)
+            else if (PlayerPrefs.GetInt(levelName + "LevelID") > 20)
             {
-                if (PlayerPrefs.GetInt("CurrentCar") < 4)
+                if (PlayerPrefs.GetInt("CurrentCar") < 3)
                 {
                     buyNewCarText.text = "Your vehicle is too old. Please buy the 4th car or better!";
                     notEnoughVehicleLevelMenu.SetActive(true);
@@ -78,9 +90,9 @@ namespace test11
                     }
                 }
             }
-            else if (PlayerPrefs.GetInt(levelName + "LevelID") > 35)
+            else if (PlayerPrefs.GetInt(levelName + "LevelID") > 30)
             {
-                if (PlayerPrefs.GetInt("CurrentCar") < 5)
+                if (PlayerPrefs.GetInt("CurrentCar") < 4)
                 {
                     buyNewCarText.text = "Your vehicle is too old. Please buy the 5th car or better!";
                     notEnoughVehicleLevelMenu.SetActive(true);
@@ -100,9 +112,9 @@ namespace test11
                     }
                 }
             }
-            else if (PlayerPrefs.GetInt(levelName + "LevelID") > 45)
+            else if (PlayerPrefs.GetInt(levelName + "LevelID") > 40)
             {
-                if (PlayerPrefs.GetInt("CurrentCar") < 6)
+                if (PlayerPrefs.GetInt("CurrentCar") < 5)
                 {
                     buyNewCarText.text = "Your vehicle is too old. Please buy the 6th car or better!";
                     notEnoughVehicleLevelMenu.SetActive(true);
@@ -135,7 +147,7 @@ namespace test11
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                     PlayerPrefs.SetInt(levelName + "LevelID", PlayerPrefs.GetInt(levelName + "LevelID") + 1);
                 }
-            }
+            }*/
         }
 
         public void Retry()

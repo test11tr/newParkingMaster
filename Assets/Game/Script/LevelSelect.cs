@@ -114,7 +114,13 @@ namespace test11
         }
 
         public void SelectLevel (int id){
-            if (id < temp) 
+            if (id < temp)
+            {
+                tempID = id;
+                selectDialog.SetActive(true);
+            }
+
+            /*if (id < temp) 
             {
                 if (id > 14)
                 {
@@ -173,7 +179,7 @@ namespace test11
                     tempID = id;
                     selectDialog.SetActive(true);
                 }
-            }
+            }*/
         }
 
         int tempID;
