@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UniqueVehicleController;
 
 namespace test11.Managers
 {
     public class LevelManager : MonoBehaviour
     {
         [SerializeField] private Car[] _playerVehicles;
+        [SerializeField] public Car _unlockingVehicle;
         [SerializeField] private Transform SpawnPoint;
 
         private GameObject p_spawnedPlayerVehicle;
@@ -23,10 +25,20 @@ namespace test11.Managers
             if(SceneManager.GetActiveScene().name == "00-MainMenu"){
                 p_spawnedPlayerVehicle = Instantiate(_playerVehicles[currentCarIndex].carVisualPrefab, SpawnPoint.position, Quaternion.identity, SpawnPoint);
             }else{
-                p_spawnedPlayerVehicle = Instantiate(_playerVehicles[currentCarIndex].carPlayablePrefab, SpawnPoint.position, Quaternion.identity);
+                if(_unlockingVehicle == null)
+                {
+                    p_spawnedPlayerVehicle = Instantiate(_playerVehicles[currentCarIndex].carPlayablePrefab, SpawnPoint.position, Quaternion.identity);
+                }
+                else
+                {
+                    p_spawnedPlayerVehicle = Instantiate(_unlockingVehicle.carPlayablePrefab, SpawnPoint.position, Quaternion.identity);
+                    int tempCarNumberIndex = p_spawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>()._carScriptableObject.carNumberIndex;
+                    string tempCarIndex= p_spawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>()._carScriptableObject.carIndex;
+                    PlayerPrefs.SetInt(tempCarIndex, 1);
+                    PlayerPrefs.SetInt("CurrentCar", tempCarNumberIndex);
+                }
+                    
             }
-            
-            //p_spawnedPlayerVehicle.SetActive(false);
         }
         
         private void Start()

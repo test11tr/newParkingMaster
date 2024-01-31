@@ -2052,6 +2052,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054be16aa6979154baa104f671de36cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _carScriptableObject: {fileID: 11400000, guid: b1ccdd398ddfc439e96d9de60086ea0e,
+    type: 2}
   startEngineOnAwake: 0
   ABSSystem: 1
   carID: 1
@@ -2059,7 +2061,7 @@ MonoBehaviour:
   centerOfMass: {x: 0, y: 0.2, z: 0.1}
   maxEngineTorque: 600
   maxEngineSpeed: 50
-  maxBrakeTorque: 2500
+  maxBrakeTorque: 2750
   SteeringWheel: {fileID: 6743934939287326556}
   minSteeringAngle: 5
   maxSteeringAngle: 60

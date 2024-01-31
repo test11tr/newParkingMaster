@@ -13,6 +13,7 @@ namespace test11.Managers
     {
         [Header("Important References - Don't Assign")]
         [SerializeField] private LevelManager _levelManager;
+        [SerializeField] private LevelLoader _levelLoader;
         [SerializeField] private UVCUniqueVehicleController _carController;
         [SerializeField] private ParkingManager _parkingManager;
         [SerializeField] private GameObject _hud;
@@ -24,6 +25,10 @@ namespace test11.Managers
         public GameObject FinishMenu;
         public GameObject FailedMenu;
         public GameObject TimeFailedMenu;
+        public GameObject vehicleGiftObject;
+        public TMP_Text giftingVehicleName;
+        public TMP_Text giftingVehicleInfoText;
+        public GameObject beBetterText;
 
         [Header("Score Settings")]
         public int CollisionScore0 = 0;
@@ -56,7 +61,6 @@ namespace test11.Managers
         
         [Header("Is Bonus Rewarded?")]
         public bool isBonusRewarded;
-        public GameObject bonusInfoText;
         public int bonusDiamondAmount;
         public GameObject bonusReward;
         public TMP_Text bonusText;
@@ -86,6 +90,10 @@ namespace test11.Managers
             if (_hud == null)
             {
                 _hud = GameObject.FindGameObjectWithTag("HUD");
+            }
+            if(_levelLoader == null)
+            {
+                _levelLoader = GameObject.FindGameObjectWithTag("levelLoader").GetComponent<LevelLoader>();
             }
             
             if(timeLimit)
@@ -168,6 +176,13 @@ namespace test11.Managers
                 PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore0);
                 _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
 
+                if (_levelLoader.Levels[PlayerPrefs.GetInt(levelName + "LevelID") +1].GetComponent<LevelManager>()._unlockingVehicle != null)
+                {
+                    vehicleGiftObject.gameObject.SetActive(true);
+                    giftingVehicleName.text = _levelLoader.Levels[PlayerPrefs.GetInt(levelName + "LevelID") + 1].GetComponent<LevelManager>()._unlockingVehicle.carName + "!";
+                    giftingVehicleInfoText.gameObject.SetActive(true);
+                }
+
                 if(isBonusRewarded){
                     PlayerPrefs.SetInt("Diamonds", PlayerPrefs.GetInt("Diamonds") + bonusDiamondAmount);
                     bonusReward.SetActive(true);
@@ -186,8 +201,19 @@ namespace test11.Managers
                 PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore1);
                 _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
 
-                if(isBonusRewarded){
-                    bonusInfoText.SetActive(true);
+                if (_levelLoader.Levels[PlayerPrefs.GetInt(levelName + "LevelNum") + 1].GetComponent<LevelManager>()._unlockingVehicle != null)
+                {
+                    vehicleGiftObject.gameObject.SetActive(true);
+                    giftingVehicleName.text = _levelLoader.Levels[PlayerPrefs.GetInt(levelName + "LevelNum") + 1].GetComponent<LevelManager>()._unlockingVehicle.carName + "!";
+                    giftingVehicleInfoText.gameObject.SetActive(true);
+                }
+                else
+                {
+                    beBetterText.SetActive(true);
+                }
+                
+                if (isBonusRewarded){
+                    //
                 }
             }
 
@@ -201,9 +227,20 @@ namespace test11.Managers
 
                 PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore2);
                 _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
+                
+                if (_levelLoader.Levels[PlayerPrefs.GetInt(levelName + "LevelNum") + 1].GetComponent<LevelManager>()._unlockingVehicle != null)
+                {
+                    vehicleGiftObject.gameObject.SetActive(true);
+                    giftingVehicleName.text = _levelLoader.Levels[PlayerPrefs.GetInt(levelName + "LevelNum") + 1].GetComponent<LevelManager>()._unlockingVehicle.carName + "!";
+                    giftingVehicleInfoText.gameObject.SetActive(true);
+                }
+                else
+                {
+                    beBetterText.SetActive(true);
+                }
 
-                if(isBonusRewarded){
-                    bonusInfoText.SetActive(true);
+                if (isBonusRewarded){
+                    //beBetterText.SetActive(true);
                 }
             }
 
@@ -217,9 +254,20 @@ namespace test11.Managers
 
                 PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScore3);
                 _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
+                
+                if (_levelLoader.Levels[PlayerPrefs.GetInt(levelName + "LevelNum") + 1].GetComponent<LevelManager>()._unlockingVehicle != null)
+                {
+                    vehicleGiftObject.gameObject.SetActive(true);
+                    giftingVehicleName.text = _levelLoader.Levels[PlayerPrefs.GetInt(levelName + "LevelNum") + 1].GetComponent<LevelManager>()._unlockingVehicle.carName + "!";
+                    giftingVehicleInfoText.gameObject.SetActive(true);
+                }
+                else
+                {
+                    beBetterText.SetActive(true);
+                }
 
-                if(isBonusRewarded){
-                    bonusInfoText.SetActive(true);
+                if (isBonusRewarded){
+                    //beBetterText.SetActive(true);
                 }
             }
 
@@ -234,7 +282,16 @@ namespace test11.Managers
                 PlayerPrefs.SetInt("LevelXP", PlayerPrefs.GetInt("LevelXP") + CollisionScoreSoftfail);
                 _levelManager.SpawnedPlayerVehicle.GetComponent<Rigidbody>().isKinematic = true;
 
-                youSuckText.SetActive(true);
+                if (_levelLoader.Levels[PlayerPrefs.GetInt(levelName + "LevelNum") + 1].GetComponent<LevelManager>()._unlockingVehicle != null)
+                {
+                    vehicleGiftObject.gameObject.SetActive(true);
+                    giftingVehicleName.text = _levelLoader.Levels[PlayerPrefs.GetInt(levelName + "LevelNum") + 1].GetComponent<LevelManager>()._unlockingVehicle.carName + "!";
+                    giftingVehicleInfoText.gameObject.SetActive(true);
+                }
+                else
+                {
+                    youSuckText.SetActive(true);
+                }
             }
 
 

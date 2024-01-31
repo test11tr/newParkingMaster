@@ -14,7 +14,8 @@ using UnityEngine.UI;
 
 namespace UniqueVehicleController
 {
-    #if UNITY_EDITOR
+    using test11;
+#if UNITY_EDITOR
     using UnityEditor;
     #endif
     public enum DriveType { FrontWheelDrive, RearWheelDrive, AllWheelDrive }
@@ -25,6 +26,8 @@ namespace UniqueVehicleController
 
     public class UVCUniqueVehicleController : MonoBehaviour
     {
+        [Header("Car ScriptableObject")]
+        public Car _carScriptableObject;
         [Header("Vehicle Setup")]
         public bool startEngineOnAwake;
         public bool ABSSystem = true;

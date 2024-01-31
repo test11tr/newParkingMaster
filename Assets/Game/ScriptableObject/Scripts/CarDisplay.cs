@@ -56,17 +56,17 @@ namespace test11
                 SelectButton.SetActive(false);
                 BuyButton.SetActive(false);
                 SelectedButton.SetActive(true);
-                carPrice.text = "- C";
+                carPrice.text = "<style=\"Orange\">You own this vehicle!</style>";
             }else if(PlayerPrefs.GetInt(carIndex) == 1){
                 SelectButton.SetActive(true);
                 BuyButton.SetActive(false);
                 SelectedButton.SetActive(false);
-                carPrice.text = "- C";
+                carPrice.text = "<style=\"Orange\">You own this vehicle!</style>";
             }else if(PlayerPrefs.GetInt(carIndex) == 0){
                 SelectButton.SetActive(false);
-                BuyButton.SetActive(true);
+                BuyButton.SetActive(false);
                 SelectedButton.SetActive(false);
-                carPrice.text = _car.carPrice.ToString() + " C";
+                carPrice.text = "<style=\"Blue\">Play levels to unlock this vehicle!</style>"; /*_car.carPrice.ToString() + " C";*/
             }
         }
 
