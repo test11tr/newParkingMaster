@@ -6511,7 +6511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &152756503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8622,7 +8622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &199532326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19812,10 +19812,10 @@ RectTransform:
   m_Father: {fileID: 883384284}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 50}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 183.23999, y: -40}
+  m_SizeDelta: {x: 176.48, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &540281536
 MonoBehaviour:
@@ -24074,7 +24074,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -89.3, y: 0}
+  m_AnchoredPosition: {x: -121.3, y: 0}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &639709529
@@ -24097,7 +24097,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d1f770b1af08343ecbcbbb83fbaacfa7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1db8bbd11d5de49abbef16b386788c34, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26747,7 +26747,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 420f609a8dd1147a8949cd253df1a726, type: 2}
   - {fileID: 11400000, guid: 91dd4eba7c95e40b48d0599d03305ed8, type: 2}
   - {fileID: 11400000, guid: a9b4ccae7c4f343d9ba655f71d6dcc3a, type: 2}
-  _overrideVehicle: {fileID: 0}
+  _unlockingVehicle: {fileID: 0}
   SpawnPoint: {fileID: 2092494388}
   drawGizmos: 1
 --- !u!4 &731664854
@@ -27471,7 +27471,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: x500
+  m_text: 00000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc2cc93475f76427c86a8262bee36b88, type: 2}
   m_sharedMaterial: {fileID: 2269793554123077917, guid: dc2cc93475f76427c86a8262bee36b88,
@@ -32916,7 +32916,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &883384284
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32938,7 +32938,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -114, y: -140}
-  m_SizeDelta: {x: 0, y: 80}
+  m_SizeDelta: {x: 281.47998, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &883384285
 MonoBehaviour:
@@ -49055,6 +49055,7 @@ MonoBehaviour:
   _scriptableObjects:
   - {fileID: 11400000, guid: 6c1a044c18e2b4b45bb80cc8e10dd520, type: 2}
   - {fileID: 11400000, guid: ac0d4caf0053246e2a732c5bc1fa31aa, type: 2}
+  - {fileID: 11400000, guid: f5a3d25efd47440a68e263fd76b82059, type: 2}
   _worldDisplay: {fileID: 441660976}
   _carDisplay: {fileID: 0}
 --- !u!1 &1306426137
@@ -63479,7 +63480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1741367549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63554,6 +63555,18 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2010976599}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 207862696}
+        m_TargetAssemblyTypeName: test11.Managers.UIManager, Assembly-CSharp
+        m_MethodName: SetTrue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 467075780}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -64159,6 +64172,42 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2010976599}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 207862696}
+        m_TargetAssemblyTypeName: test11.Managers.UIManager, Assembly-CSharp
+        m_MethodName: SetFalse
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 467075780}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 207862696}
+        m_TargetAssemblyTypeName: test11.Managers.UIManager, Assembly-CSharp
+        m_MethodName: SetFalse
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1436788766}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 207862696}
+        m_TargetAssemblyTypeName: test11.Managers.UIManager, Assembly-CSharp
+        m_MethodName: SetFalse
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 268749446}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0

@@ -68,8 +68,8 @@ namespace test11
         }
 
         public void BuyWorld(){
-            if(PlayerPrefs.GetInt("Diamonds") >= worldPriceAsDiamondInt){
-                PlayerPrefs.SetInt("Diamonds", PlayerPrefs.GetInt("Diamonds") - worldPriceAsDiamondInt);
+            if(PlayerPrefs.GetInt("Coins") >= worldPriceAsDiamondInt){
+                PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") - worldPriceAsDiamondInt);
                 PlayerPrefs.SetInt(worldIndex, 1); 
                 PlayerPrefs.SetInt(worldSceneName + "LevelNum", 1);
                 playButton.SetActive(true);
