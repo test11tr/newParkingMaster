@@ -410,8 +410,13 @@ namespace UniqueVehicleController
         public IEnumerator ThrottleWithDelay()
         {
             // 2 saniye beklet
-            yield return new WaitForSeconds(.6f);
-
+            yield return new WaitForSeconds(.2f);
+            if(Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == false )
+            {
+                StartEngine();
+                
+            }
+            yield return new WaitForSeconds(.4f);
             // Sonrasında asıl işlemleri gerçekleştir
             if (Car.GetComponent<UVCUniqueVehicleController>().engineIsStarted == true && Car.GetComponent<UVCUniqueVehicleController>().isoutofFuel == false)
             {
@@ -1336,7 +1341,7 @@ namespace UniqueVehicleController
                     DriveNotify.SetActive(false);
                 }
 
-                Gear.SetActive(true);
+                //Gear.SetActive(true);
                 ClickPedals.SetActive(true);
 
                 if(PlayerPrefs.GetInt("ControllerType") == 1){
@@ -1460,7 +1465,7 @@ namespace UniqueVehicleController
                     }
                 }
             }else{
-                Gear.SetActive(false);
+                //Gear.SetActive(false);
             }
 
             if (!FirstGear)
