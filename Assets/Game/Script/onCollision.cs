@@ -37,7 +37,15 @@ namespace test11
                     // _parkingManager.AlarmSound.Play();
                     CanCollid = true;
                     _parkingManager.updateVisualStar();
-                    _carController.onCollisionEffect.Play();
+                    if(_parkingManager.CollisionCount == 3 || _parkingManager.CollisionCount == 6 || _parkingManager.CollisionCount == 9)
+                    {
+                        _carController.onCollisionEffectWithStar.Play();
+                    }
+                    else
+                    {
+                        _carController.onCollisionEffect.Play();
+                    }
+                    
                     StartCoroutine(CanCollidCounter());
                     //_parkingManager.CollisionCountText.text = _parkingManager.collisionLimit + "/" + _parkingManager.CollisionCount.ToString();
                     /*if (_parkingManager.CollisionCount > _parkingManager.collisionLimit){

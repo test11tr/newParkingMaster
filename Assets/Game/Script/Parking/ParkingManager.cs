@@ -310,15 +310,15 @@ namespace test11.Managers
                 visualstar1.SetActive(true);
                 visualstar2.SetActive(true);
                 visualstar3.SetActive(true);
-            }else if (CollisionCount == 1){
+            }else if (CollisionCount == 3){
                 visualstar1.SetActive(true);
                 visualstar2.SetActive(true);
                 visualstar3.SetActive(false);
-            }else if (CollisionCount == 2){
+            }else if (CollisionCount == 6){
                 visualstar1.SetActive(true);
                 visualstar2.SetActive(false);
                 visualstar3.SetActive(false);
-            }else if (CollisionCount >= 3){
+            }else if (CollisionCount >= 9){
                 visualstar1.SetActive(false);
                 visualstar2.SetActive(false);
                 visualstar3.SetActive(false);
