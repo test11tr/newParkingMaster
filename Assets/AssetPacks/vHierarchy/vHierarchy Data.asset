@@ -17,10 +17,12 @@ MonoBehaviour:
     - beffa06b6127b4def97e724bd3cd037b
     - 45851306928bc496a985225ccb3cd61a
     - 5389d0bf3db0fb9419709a8f23914d77
+    - 6529fe88d17b483448ad6c4f43b6128d
+    - 28ac9a59020c6bc459f797acd217859a
+    - 8a54351d28550434eaef9d3eb03b552c
     values:
     - goDatasByGlobalId:
         keys:
-        - GlobalObjectId_V1-2-beffa06b6127b4def97e724bd3cd037b-1514104609-0
         - GlobalObjectId_V1-2-beffa06b6127b4def97e724bd3cd037b-1223494913-0
         - GlobalObjectId_V1-2-beffa06b6127b4def97e724bd3cd037b-138753381-0
         - GlobalObjectId_V1-2-beffa06b6127b4def97e724bd3cd037b-966703743-0
@@ -33,6 +35,33 @@ MonoBehaviour:
         - GlobalObjectId_V1-2-beffa06b6127b4def97e724bd3cd037b-731664852-0
         - GlobalObjectId_V1-2-beffa06b6127b4def97e724bd3cd037b-2092494387-0
         - GlobalObjectId_V1-2-beffa06b6127b4def97e724bd3cd037b-207862690-0
+        values:
+        - iColor: 0
+          icon: Camera Icon
+        - iColor: 0
+          icon: Camera Icon
+        - iColor: 0
+          icon: Camera Icon
+        - iColor: 0
+          icon: DirectionalLight Icon
+        - iColor: 0
+          icon: LightmapParameters Icon
+        - iColor: 0
+          icon: Light Icon
+        - iColor: 0
+          icon: Folder Icon
+        - iColor: 0
+          icon: Light Icon
+        - iColor: 0
+          icon: Settings Icon
+        - iColor: 0
+          icon: ScriptableObject Icon
+        - iColor: 0
+          icon: AvatarMask On Icon
+        - iColor: 0
+          icon: 
+      goDatasByInstanceId:
+        keys: b27d0000227a0000fe6b0000ea760000186f0000d87400006af8ffffa6750000b0710000807900006c730000de840000206d0000d6161400b20814009e131400cc0b14008c111400b682f2ff5a121400640e1400341614002010140082211400d4091400
         values:
         - iColor: 4
           icon: Camera Icon
@@ -60,11 +89,6 @@ MonoBehaviour:
           icon: AvatarMask On Icon
         - iColor: 2
           icon: 
-      goDatasByInstanceId:
-        keys: b27d0000227a0000fe6b0000ea760000186f0000d87400006af8ffffa6750000b0710000807900006c730000de840000206d0000
-        values:
-        - iColor: 4
-          icon: Camera Icon
         - iColor: 0
           icon: Camera Icon
         - iColor: 0
@@ -87,7 +111,7 @@ MonoBehaviour:
           icon: ScriptableObject Icon
         - iColor: 0
           icon: AvatarMask On Icon
-        - iColor: 2
+        - iColor: 0
           icon: 
     - goDatasByGlobalId:
         keys:
@@ -117,8 +141,56 @@ MonoBehaviour:
         - iColor: 4
           icon: ScriptableObject Icon
       goDatasByInstanceId:
-        keys: 2e100100f463ffff90f400001ced000050d50000caf4000034f0000052e60000
+        keys: 2e100100f463ffff90f400001ced000050d50000caf4000034f0000052e60000ee2d0300f0f5fdff50120300dc0a030010f302008a120300f40d030012040300762005006a75fcffd804050064fd040098e50400120505007c0005009af60400607113004694f2ffc25513004e4e130082361300fc5513006651130084471300
         values:
+        - iColor: 2
+          icon: 
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 0
+          icon: Camera Icon
+        - iColor: 0
+          icon: LightmapParameters Icon
+        - iColor: 0
+          icon: DirectionalLight Icon
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 9
+          icon: PreMatCube
+        - iColor: 4
+          icon: ScriptableObject Icon
+        - iColor: 2
+          icon: 
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 0
+          icon: Camera Icon
+        - iColor: 0
+          icon: LightmapParameters Icon
+        - iColor: 0
+          icon: DirectionalLight Icon
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 9
+          icon: PreMatCube
+        - iColor: 4
+          icon: ScriptableObject Icon
+        - iColor: 2
+          icon: 
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 0
+          icon: Camera Icon
+        - iColor: 0
+          icon: LightmapParameters Icon
+        - iColor: 0
+          icon: DirectionalLight Icon
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 9
+          icon: PreMatCube
+        - iColor: 4
+          icon: ScriptableObject Icon
         - iColor: 2
           icon: 
         - iColor: 0
@@ -137,14 +209,24 @@ MonoBehaviour:
           icon: ScriptableObject Icon
     - goDatasByGlobalId:
         keys:
-        - GlobalObjectId_V1-2-5389d0bf3db0fb9419709a8f23914d77-885882973-0
         - GlobalObjectId_V1-2-5389d0bf3db0fb9419709a8f23914d77-697745935-0
-        - GlobalObjectId_V1-2-5389d0bf3db0fb9419709a8f23914d77-1514104609-0
         - GlobalObjectId_V1-2-5389d0bf3db0fb9419709a8f23914d77-966703743-0
         - GlobalObjectId_V1-2-5389d0bf3db0fb9419709a8f23914d77-410087039-0
         - GlobalObjectId_V1-2-5389d0bf3db0fb9419709a8f23914d77-832575517-0
         - GlobalObjectId_V1-2-5389d0bf3db0fb9419709a8f23914d77-1695654902-0
-        - GlobalObjectId_V1-2-5389d0bf3db0fb9419709a8f23914d77-4622981727769301680-4622981727834089746
+        values:
+        - iColor: 4
+          icon: ScriptableObject Icon
+        - iColor: 0
+          icon: Camera Icon
+        - iColor: 0
+          icon: DirectionalLight Icon
+        - iColor: 0
+          icon: LightmapParameters Icon
+        - iColor: 0
+          icon: Canvas Icon
+      goDatasByInstanceId:
+        keys: a4490200f8420200d06002005a4c0200bc3802009c47020066670200706efeffa8620500fc5b0500d47905005e650500c0510500a06005006a8005006c8cfbffe29b0d0068950d00dcb20d00a29e0d00a88a0d00fe990d007eb90d005e5ef3ff
         values:
         - iColor: 9
           icon: PreMatCube
@@ -158,26 +240,161 @@ MonoBehaviour:
           icon: DirectionalLight Icon
         - iColor: 0
           icon: LightmapParameters Icon
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 9
+          icon: PreMatCube
+        - iColor: 4
+          icon: ScriptableObject Icon
+        - iColor: 3
+          icon: 
+        - iColor: 0
+          icon: Camera Icon
+        - iColor: 0
+          icon: DirectionalLight Icon
+        - iColor: 0
+          icon: LightmapParameters Icon
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 9
+          icon: PreMatCube
+        - iColor: 4
+          icon: ScriptableObject Icon
+        - iColor: 3
+          icon: 
+        - iColor: 0
+          icon: Camera Icon
+        - iColor: 0
+          icon: DirectionalLight Icon
+        - iColor: 0
+          icon: LightmapParameters Icon
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 0
+          icon: Canvas Icon
+    - goDatasByGlobalId:
+        keys:
+        - GlobalObjectId_V1-2-6529fe88d17b483448ad6c4f43b6128d-1514104609-0
+        - GlobalObjectId_V1-2-6529fe88d17b483448ad6c4f43b6128d-697745935-0
+        - GlobalObjectId_V1-2-6529fe88d17b483448ad6c4f43b6128d-885882973-0
+        - GlobalObjectId_V1-2-6529fe88d17b483448ad6c4f43b6128d-410087039-0
+        - GlobalObjectId_V1-2-6529fe88d17b483448ad6c4f43b6128d-832575517-0
+        - GlobalObjectId_V1-2-6529fe88d17b483448ad6c4f43b6128d-966703743-0
+        - GlobalObjectId_V1-2-6529fe88d17b483448ad6c4f43b6128d-150463440-0
+        - GlobalObjectId_V1-2-6529fe88d17b483448ad6c4f43b6128d-973214944-0
+        - GlobalObjectId_V1-2-6529fe88d17b483448ad6c4f43b6128d-4622981727769301680-4622981727834089746
+        values:
+        - iColor: 2
+          icon: 
+        - iColor: 4
+          icon: ScriptableObject Icon
+        - iColor: 9
+          icon: PreMatCube
+        - iColor: 0
+          icon: DirectionalLight Icon
+        - iColor: 0
+          icon: LightmapParameters Icon
+        - iColor: 0
+          icon: Camera Icon
+        - iColor: 0
+          icon: Canvas Icon
         - iColor: 0
           icon: Canvas Icon
         - iColor: 0
           icon: Canvas Icon
       goDatasByInstanceId:
-        keys: a4490200f8420200d06002005a4c0200bc3802009c47020066670200706efeff
+        keys: 22e1050046b7050028c1050044a6050010be050084c50500b0990500bec50500121cfbfface60600d0bc0600b2c60600ceab06009ac306000ecb06003a9f060048cb06005093f9ff226a0800760e0800d4230800fceb0700841d0800a02c080008d007003c2d080036a9f5ffb42e0b0004d8090022220a0084680900360d0a00dc420a00a410090020450a00625b0a00
         values:
-        - iColor: 9
-          icon: PreMatCube
+        - iColor: 2
+          icon: 
         - iColor: 4
           icon: ScriptableObject Icon
-        - iColor: 3
-          icon: 
-        - iColor: 0
-          icon: Camera Icon
+        - iColor: 9
+          icon: PreMatCube
         - iColor: 0
           icon: DirectionalLight Icon
         - iColor: 0
           icon: LightmapParameters Icon
         - iColor: 0
+          icon: Camera Icon
+        - iColor: 0
           icon: Canvas Icon
         - iColor: 0
           icon: Canvas Icon
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 2
+          icon: 
+        - iColor: 4
+          icon: ScriptableObject Icon
+        - iColor: 9
+          icon: PreMatCube
+        - iColor: 0
+          icon: DirectionalLight Icon
+        - iColor: 0
+          icon: LightmapParameters Icon
+        - iColor: 0
+          icon: Camera Icon
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 2
+          icon: 
+        - iColor: 4
+          icon: ScriptableObject Icon
+        - iColor: 9
+          icon: PreMatCube
+        - iColor: 0
+          icon: DirectionalLight Icon
+        - iColor: 0
+          icon: LightmapParameters Icon
+        - iColor: 0
+          icon: Camera Icon
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 2
+          icon: 
+        - iColor: 4
+          icon: ScriptableObject Icon
+        - iColor: 9
+          icon: PreMatCube
+        - iColor: 0
+          icon: DirectionalLight Icon
+        - iColor: 0
+          icon: LightmapParameters Icon
+        - iColor: 0
+          icon: Camera Icon
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 0
+          icon: Canvas Icon
+        - iColor: 0
+          icon: Canvas Icon
+    - goDatasByGlobalId:
+        keys:
+        - GlobalObjectId_V1-2-28ac9a59020c6bc459f797acd217859a-1093623937771610-726918561
+        values:
+        - iColor: 0
+          icon: 
+      goDatasByInstanceId:
+        keys: e6b7faff
+        values:
+        - iColor: 0
+          icon: 
+    - goDatasByGlobalId:
+        keys: []
+        values: []
+      goDatasByInstanceId:
+        keys: 
+        values: []
