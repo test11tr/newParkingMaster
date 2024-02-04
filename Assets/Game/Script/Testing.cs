@@ -38,6 +38,11 @@ namespace test11
         public string testString4;
         public string testString5;
 
+        [Foldout("Random")]
+        public int testIntS1;
+        public float testFloatS1;
+        public bool testBoolS1;
+
         [Tab("Floats")]
         public float testFloat11;
         public float testFloat22;
@@ -51,5 +56,6 @@ namespace test11
         public string testString33;
         public string testString44;
         public string testString55;
+        
     }
 }
