@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UniqueVehicleController;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 namespace test11
 {
@@ -16,22 +17,35 @@ namespace test11
         private float transitionStartTime;
         private int targetCam;
 
+        public bool _debug;
+        public int debugTarget;
+
         void Start() {
             TriggerTransition(0);
         }
 
         void Update(){
-            if (isTransitioning){
-                float transitionProgress = (Time.time - transitionStartTime) / transitionDuration;
-                transitionProgress = Mathf.Clamp01(transitionProgress);
-
-                SmoothTransition(transitionProgress);
-
-                if (transitionProgress >= 1f)
+            if (_debug)
+            {
+                _camera.transform.position = CameraPositions[debugTarget].position;
+                _camera.transform.rotation = CameraPositions[debugTarget].rotation;
+            }
+            else
+            {
+                if (isTransitioning)
                 {
-                    isTransitioning = false;
+                    float transitionProgress = (Time.time - transitionStartTime) / transitionDuration;
+                    transitionProgress = Mathf.Clamp01(transitionProgress);
+
+                    SmoothTransition(transitionProgress);
+
+                    if (transitionProgress >= 1f)
+                    {
+                        isTransitioning = false;
+                    }
                 }
             }
+            
         }
 
         public void TriggerTransition(int _target){
