@@ -165,7 +165,7 @@ namespace test11.Managers
 
         IEnumerator CalculateFinish(){
             yield return new WaitForSeconds(finishMenuDelay);
-            if(CollisionCount == 0){
+            if(CollisionCount < 3){
                 PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore0);
                 FinishScoreText.text = CollisionScore0.ToString();
                 star3.SetActive(true);
@@ -190,7 +190,7 @@ namespace test11.Managers
                 }
             }
 
-            if(CollisionCount == 1){
+            if(CollisionCount < 6){
                 PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore1);
                 FinishScoreText.text = CollisionScore1.ToString();
                 star2.SetActive(true);
@@ -217,7 +217,7 @@ namespace test11.Managers
                 }
             }
 
-            if(CollisionCount == 2){
+            if(CollisionCount < 9){
                 PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore2);
                 FinishScoreText.text = CollisionScore2.ToString();
                 star1.SetActive(true);
@@ -244,7 +244,7 @@ namespace test11.Managers
                 }
             }
 
-            if(CollisionCount == 3){
+            if(CollisionCount >= 9){
                 PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CollisionScore3);
                 FinishScoreText.text = CollisionScore3.ToString();
                 star0.SetActive(true);
