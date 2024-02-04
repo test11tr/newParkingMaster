@@ -13405,7 +13405,7 @@ MonoBehaviour:
   vehicleType: 1
   exhaustEffect: {fileID: 5884773561241475125}
   onCollisionEffect: {fileID: 6104677769882049252}
-  onCollisionEffectWithStar: {fileID: 0}
+  onCollisionEffectWithStar: {fileID: 2219216202314289733}
   engineIsStarted: 0
   isbraking: 0
   isaccelerating: 0
