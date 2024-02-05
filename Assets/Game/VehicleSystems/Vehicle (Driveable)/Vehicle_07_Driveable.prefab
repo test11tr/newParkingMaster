@@ -11146,13 +11146,13 @@ MonoBehaviour:
   centerOfMass: {x: 0, y: 0.2, z: 0.275}
   maxEngineTorque: 800
   maxEngineSpeed: 50
-  maxBrakeTorque: 2850
+  maxBrakeTorque: 3500
   SteeringWheel: {fileID: 3246930717528864182}
   minSteeringAngle: 5
   maxSteeringAngle: 60
   arrowSteeringSpeed: 0.03
   steeringSensitivity: 1.3
-  handling: 0.6
+  handling: 0.5
   AntiRoll: 1000
   PowerSteering: 1
   driveType: 2
