@@ -60,7 +60,7 @@ namespace UniqueVehicleController
         public float wheelRadius = 0.35f;
         [Range(5000f, 70000f)]
         public float suspensionSpring = 35000f;
-        [Range(500f, 6500f)]
+        [Range(100f, 6500f)]
         public float Damper = 4500f;
         [Range(0f, 10f)]
         public float suspensionDistance = 0.1f;
@@ -324,36 +324,6 @@ namespace UniqueVehicleController
                 }
             }
 
-            if (isaccelerating && !isneutral && !isoutofFuel && !isparking && engineIsStarted)
-            {
-                if (isreversing)
-                {
-                    if (isSlidePedals)
-                    {
-                        Drive = (currentWheelsTorque - (currentWheelsTorque * UVCInputSystem.UIS.Accelerator.value)) * -1f;
-                    }
-                    else
-                    {
-                        Drive = currentWheelsTorque * -1f;
-                    }
-                }
-                else
-                {
-                    if (isSlidePedals)
-                    {
-                        Drive = (currentWheelsTorque - (currentWheelsTorque * UVCInputSystem.UIS.Accelerator.value)) * 1f;
-                    }
-                    else
-                    {
-                        Drive = currentWheelsTorque * 1f;
-                    }
-                }
-            }
-            else
-            {
-                Drive = currentWheelsTorque * 0f;
-            }
-
             if (UVCInputSystem.UIS.Mobile)
             {
                 if (isSlidePedals)
@@ -394,7 +364,7 @@ namespace UniqueVehicleController
             }
             else
             {
-                if (isparking | isbraking)
+                if (isparking /*| isbraking*/)
                 {
                     rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
                     rb.freezeRotation = true;
@@ -436,6 +406,36 @@ namespace UniqueVehicleController
             else
             {
                 isbraking = true;
+            }
+
+            if (isaccelerating && !isneutral && !isoutofFuel && !isparking && engineIsStarted)
+            {
+                if (isreversing)
+                {
+                    if (isSlidePedals)
+                    {
+                        Drive = (currentWheelsTorque - (currentWheelsTorque * UVCInputSystem.UIS.Accelerator.value)) * -1f;
+                    }
+                    else
+                    {
+                        Drive = currentWheelsTorque * -1f;
+                    }
+                }
+                else
+                {
+                    if (isSlidePedals)
+                    {
+                        Drive = (currentWheelsTorque - (currentWheelsTorque * UVCInputSystem.UIS.Accelerator.value)) * 1f;
+                    }
+                    else
+                    {
+                        Drive = currentWheelsTorque * 1f;
+                    }
+                }
+            }
+            else
+            {
+                Drive = currentWheelsTorque * 0f;
             }
 
             speedFactor = (rb.velocity.magnitude * 4.84f * handling / maxEngineSpeed) * (DriveWheelsNumber / 2);

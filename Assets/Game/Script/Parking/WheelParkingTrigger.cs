@@ -45,16 +45,16 @@ namespace test11.Managers
                 if(_colliderChecker == colliderChecker.FL){
                     _parkingManager.fl = true;
                     //print("fl = true");
-                }else if (_colliderChecker == colliderChecker.FR){
-                    _parkingManager.fr = true;
+                //}else if (_colliderChecker == colliderChecker.FR){
+                 //   _parkingManager.fr = true;
                     //print("fr = true");
                 }else if (_colliderChecker == colliderChecker.RL){
                     _parkingManager.rl = true;
                     //print("rl = true");
-                }else if (_colliderChecker == colliderChecker.RR){
-                    _parkingManager.rr = true;
+                }//else if (_colliderChecker == colliderChecker.RR){
+                 //   _parkingManager.rr = true;
                     //print("rr = true");
-                }
+                //}
             }    
         
             /*if(_colliderChecker == colliderChecker.VehicleFront)
@@ -77,16 +77,16 @@ namespace test11.Managers
                 if(_colliderChecker == colliderChecker.FL){
                     _parkingManager.fl = false;
                     //print("fl = false");
-                }else if (_colliderChecker == colliderChecker.FR){
-                    _parkingManager.fr = false;
+                //}else if (_colliderChecker == colliderChecker.FR){
+                 //   _parkingManager.fr = false;
                      //print("fr = false");
                 }else if (_colliderChecker == colliderChecker.RL){
                     _parkingManager.rl = false;
                      //print("rl = false");
-                }else if (_colliderChecker == colliderChecker.RR){
-                    _parkingManager.rr = false;
+                }//else if (_colliderChecker == colliderChecker.RR){
+                 //   _parkingManager.rr = false;
                      //print("rr = false");
-                }
+                //}
             }   
 
             /*if(_colliderChecker == colliderChecker.VehicleFront)

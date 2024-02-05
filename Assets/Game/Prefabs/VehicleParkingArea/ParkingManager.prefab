@@ -169,7 +169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3026618148575178473
 Transform:
   m_ObjectHideFlags: 0
@@ -258,8 +258,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1.1608781}
-  m_Center: {x: 0, y: 0, z: -0.045964774}
+  m_Size: {x: 2.024658, y: 1, z: 1.1608781}
+  m_Center: {x: 0.5123288, y: 0, z: -0.04596475}
 --- !u!114 &3026618148585186540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,8 +320,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9338456, y: 1, z: 2.3528755}
-  m_Center: {x: 0.13732997, y: 0, z: 0.17922574}
+  m_Size: {x: 3.8806403, y: 1, z: 2.3528755}
+  m_Center: {x: 1.1107274, y: 0, z: 0.17922574}
 --- !u!114 &3026618149308578055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelManager: {fileID: 0}
+  _levelLoader: {fileID: 0}
   _carController: {fileID: 0}
   _parkingManager: {fileID: 0}
   _hud: {fileID: 0}
@@ -398,6 +399,10 @@ MonoBehaviour:
   FinishMenu: {fileID: 0}
   FailedMenu: {fileID: 0}
   TimeFailedMenu: {fileID: 0}
+  vehicleGiftObject: {fileID: 0}
+  giftingVehicleName: {fileID: 0}
+  giftingVehicleInfoText: {fileID: 0}
+  beBetterText: {fileID: 0}
   CollisionScore0: 500
   CollisionScore1: 350
   CollisionScore2: 200
@@ -424,7 +429,6 @@ MonoBehaviour:
   timeLimit: 0
   TimeDownMenu: {fileID: 0}
   isBonusRewarded: 0
-  bonusInfoText: {fileID: 0}
   bonusDiamondAmount: 5
   bonusReward: {fileID: 0}
   bonusText: {fileID: 0}
@@ -451,7 +455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3026618149714740047
 Transform:
   m_ObjectHideFlags: 0

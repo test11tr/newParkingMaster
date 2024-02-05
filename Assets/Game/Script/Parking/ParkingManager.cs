@@ -113,7 +113,7 @@ namespace test11.Managers
 
         void Update(){
             if(!Finished){
-                if(fl && fr && rl && rr && /*front && rear &&*/ !_levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().ismoving){
+                if(fl && rl && /*fr && rr && front && rear &&*/ !_levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().ismoving){
                         ParkingArea.material.color = Color.green;
                         //ParkingAreaEmission.gameObject.SetActive(true);
                         ParkingAreaEmission.material.color = Color.green;
@@ -128,7 +128,8 @@ namespace test11.Managers
                             _levelManager.SpawnedPlayerVehicle.GetComponent<UVCUniqueVehicleController>().isparking = true;
                         //}
                 }
-                else if(fl || fr || rl || rr /*|| front || rear*/){
+                else if(fl || rl /*|| fr || rr || front || rear*/)
+                {
                     //ParkingArea.material.color = Color.red;
                     //ParkingAreaEmission.material.color = Color.red;
                     //ParkingAreaEmission.material.SetColor("_EmissionColor", Color.red);
