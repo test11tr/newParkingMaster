@@ -2060,7 +2060,7 @@ MonoBehaviour:
   engineStartDuration: 12
   centerOfMass: {x: 0, y: 0.2, z: 0.1}
   maxEngineTorque: 600
-  maxEngineSpeed: 60
+  maxEngineSpeed: 50
   maxBrakeTorque: 2850
   SteeringWheel: {fileID: 6743934939287326556}
   minSteeringAngle: 5
@@ -2083,7 +2083,7 @@ MonoBehaviour:
     steering: 0
   wheelRadius: 0.35
   suspensionSpring: 20000
-  Damper: 500
+  Damper: 750
   suspensionDistance: 0.25
   vehicleType: 1
   exhaustEffect: {fileID: 166973961737958404}
