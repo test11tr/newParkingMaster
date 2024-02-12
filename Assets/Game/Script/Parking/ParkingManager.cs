@@ -18,6 +18,7 @@ namespace test11.Managers
         [SerializeField] private ParkingManager _parkingManager;
         [SerializeField] private GameObject _hud;
         [SerializeField] private GameObject parkingNotify;
+        [SerializeField] private GameObject _rateUsMenu;
 
         [HideInInspector]
         public bool fl,fr,rl,rr,front,rear;
