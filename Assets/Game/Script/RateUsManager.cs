@@ -32,7 +32,7 @@ public class RateUsManager : MonoBehaviour
     public void SetDontShow()
     {
         PlayerPrefs.SetInt("DontShow", 1);
-        print("DontShow = 1");
+        //print("DontShow = 1");
     }
 
     public void CheckRateUsState()
@@ -43,7 +43,6 @@ public class RateUsManager : MonoBehaviour
         }
     }
 
-    #region Granular Implementation
     private interface RateUsImpl
     {
         void ShowPrompt();
@@ -82,11 +81,26 @@ public class RateUsManager : MonoBehaviour
 	        Debug.Log("<color=yellow>RateUsManager --> launching store review</color>");
             var launchFlowOperation = _reviewManager.LaunchReviewFlow(_playReviewInfo);
             yield return launchFlowOperation;
-            _playReviewInfo = null; // Reset the object
-            PlayerPrefs.SetInt("DontShow", 1);
+            _playReviewInfo = null; // Reset the 
             if (launchFlowOperation.Error != ReviewErrorCode.NoError) {
 	            Debug.Log("<color=red>RateUsManager --> cannot request store review</color>");
 	            Debug.Log(launchFlowOperation.Error.ToString());
+
+                if (!launchFlowOperation.IsDone)
+                {
+                    print("interrupted");
+                }
+                else if (!launchFlowOperation.IsSuccessful)
+                {
+                    print("interrupted");
+                }
+                else
+                {
+                    // Assuming review process is initiated successfully, set a flag
+                    //PlayerPrefs.SetInt("UserRated", 1);
+                    Debug.Log("<color=green>Assuming review initiated, setting UserRated to 1</color>");
+
+                }
                 yield break;
             }
         }
@@ -100,5 +114,4 @@ public class RateUsManager : MonoBehaviour
             Debug.Log("<color=green>Rate us success :)</color>");
         }
     }
-    #endregion
 }

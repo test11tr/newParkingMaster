@@ -7,6 +7,7 @@ namespace test11
 {
     public class FPS : MonoBehaviour
     {
+        private static FPS Instance;
         private float count;
         public bool isFPSCounterEnabled;
         public int _targetFPS;
@@ -35,9 +36,17 @@ namespace test11
         }
 
         private void Awake() {
+            if (Instance)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+
+            Instance = (this);
             Application.targetFrameRate = _targetFPS;
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
             DontDestroyOnLoad(gameObject);
+            SceneManager.LoadScene("00-MainMenu");
         }
     }
 }
