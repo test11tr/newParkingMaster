@@ -11,6 +11,7 @@ public class RateUsManager : MonoBehaviour
 {
     public bool levelBased = true;
     public int firstRateUsLevel;
+    public int rateUsLevelFrequency;
     public GameObject RateMenu;
     private RateUsImpl _rateUs;
     
@@ -21,9 +22,15 @@ public class RateUsManager : MonoBehaviour
         _rateUs = new RateUsAndroidImpl(this);
 #endif
         int passedLevels = PlayerPrefs.GetInt("01-MallPassedLevels");
-        if (passedLevels >= firstRateUsLevel && (passedLevels % firstRateUsLevel == 0) && PlayerPrefs.GetInt("UserRated") < 1)
+        if (passedLevels >= firstRateUsLevel)
         {
-            RateMenu.SetActive(true);
+            if (PlayerPrefs.GetInt("DontShow") == 0 && (passedLevels % rateUsLevelFrequency == 0))
+                CheckRateUsState();
+            //RateMenu.SetActive(true);
+            else
+            {
+                //RateMenu.SetActive(false);
+            }
             //CheckRateUsState();
         }
             
@@ -32,15 +39,11 @@ public class RateUsManager : MonoBehaviour
     public void SetDontShow()
     {
         PlayerPrefs.SetInt("DontShow", 1);
-        //print("DontShow = 1");
     }
 
     public void CheckRateUsState()
     {
-        if(PlayerPrefs.GetInt("DontShow") != 1)
-        {
-            _rateUs.ShowPrompt();  
-        }
+        _rateUs.ShowPrompt();  
     }
 
     private interface RateUsImpl
@@ -85,22 +88,6 @@ public class RateUsManager : MonoBehaviour
             if (launchFlowOperation.Error != ReviewErrorCode.NoError) {
 	            Debug.Log("<color=red>RateUsManager --> cannot request store review</color>");
 	            Debug.Log(launchFlowOperation.Error.ToString());
-
-                if (!launchFlowOperation.IsDone)
-                {
-                    print("interrupted");
-                }
-                else if (!launchFlowOperation.IsSuccessful)
-                {
-                    print("interrupted");
-                }
-                else
-                {
-                    // Assuming review process is initiated successfully, set a flag
-                    //PlayerPrefs.SetInt("UserRated", 1);
-                    Debug.Log("<color=green>Assuming review initiated, setting UserRated to 1</color>");
-
-                }
                 yield break;
             }
         }

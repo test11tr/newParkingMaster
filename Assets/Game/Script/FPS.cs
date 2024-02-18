@@ -36,17 +36,9 @@ namespace test11
         }
 
         private void Awake() {
-            if (Instance)
-            {
-                Destroy(this.gameObject);
-                return;
-            }
-
-            Instance = (this);
             Application.targetFrameRate = _targetFPS;
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
             DontDestroyOnLoad(gameObject);
-            SceneManager.LoadScene("00-MainMenu");
         }
     }
 }

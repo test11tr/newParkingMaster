@@ -45,11 +45,9 @@ namespace test11
                 PlayerPrefs.SetInt("Car9",0);
             }
 
-            if(!PlayerPrefs.HasKey("UserRated"))
+            if(!PlayerPrefs.HasKey("DontShow"))
             {
-                PlayerPrefs.SetInt("UserRated", 0);
                 PlayerPrefs.SetInt("DontShow", 0);
-                print("userRated added");
             }
         }
 
